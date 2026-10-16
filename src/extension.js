@@ -4,6 +4,7 @@ const { activateProviders } = require('./providers');
 const { registerDebug } = require('./debug/inline');
 const { resolveInterpreter, registerInterpreterSelector } = require('./interpreter');
 const { registerTesting } = require('./testing');
+const onboarding = require('./onboarding');
 
 let extensionContext;
 
@@ -56,6 +57,7 @@ function activate(context) {
   const providers = activateProviders(context, log);
   registerTesting(context, log);
   registerDebug(context);
+  onboarding.register(vscode, context);
   registerInterpreterSelector(vscode, context, () => providers.refreshIntrospection(false));
   context.subscriptions.push(
     vscode.commands.registerCommand('tcl.runFile', runFile),

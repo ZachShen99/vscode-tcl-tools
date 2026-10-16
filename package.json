@@ -1,10 +1,11 @@
 {
   "name": "tcl-tools",
   "displayName": "Tcl Tools",
-  "description": "Tcl for VS Code: highlighting, completion, Tk and SQLite support, diagnostics, and a full debugger (breakpoints, stepping, variables, Tk).",
+  "description": "Tcl language support for VS Code: smart completion, diagnostics, Tk/SQLite/TclOO awareness, tcltest Test Explorer, and a full debugger.",
   "version": "0.6.12",
   "publisher": "zach-shen",
   "license": "MIT",
+  "author": "Zach Shen",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -70,6 +71,100 @@
         "path": "./snippets/tcl.json"
       }
     ],
+    "walkthroughs": [
+      {
+        "id": "tcl-tools.gettingStarted",
+        "title": "%walkthrough.title%",
+        "description": "%walkthrough.description%",
+        "steps": [
+          {
+            "id": "interpreter",
+            "title": "%walkthrough.step.interpreter.title%",
+            "description": "%walkthrough.step.interpreter.description%",
+            "media": {
+              "markdown": "media/walkthrough/1-interpreter.md"
+            },
+            "completionEvents": [
+              "onCommand:tcl.selectInterpreter"
+            ]
+          },
+          {
+            "id": "environment",
+            "title": "%walkthrough.step.environment.title%",
+            "description": "%walkthrough.step.environment.description%",
+            "media": {
+              "markdown": "media/walkthrough/2-environment.md"
+            },
+            "completionEvents": [
+              "onCommand:tcl.showEnvironment"
+            ]
+          },
+          {
+            "id": "sample",
+            "title": "%walkthrough.step.sample.title%",
+            "description": "%walkthrough.step.sample.description%",
+            "media": {
+              "markdown": "media/walkthrough/3-sample.md"
+            },
+            "completionEvents": [
+              "onCommand:tcl.openWalkthroughSample"
+            ]
+          },
+          {
+            "id": "run",
+            "title": "%walkthrough.step.run.title%",
+            "description": "%walkthrough.step.run.description%",
+            "media": {
+              "markdown": "media/walkthrough/4-run.md"
+            },
+            "completionEvents": [
+              "onCommand:tcl.runFile"
+            ]
+          },
+          {
+            "id": "tests",
+            "title": "%walkthrough.step.tests.title%",
+            "description": "%walkthrough.step.tests.description%",
+            "media": {
+              "markdown": "media/walkthrough/5-tests.md"
+            },
+            "completionEvents": [
+              "onCommand:workbench.view.testing.focus"
+            ]
+          },
+          {
+            "id": "debug",
+            "title": "%walkthrough.step.debug.title%",
+            "description": "%walkthrough.step.debug.description%",
+            "media": {
+              "markdown": "media/walkthrough/6-debug.md"
+            },
+            "completionEvents": [
+              "onCommand:workbench.action.debug.start"
+            ]
+          },
+          {
+            "id": "projectConfig",
+            "title": "%walkthrough.step.projectConfig.title%",
+            "description": "%walkthrough.step.projectConfig.description%",
+            "media": {
+              "markdown": "media/walkthrough/7-project-config.md"
+            },
+            "completionEvents": [
+              "onCommand:tcl.createProjectConfig"
+            ]
+          },
+          {
+            "id": "next",
+            "title": "%walkthrough.step.next.title%",
+            "description": "%walkthrough.step.next.description%",
+            "media": {
+              "markdown": "media/walkthrough/8-next.md"
+            }
+          }
+        ]
+      }
+    ],
     "jsonValidation": [
       {
         "fileMatch": ".tcl-tools.json",
@@ -83,32 +178,44 @@
     "commands": [
       {
         "command": "tcl.runFile",
-        "title": "Tcl: Run Current File",
+        "title": "%command.runFile.title%",
         "icon": "$(play)"
       },
       {
         "command": "tcl.runSelection",
-        "title": "Tcl: Run Selection"
+        "title": "%command.runSelection.title%"
       },
       {
         "command": "tcl.refreshIntrospection",
-        "title": "Tcl: Refresh Introspection"
+        "title": "%command.refreshIntrospection.title%"
       },
       {
         "command": "tcl.selectInterpreter",
-        "title": "Tcl: Select Interpreter"
+        "title": "%command.selectInterpreter.title%"
       },
       {
         "command": "tcl.explainUndefinedCommands",
-        "title": "Tcl: Why Is the Undefined-Command Check Inactive?"
+        "title": "%command.explainUndefinedCommands.title%"
       },
       {
         "command": "tcl.showEnvironment",
-        "title": "Tcl: Show Environment Info"
+        "title": "%command.showEnvironment.title%"
       },
       {
         "command": "tcl.createProjectConfig",
-        "title": "Tcl: Create Project Config"
+        "title": "%command.createProjectConfig.title%"
+      },
+      {
+        "command": "tcl.getStarted",
+        "title": "%command.getStarted.title%"
+      },
+      {
+        "command": "tcl.openWalkthroughSample",
+        "title": "%command.openWalkthroughSample.title%"
+      },
+      {
+        "command": "tcl.openGuide",
+        "title": "%command.openGuide.title%"
       }
     ],
     "menus": {
@@ -323,7 +430,12 @@
     "debugger",
     "sqlite",
     "tclsh",
-    "eda"
+    "eda",
+    "tcltk",
+    "tcltest",
+    "tcloo",
+    "vivado",
+    "debug"
   ],
   "galleryBanner": {
     "color": "#0f3d2e",
