@@ -1,0 +1,751 @@
+{
+ "packages": {
+  "http": {
+   "cmds": {
+    "http::geturl": [
+     "url ?option value ...?",
+     "Fetch a URL; returns a token. Use http::status / http::data / http::code with the token, then http::cleanup.",
+     "请求一个 URL,返回 token;用 http::status / http::data / http::code 读取结果,最后调用 http::cleanup。"
+    ],
+    "http::config": [
+     "?option? ?value? ...",
+     "Query or set the package defaults (-useragent, -proxyhost, -proxyport, -urlencoding, -accept, -zip ...).",
+     "查询或设置包的默认配置(-useragent、-proxyhost、-proxyport、-urlencoding、-accept、-zip 等)。"
+    ],
+    "http::reset": [
+     "token ?why?",
+     "Abort a running request.",
+     "中止正在进行的请求。"
+    ],
+    "http::wait": [
+     "token",
+     "Block (enter the event loop) until the request finishes.",
+     "等待(进入事件循环)直到请求结束。"
+    ],
+    "http::formatQuery": [
+     "key value ?key value ...?",
+     "Build a URL-encoded query string from key/value pairs.",
+     "把键值对编码成 URL 查询字符串。"
+    ],
+    "http::quoteString": [
+     "string",
+     "URL-encode a string.",
+     "对字符串做 URL 编码。"
+    ],
+    "http::register": [
+     "proto port command",
+     "Register a handler for a new URL scheme (e.g. https via tls::socket).",
+     "为新的 URL 协议注册处理命令(如用 tls::socket 支持 https)。"
+    ],
+    "http::unregister": [
+     "proto",
+     "Remove a registered URL scheme.",
+     "移除已注册的 URL 协议。"
+    ],
+    "http::registerError": [
+     "sock ?message?",
+     "Report an error on a socket opened by a registered handler.",
+     "报告由已注册协议处理器打开的套接字上的错误。"
+    ],
+    "http::status": [
+     "token",
+     "Request state: ok, eof, error, timeout, reset, or empty while running.",
+     "请求状态:ok、eof、error、timeout、reset;进行中为空。"
+    ],
+    "http::code": [
+     "token",
+     "HTTP status line, e.g. \"HTTP/1.1 200 OK\".",
+     "HTTP 状态行,如 \"HTTP/1.1 200 OK\"。"
+    ],
+    "http::ncode": [
+     "token",
+     "Numeric HTTP status code, e.g. 200.",
+     "数字形式的 HTTP 状态码,如 200。"
+    ],
+    "http::data": [
+     "token",
+     "The response body.",
+     "响应正文。"
+    ],
+    "http::size": [
+     "token",
+     "Bytes of the body received so far.",
+     "目前已接收的正文字节数。"
+    ],
+    "http::error": [
+     "token",
+     "Error message of a failed request (empty if none).",
+     "失败请求的错误信息(无则为空)。"
+    ],
+    "http::meta": [
+     "token",
+     "Response headers as a key/value list (names lower-cased by http::meta users).",
+     "响应头的键值列表。"
+    ],
+    "http::cleanup": [
+     "token",
+     "Free the state of a request. Always call it when done.",
+     "释放请求占用的状态;用完后务必调用。"
+    ],
+    "http::mapReply": [
+     "string",
+     "Escape a string for use inside a reply body (HTML-safe).",
+     "对字符串转义,便于放入响应正文。"
+    ],
+    "http::postError": ["token", "Return the full error from posting request data.", "返回发送请求数据时的完整错误信息。"],
+    "http::requestLine": ["token", "Return the HTTP request line.", "返回 HTTP 请求行。"],
+    "http::requestHeaders": ["token ?headerName?", "Return request headers, or one named header.", "返回请求头，或指定名称的请求头。"],
+    "http::requestHeaderValue": ["token header", "Return the value of a request header.", "返回指定请求头的值。"],
+    "http::responseLine": ["token", "Return the HTTP response status line.", "返回 HTTP 响应状态行。"],
+    "http::responseHeaders": ["token ?headerName?", "Return response headers, or one named header.", "返回响应头，或指定名称的响应头。"],
+    "http::responseHeaderValue": ["token header", "Return the value of a response header.", "返回指定响应头的值。"],
+    "http::responseCode": ["token", "Return the numeric HTTP response code when available.", "返回 HTTP 响应状态码（如有）。"],
+    "http::responseBody": ["token", "Return the HTTP response body.", "返回 HTTP 响应正文。"],
+    "http::responseInfo": ["token", "Return a dictionary of request and response state.", "返回请求和响应状态的字典。"],
+    "http::reasonPhrase": ["code", "Return the standard HTTP reason phrase for a status code.", "返回状态码对应的标准 HTTP 原因短语。"]
+   }
+  },
+  "msgcat": {
+   "cmds": {
+    "msgcat::mc": [
+     "src ?arg ...?",
+     "Translate a string for the current locale (format-style arguments are substituted).",
+     "按当前区域翻译字符串(其余参数按 format 方式代入)。"
+    ],
+    "msgcat::mcset": [
+     "locale src ?dest?",
+     "Define the translation of src for a locale.",
+     "为某区域设置 src 的译文。"
+    ],
+    "msgcat::mcmset": [
+     "locale pairs",
+     "Define several translations at once: {src dest src dest ...}.",
+     "一次定义多条译文:{原文 译文 原文 译文 ...}。"
+    ],
+    "msgcat::mclocale": [
+     "?newLocale?",
+     "Query or set the current locale (e.g. ja_JP, en).",
+     "查询或设置当前区域(如 ja_JP、en)。"
+    ],
+    "msgcat::mcpreferences": [
+     "",
+     "List of locales tried in order for the current locale.",
+     "当前区域按顺序尝试的区域列表。"
+    ],
+    "msgcat::mcload": [
+     "langdir",
+     "Load all .msg files for the preferred locales from a directory.",
+     "从目录加载首选区域的所有 .msg 文件。"
+    ],
+    "msgcat::mcexists": [
+     "?-exactnamespace? ?-exactlocale? ?-namespace ns? ?-locale loc? src",
+     "True if a translation exists.",
+     "判断是否存在译文。"
+    ],
+    "msgcat::mcmax": [
+     "?src ...?",
+     "Length of the longest translation of the given strings (for layout).",
+     "给定字符串的译文中最长的长度(用于排版)。"
+    ],
+    "msgcat::mcunknown": [
+     "locale src ?arg ...?",
+     "Handler called when no translation is found; override to customise.",
+     "找不到译文时调用的处理命令;可重定义。"
+    ],
+    "msgcat::mcflset": [
+     "src ?dest?",
+     "Like mcset using the file-name locale (for .msg files).",
+     "与 mcset 类似,使用文件名所表示的区域(用于 .msg 文件)。"
+    ],
+    "msgcat::mcflmset": [
+     "pairs",
+     "Like mcmset using the file-name locale (for .msg files).",
+     "与 mcmset 类似,使用文件名所表示的区域(用于 .msg 文件)。"
+    ],
+    "msgcat::mcloadedlocales": [
+     "subcommand",
+     "loaded or clear: the locales that currently have translations.",
+     "loaded 或 clear:当前已加载译文的区域。"
+    ],
+    "msgcat::mcpackagelocale": [
+     "subcommand ?locale?",
+     "Per-package locale: set, get, preferences, loaded, present, clear.",
+     "按包设置区域:set、get、preferences、loaded、present、clear。"
+    ],
+    "msgcat::mcpackageconfig": [
+     "subcommand option ?value?",
+     "Per-package options: get, set (mcfolder, loadcmd, changecmd, unknowncmd).",
+     "按包配置:get、set(mcfolder、loadcmd、changecmd、unknowncmd)。"
+    ],
+    "msgcat::mcforgetpackage": [
+     "",
+     "Forget all translations of the calling namespace.",
+     "清除调用者命名空间的所有译文。"
+    ],
+    "msgcat::mcn": ["namespace src ?arg ...?", "Translate a message using the given namespace and its parents.", "在指定命名空间及其父命名空间中查找并翻译消息。"],
+    "msgcat::mcpackagenamespaceget": ["", "Return the calling package's message namespace.", "返回当前包的消息命名空间。"],
+    "msgcat::mcutil": ["subcommand ?arg ...?", "Utilities for message catalog packages.", "消息目录包的辅助命令。"]
+   }
+  },
+  "tcltest": {
+   "cmds": {
+    "tcltest::test": [
+     "name description ?-constraints list? ?-setup script? ?-body script? ?-cleanup script? ?-result value? ?-returnCodes list? ?-output text? ?-errorOutput text? ?-match mode?",
+     "Define and run one test; reports a pass or fail.",
+     "定义并运行一个测试,报告通过或失败。"
+    ],
+    "tcltest::configure": [
+     "?option? ?value? ...",
+     "Query or set the test-suite options (-verbose, -match, -skip, -file, -notfile, -tmpdir ...).",
+     "查询或设置测试套件选项(-verbose、-match、-skip、-file、-notfile、-tmpdir 等)。"
+    ],
+    "tcltest::cleanupTests": [
+     "?calledFromAllFile?",
+     "Print the test summary; call at the end of every test file.",
+     "输出测试汇总;每个测试文件末尾都应调用。"
+    ],
+    "tcltest::runAllTests": [
+     "?shell?",
+     "Run every *.test file in the directory (for all.tcl).",
+     "运行目录下所有 *.test 文件(用于 all.tcl)。"
+    ],
+    "tcltest::testConstraint": [
+     "constraint ?value?",
+     "Query or set a constraint that tests can require.",
+     "查询或设置测试可依赖的约束条件。"
+    ],
+    "tcltest::customMatch": [
+     "mode script",
+     "Register a custom -match mode.",
+     "注册自定义的 -match 模式。"
+    ],
+    "tcltest::makeFile": [
+     "contents name ?directory?",
+     "Create a temporary file for a test.",
+     "为测试创建临时文件。"
+    ],
+    "tcltest::removeFile": [
+     "name ?directory?",
+     "Remove a file made by makeFile.",
+     "删除 makeFile 创建的文件。"
+    ],
+    "tcltest::makeDirectory": [
+     "name ?directory?",
+     "Create a temporary directory.",
+     "创建临时目录。"
+    ],
+    "tcltest::removeDirectory": [
+     "name ?directory?",
+     "Remove a directory made by makeDirectory.",
+     "删除 makeDirectory 创建的目录。"
+    ],
+    "tcltest::viewFile": [
+     "name ?directory?",
+     "Contents of a file made by makeFile.",
+     "makeFile 所建文件的内容。"
+    ],
+    "tcltest::loadTestedCommands": [
+     "",
+     "Hook to load the code under test (set with -load / -loadfile).",
+     "加载被测代码的钩子(通过 -load / -loadfile 设置)。"
+    ],
+    "tcltest::interpreter": [
+     "?interp?",
+     "Query or set the interpreter used to run test files.",
+     "查询或设置运行测试文件的解释器。"
+    ],
+    "tcltest::outputChannel": [
+     "?channel?",
+     "Channel for normal output.",
+     "正常输出的通道。"
+    ],
+    "tcltest::errorChannel": [
+     "?channel?",
+     "Channel for error output.",
+     "错误输出的通道。"
+    ],
+    "tcltest::bytestring": [
+     "string",
+     "Convert a string to a byte string (for binary comparisons).",
+     "把字符串转换为字节串(用于二进制比较)。"
+    ],
+    "tcltest::normalizeMsg": [
+     "msg",
+     "Normalize whitespace in a message.",
+     "规范化消息中的空白。"
+    ],
+    "tcltest::normalizePath": [
+     "pathVar",
+     "Normalize a path variable.",
+     "规范化路径变量。"
+    ],
+    "tcltest::getMatchingFiles": [
+     "?args?",
+     "List the test files that match the current options.",
+     "列出符合当前选项的测试文件。"
+    ],
+    "tcltest::saveState": [
+     "",
+     "Remember the interpreter state (used to detect leaks).",
+     "记录解释器状态(用于检测泄漏)。"
+    ],
+    "tcltest::restoreState": [
+     "",
+     "Report differences from the saved state.",
+     "报告与已保存状态的差异。"
+    ],
+    "tcltest::threadReap": [
+     "",
+     "Kill extra threads created by tests.",
+     "终止测试创建的多余线程。"
+    ],
+    "tcltest::mainThread": [
+     "?new?",
+     "The main thread id.",
+     "主线程 id。"
+    ],
+    "tcltest::debug": [
+     "?level?",
+     "Debug level (alias of configure -debug).",
+     "调试级别(等同 configure -debug)。"
+    ],
+    "tcltest::verbose": [
+     "?levels?",
+     "Verbosity: pass, body, skip, start, error, line, msec (alias of configure -verbose).",
+     "输出详细程度:pass、body、skip、start、error、line、msec。"
+    ],
+    "tcltest::match": [
+     "?patterns?",
+     "Only run tests whose names match (alias of configure -match).",
+     "只运行名称匹配的测试。"
+    ],
+    "tcltest::skip": [
+     "?patterns?",
+     "Skip tests whose names match (alias of configure -skip).",
+     "跳过名称匹配的测试。"
+    ],
+    "tcltest::matchFiles": [
+     "?patterns?",
+     "Only run test files that match.",
+     "只运行匹配的测试文件。"
+    ],
+    "tcltest::skipFiles": [
+     "?patterns?",
+     "Skip test files that match.",
+     "跳过匹配的测试文件。"
+    ],
+    "tcltest::matchDirectories": [
+     "?patterns?",
+     "Only descend into matching directories.",
+     "只进入匹配的目录。"
+    ],
+    "tcltest::skipDirectories": [
+     "?patterns?",
+     "Skip matching directories.",
+     "跳过匹配的目录。"
+    ],
+    "tcltest::temporaryDirectory": [
+     "?dir?",
+     "Directory for temporary files.",
+     "临时文件目录。"
+    ],
+    "tcltest::testsDirectory": [
+     "?dir?",
+     "Directory containing the tests.",
+     "测试所在目录。"
+    ],
+    "tcltest::errorFile": [
+     "?file?",
+     "File for error output (alias of configure -errfile).",
+     "错误输出文件(等同 configure -errfile)。"
+    ],
+    "tcltest::limitConstraints": [
+     "?bool?",
+     "Run only tests with the enabled constraints (alias of configure -limitconstraints).",
+     "只运行满足已启用约束的测试(等同 configure -limitconstraints)。"
+    ],
+    "tcltest::loadFile": [
+     "?file?",
+     "File sourced before tests (alias of configure -loadfile).",
+     "测试前执行的文件(等同 configure -loadfile)。"
+    ],
+    "tcltest::loadScript": [
+     "?script?",
+     "Script run before tests (alias of configure -load).",
+     "测试前运行的脚本(等同 configure -load)。"
+    ],
+    "tcltest::outputFile": [
+     "?file?",
+     "File for normal output (alias of configure -outfile).",
+     "正常输出文件(等同 configure -outfile)。"
+    ],
+    "tcltest::preserveCore": [
+     "?level?",
+     "Core file handling (alias of configure -preservecore).",
+     "core 文件处理方式(等同 configure -preservecore)。"
+    ],
+    "tcltest::singleProcess": [
+     "?bool?",
+     "Run all test files in one process (alias of configure -singleproc).",
+     "在同一进程运行所有测试文件(等同 configure -singleproc)。"
+    ],
+    "tcltest::workingDirectory": [
+     "?dir?",
+     "Working directory for tests.",
+     "测试的工作目录。"
+    ]
+   }
+  },
+  "platform": {
+   "cmds": {
+    "platform::generic": [
+     "",
+     "Generic platform identifier, e.g. linux-x86_64.",
+     "通用平台标识,如 linux-x86_64。"
+    ],
+    "platform::identify": [
+     "",
+     "Full platform identifier, including OS version/libc, e.g. linux-glibc2.35-x86_64.",
+     "完整平台标识,包含系统版本/libc。"
+    ],
+    "platform::patterns": [
+     "identifier",
+     "List of identifiers compatible with the given one, most specific first.",
+     "与给定标识兼容的标识列表,由具体到宽泛。"
+    ]
+   }
+  },
+  "platform::shell": {
+   "cmds": {
+    "platform::shell::generic": [
+     "shell",
+     "Generic platform identifier of another tclsh.",
+     "另一个 tclsh 的通用平台标识。"
+    ],
+    "platform::shell::identify": [
+     "shell",
+     "Full platform identifier of another tclsh.",
+     "另一个 tclsh 的完整平台标识。"
+    ]
+   }
+  },
+  "opt": {
+   "cmds": {
+    "tcl::OptProc": [
+     "name arguments ?body?",
+     "Define a proc with named options and typed arguments (optparse): tcl::OptProc name {{-flag \"doc\"} {arg -int 3 \"doc\"}} body.",
+     "定义带具名选项和类型化参数的过程(optparse)。"
+    ]
+   }
+  }
+ },
+ "options": {
+  "http::geturl": {
+   "-binary": [
+    "Treat the body as binary.",
+    "把正文按二进制处理。",
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "-blocksize": [
+    "Block size for reads (bytes).",
+    "读取块大小(字节)。"
+   ],
+   "-channel": [
+    "Write the body to this channel instead of memory.",
+    "把正文写入该通道而不是内存。"
+   ],
+   "-command": [
+    "Call this command when the request completes (asynchronous).",
+    "请求完成时调用该命令(异步)。"
+   ],
+   "-handler": [
+    "Command called for each chunk of body data.",
+    "每收到一块正文数据就调用的命令。"
+   ],
+   "-headers": [
+    "Extra request headers as a key/value list.",
+    "额外的请求头(键值列表)。"
+   ],
+   "-keepalive": [
+    "Keep the connection alive for reuse.",
+    "保持连接以便复用。",
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "-method": [
+    "HTTP method (GET, POST, PUT, DELETE ...).",
+    "HTTP 方法(GET、POST、PUT、DELETE 等)。",
+    [
+     "GET",
+     "POST",
+     "PUT",
+     "DELETE",
+     "HEAD",
+     "PATCH",
+     "OPTIONS"
+    ]
+   ],
+   "-myaddr": [
+    "Local address to bind.",
+    "绑定的本地地址。"
+   ],
+   "-progress": [
+    "Command called with (token total current) as data arrives.",
+    "收到数据时调用,参数为 (token 总量 已收)。"
+   ],
+   "-protocol": [
+    "HTTP protocol version to send.",
+    "发送的 HTTP 协议版本。",
+    [
+     "1.0",
+     "1.1"
+    ]
+   ],
+   "-query": [
+    "Request body / query string (see http::formatQuery); makes the request a POST.",
+    "请求正文/查询字符串(参见 http::formatQuery);设置后默认变为 POST。"
+   ],
+   "-queryblocksize": [
+    "Block size when sending -querychannel.",
+    "发送 -querychannel 时的块大小。"
+   ],
+   "-querychannel": [
+    "Channel to read the request body from.",
+    "请求正文的来源通道。"
+   ],
+   "-queryprogress": [
+    "Command called while the request body is sent.",
+    "发送请求正文期间调用的命令。"
+   ],
+   "-strict": [
+    "Strict RFC compliance when checking headers.",
+    "检查头部时严格遵循 RFC。",
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "-timeout": [
+    "Timeout in milliseconds.",
+    "超时(毫秒)。"
+   ],
+   "-type": [
+    "Content-Type of the request body.",
+    "请求正文的 Content-Type。"
+   ],
+   "-validate": [
+    "Send a HEAD request (headers only).",
+    "发送 HEAD 请求(只取头部)。",
+    [
+     "0",
+     "1"
+    ]
+   ]
+  },
+  "http::config": {
+   "-accept": [
+    "Default Accept header.",
+    "默认的 Accept 头。"
+   ],
+   "-pipeline": [
+    "Use HTTP/1.1 pipelining.",
+    "使用 HTTP/1.1 管线化。",
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "-postfresh": [
+    "Open a fresh connection for POST requests.",
+    "POST 请求使用新连接。",
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "-proxyfilter": [
+    "Command that decides which proxy to use for a host.",
+    "决定某主机用哪个代理的命令。"
+   ],
+   "-proxyhost": [
+    "Proxy host.",
+    "代理主机。"
+   ],
+   "-proxyport": [
+    "Proxy port.",
+    "代理端口。"
+   ],
+   "-repost": [
+    "Allow automatic re-POST after a connection loss.",
+    "连接断开后允许自动重新 POST。",
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "-urlencoding": [
+    "Character encoding used for URL escapes.",
+    "URL 转义使用的字符编码。"
+   ],
+   "-useragent": [
+    "Value of the User-Agent header.",
+    "User-Agent 头的值。"
+   ],
+   "-zip": [
+    "Request and decode gzip/deflate content.",
+    "请求并解码 gzip/deflate 内容。",
+    [
+     "0",
+     "1"
+    ]
+   ]
+  },
+  "msgcat::mcexists": {
+   "-exactnamespace": [
+    "Do not search parent namespaces.",
+    "不搜索父命名空间。"
+   ],
+   "-exactlocale": [
+    "Do not fall back to less specific locales.",
+    "不回退到更宽泛的区域。"
+   ],
+   "-namespace": [
+    "Namespace to look in.",
+    "要查找的命名空间。"
+   ],
+   "-locale": [
+    "Locale to look in.",
+    "要查找的区域。"
+   ]
+  },
+  "tcltest::test": {
+   "-constraints": [
+    "Constraints that must hold, otherwise the test is skipped.",
+    "必须满足的约束,否则跳过该测试。"
+   ],
+   "-setup": [
+    "Script run before -body.",
+    "在 -body 之前运行的脚本。"
+   ],
+   "-body": [
+    "The script under test.",
+    "被测试的脚本。"
+   ],
+   "-cleanup": [
+    "Script run after -body.",
+    "在 -body 之后运行的脚本。"
+   ],
+   "-result": [
+    "Expected result of -body.",
+    "-body 的预期结果。"
+   ],
+   "-returnCodes": [
+    "Expected return codes (ok, error, return, break, continue).",
+    "预期的返回码(ok、error、return、break、continue)。",
+    [
+     "ok",
+     "error",
+     "return",
+     "break",
+     "continue"
+    ]
+   ],
+   "-output": [
+    "Expected text on stdout.",
+    "预期的 stdout 输出。"
+   ],
+   "-errorOutput": [
+    "Expected text on stderr.",
+    "预期的 stderr 输出。"
+   ],
+   "-match": [
+    "How to compare results.",
+    "结果的比较方式。",
+    [
+     "exact",
+     "glob",
+     "regexp"
+    ]
+   ]
+  },
+  "tcltest::configure": {
+   "-verbose": [
+    "Verbosity: pass body skip start error line msec usec.",
+    "输出详细程度:pass body skip start error line msec usec。"
+   ],
+   "-match": [
+    "Only run tests whose names match these glob patterns.",
+    "只运行名称匹配这些通配符的测试。"
+   ],
+   "-skip": [
+    "Skip tests whose names match.",
+    "跳过名称匹配的测试。"
+   ],
+   "-file": [
+    "Only run test files matching these patterns.",
+    "只运行匹配的测试文件。"
+   ],
+   "-notfile": [
+    "Skip test files matching these patterns.",
+    "跳过匹配的测试文件。"
+   ],
+   "-constraints": [
+    "Constraints to enable.",
+    "要启用的约束。"
+   ],
+   "-limitconstraints": [
+    "Run only tests with the enabled constraints.",
+    "只运行满足已启用约束的测试。",
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "-tmpdir": [
+    "Directory for temporary files.",
+    "临时文件目录。"
+   ],
+   "-testdir": [
+    "Directory containing the tests.",
+    "测试所在目录。"
+   ],
+   "-singleproc": [
+    "Run all test files in one process.",
+    "在同一进程中运行所有测试文件。",
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "-debug": [
+    "Debug level 0-3.",
+    "调试级别 0-3。"
+   ],
+   "-load": [
+    "Script run before tests to load the code under test.",
+    "测试前运行的脚本,用于加载被测代码。"
+   ],
+   "-loadfile": [
+    "File sourced before tests.",
+    "测试前执行的文件。"
+   ],
+   "-preservecore": [
+    "Core file handling 0-2.",
+    "core 文件处理方式 0-2。"
+   ],
+   "-outfile": [
+    "File for normal output.",
+    "正常输出的文件。"
+   ],
+   "-errfile": [
+    "File for error output.",
+    "错误输出的文件。"
+   ]
+  }
+ }
+}

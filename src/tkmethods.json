@@ -1,0 +1,727 @@
+{
+"activate": [
+"PATH activate index",
+"Set the active element (listbox) or the active element under the pointer (scrollbar).",
+"设置活动元素（列表框）；对滚动条则设置当前激活的部件。"
+],
+"add": [
+"PATH add type ?-option value ...?",
+"Append an entry (menu: cascade, checkbutton, command, radiobutton, separator; notebook: a pane window; panedwindow: a pane).",
+"追加条目：菜单可加 cascade、checkbutton、command、radiobutton、separator；notebook 加页面；panedwindow 加窗格。"
+],
+"addtag": [
+"PATH addtag tag searchCommand ?arg ...?",
+"Add a tag to all items matching the search.",
+"给匹配的图元添加标签。"
+],
+"bbox": [
+"PATH bbox index",
+"Return {x y width height} of the character or item at index.",
+"返回 index 处字符或项的外框 {x y 宽 高}。"
+],
+"canvas bbox": [
+"PATH bbox tagOrId ?tagOrId ...?",
+"Return {x1 y1 x2 y2} enclosing the items.",
+"返回包住这些图元的外框 {x1 y1 x2 y2}。"
+],
+"canvas bind": [
+"PATH bind tagOrId ?sequence? ?script?",
+"Bind an event to the items (not the canvas itself).",
+"给图元（而不是画布本身）绑定事件。"
+],
+"canvas coords": [
+"PATH coords tagOrId ?x y ...?",
+"Query or set the coordinates of an item.",
+"查询或设置图元的坐标。"
+],
+"canvas delete": [
+"PATH delete tagOrId ?tagOrId ...?",
+"Delete the matching items.",
+"删除匹配的图元。"
+],
+"canvas focus": [
+"PATH focus ?tagOrId?",
+"Set or query the item that has the keyboard focus.",
+"设置或查询拥有键盘焦点的图元。"
+],
+"canvas icursor": [
+"PATH icursor tagOrId index",
+"Set the insertion cursor of a text item.",
+"设置文本图元的插入光标。"
+],
+"canvas index": [
+"PATH index tagOrId index",
+"Return the numerical index in a text item.",
+"返回文本图元内的数字索引。"
+],
+"canvas insert": [
+"PATH insert tagOrId beforeThis string",
+"Insert text into a text item (or coordinates into a line/polygon).",
+"向文本图元插入文字（或向线条/多边形插入坐标）。"
+],
+"canvas itemcget": [
+"PATH itemcget tagOrId -option",
+"Return one item option.",
+"返回图元的某个选项值。"
+],
+"canvas itemconfigure": [
+"PATH itemconfigure tagOrId ?-option value ...?",
+"Query or change item options.",
+"查询或修改图元选项。"
+],
+"canvas scale": [
+"PATH scale tagOrId xOrigin yOrigin xScale yScale",
+"Scale items about an origin.",
+"以指定原点缩放图元。"
+],
+"canvas select": [
+"PATH select adjust|clear|from|item|to ...",
+"Manipulate the text selection of canvas text items.",
+"操作画布文本图元的选区。"
+],
+"canvas tag": [
+"PATH tag bind tagOrId ?sequence? ?script?",
+"Bind events to the items with a tag (same as the canvas bind method).",
+"给带某标签的图元绑定事件（等同画布的 bind 方法）。"
+],
+"canvasx": [
+"PATH canvasx screenx ?gridspacing?",
+"Convert a window x coordinate to a canvas coordinate.",
+"把窗口横坐标换算成画布坐标。"
+],
+"canvasy": [
+"PATH canvasy screeny ?gridspacing?",
+"Convert a window y coordinate to a canvas coordinate.",
+"把窗口纵坐标换算成画布坐标。"
+],
+"cget": [
+"PATH cget -option",
+"Return the current value of one option.",
+"返回某个选项的当前值。"
+],
+"children": [
+"PATH children item ?newChildren?",
+"Return or replace the children of an item.",
+"返回或重设某项的子项列表。"
+],
+"clone": [
+"PATH clone newPath ?cloneType?",
+"Make a copy of the menu (used for torn-off and menubar copies).",
+"复制菜单（用于撕下菜单与菜单栏副本）。"
+],
+"column": [
+"PATH column column ?-option value ...?",
+"Query or change a column (-width, -minwidth, -stretch, -anchor).",
+"查询或修改列属性（-width、-minwidth、-stretch、-anchor）。"
+],
+"compare": [
+"PATH compare index1 op index2",
+"Compare two indices with <, <=, ==, >=, >, !=; returns 0 or 1.",
+"用 <、<=、==、>=、>、!= 比较两个位置，返回 0 或 1。"
+],
+"configure": [
+"PATH configure ?-option? ?value -option value ...?",
+"Query or change widget options. With no arguments returns all options; with one option returns its description.",
+"查询或修改控件选项。无参数时返回全部选项，只给一个选项时返回该选项的描述。"
+],
+"coords": [
+"PATH coords ?value?",
+"Return the pixel position of the slider for a value (scale), or the coordinates of an item (canvas).",
+"返回某个值对应的滑块像素位置（滑块）；canvas 中则查询或设置图元的坐标。"
+],
+"count": [
+"PATH count ?options? index1 index2",
+"Count characters, lines, display lines, etc. between two indices.",
+"统计两个位置之间的字符数、行数、显示行数等。"
+],
+"create": [
+"PATH create type x y ?x y ...? ?-option value ...?",
+"Create an item (line, rectangle, oval, polygon, text, image, window, arc, bitmap) and return its id.",
+"创建图元（line、rectangle、oval、polygon、text、image、window、arc、bitmap），返回其 id。"
+],
+"current": [
+"PATH current ?index?",
+"Query or set which value of -values is selected (index into the list).",
+"查询或设置 -values 中当前选中项的序号。"
+],
+"curselection": [
+"PATH curselection",
+"Return the indices of all selected elements.",
+"返回所有被选中元素的序号列表。"
+],
+"dchars": [
+"PATH dchars tagOrId first ?last?",
+"Delete characters/coordinates from text or line items.",
+"删除文本或线条图元中的字符/坐标。"
+],
+"debug": [
+"PATH debug ?boolean?",
+"Turn B-tree consistency checks on or off.",
+"开关内部 B 树一致性检查。"
+],
+"delete": [
+"PATH delete first ?last?",
+"Delete the characters from first up to but not including last (or just the one at first).",
+"删除从 first 到 last（不含）的字符；省略 last 时只删除 first 处的一个字符。"
+],
+"delta": [
+"PATH delta deltaX deltaY",
+"Return the fraction change for a pixel movement of the slider.",
+"返回滑块移动指定像素对应的比例变化量。"
+],
+"deselect": [
+"PATH deselect",
+"Deselect the widget (set its variable to the off value).",
+"取消选中（把关联变量设为未选中值）。"
+],
+"detach": [
+"PATH detach itemList",
+"Unlink items from the tree without deleting them.",
+"把项从树上摘下但不删除。"
+],
+"dlineinfo": [
+"PATH dlineinfo index",
+"Return {x y width height baseline} of the display line containing index.",
+"返回 index 所在显示行的 {x y 宽 高 基线}。"
+],
+"dtag": [
+"PATH dtag tagOrId ?tagToDelete?",
+"Remove a tag from items.",
+"从图元上移除标签。"
+],
+"dump": [
+"PATH dump ?switches? index1 ?index2?",
+"Return the contents (text, tags, marks, windows, images) between two indices.",
+"返回两个位置之间的内容（文本、标签、标记、嵌入窗口、图片）。"
+],
+"edit": [
+"PATH edit option ?arg?",
+"Undo/redo and modified flag: modified, undo, redo, reset, separator, canundo, canredo.",
+"撤销/重做与修改标志：modified、undo、redo、reset、separator、canundo、canredo。"
+],
+"entrycget": [
+"PATH entrycget index -option",
+"Return one option of a menu entry.",
+"返回菜单项的某个选项值。"
+],
+"entryconfigure": [
+"PATH entryconfigure index ?-option value ...?",
+"Query or change options of a menu entry (-label, -state, -command ...).",
+"查询或修改菜单项选项（-label、-state、-command 等）。"
+],
+"exists": [
+"PATH exists item",
+"Return 1 if the item id exists.",
+"该项 id 存在时返回 1。"
+],
+"find": [
+"PATH find searchCommand ?arg ...?",
+"Return ids of items matching withtag, all, above, below, closest, enclosed, overlapping.",
+"按 withtag、all、above、below、closest、enclosed、overlapping 查找图元，返回 id 列表。"
+],
+"flash": [
+"PATH flash",
+"Flash the widget between its active and normal colours several times.",
+"让控件在激活色与正常色之间闪烁几次。"
+],
+"forget": [
+"PATH forget tabid",
+"Remove the tab (notebook) or pane (panedwindow); the window is kept and can be re-added.",
+"移除标签页（notebook）或窗格（panedwindow），子窗口仍保留，可重新添加。"
+],
+"fraction": [
+"PATH fraction x y",
+"Return the fraction (0..1) corresponding to a pixel position.",
+"返回像素位置对应的比例（0..1）。"
+],
+"get": [
+"PATH get",
+"Return the current contents (entry, spinbox, combobox) or value (scale).",
+"返回当前内容（输入框、微调框、组合框）或当前值（滑块）。"
+],
+"gettags": [
+"PATH gettags tagOrId",
+"Return the tags of an item.",
+"返回图元的标签列表。"
+],
+"heading": [
+"PATH heading column ?-option value ...?",
+"Query or change a column heading (-text, -command, -anchor, -image).",
+"查询或修改列标题（-text、-command、-anchor、-image）。"
+],
+"hide": [
+"PATH hide tabid",
+"Hide a tab without forgetting it; show it again with add or select.",
+"隐藏某标签页但不移除，可用 add 或 select 重新显示。"
+],
+"icursor": [
+"PATH icursor index",
+"Move the insertion cursor to index.",
+"把插入光标移到 index 位置。"
+],
+"identify": [
+"PATH identify x y",
+"Return the name of the element at pixel position x, y.",
+"返回坐标 x、y 处的元素名称。"
+],
+"image": [
+"PATH image option ?arg ...?",
+"Manage embedded images: create, configure, cget, names.",
+"管理嵌入图片：create、configure、cget、names。"
+],
+"imove": [
+"PATH imove tagOrId index x y",
+"Move one coordinate point of an item.",
+"移动图元的某个坐标点。"
+],
+"index": [
+"PATH index index",
+"Return the numerical index corresponding to an index expression.",
+"把索引表达式换算成数字索引。"
+],
+"insert": [
+"PATH insert index string",
+"Insert text before the character at index.",
+"在 index 指定的字符之前插入文本。"
+],
+"instate": [
+"PATH instate stateSpec ?script?",
+"Test whether the widget is in the given state; with a script, evaluate it if so.",
+"判断控件是否处于指定状态；带脚本时，状态成立才执行脚本。"
+],
+"invoke": [
+"PATH invoke",
+"Run the command associated with the widget as if it had been clicked; returns its result.",
+"执行控件关联的命令，效果等同点击，并返回命令的结果。"
+],
+"item": [
+"PATH item item ?-option value ...?",
+"Query or change an item's options (-text, -values, -open, -tags, -image).",
+"查询或修改某项的选项（-text、-values、-open、-tags、-image）。"
+],
+"itemcget": [
+"PATH itemcget index -option",
+"Return one per-item option.",
+"返回单个条目的某个选项值。"
+],
+"itemconfigure": [
+"PATH itemconfigure index ?-option value ...?",
+"Query or change per-item options (-background, -foreground, -selectbackground ...).",
+"查询或修改单个条目的选项（-background、-foreground、-selectbackground 等）。"
+],
+"listbox delete": [
+"PATH delete first ?last?",
+"Delete the elements from first to last inclusive.",
+"删除 first 到 last（含）的元素。"
+],
+"listbox get": [
+"PATH get first ?last?",
+"Return the element(s) from first to last.",
+"返回 first 到 last 的元素。"
+],
+"listbox insert": [
+"PATH insert index ?element ...?",
+"Insert elements before the one at index (end appends).",
+"在 index 之前插入若干元素；index 为 end 时追加。"
+],
+"lower": [
+"PATH lower tagOrId ?belowThis?",
+"Move items down in the display list.",
+"把图元降到显示顺序的下层。"
+],
+"mark": [
+"PATH mark option ?arg ...?",
+"Manage marks: set, unset, names, gravity, next, previous.",
+"管理标记：set、unset、names、gravity、next、previous。"
+],
+"menu delete": [
+"PATH delete index1 ?index2?",
+"Delete the entries between index1 and index2.",
+"删除 index1 到 index2 之间的菜单项。"
+],
+"menu insert": [
+"PATH insert index type ?-option value ...?",
+"Insert a new entry before index.",
+"在 index 之前插入新菜单项。"
+],
+"menu invoke": [
+"PATH invoke index",
+"Invoke the action of a menu entry.",
+"执行菜单项的动作。"
+],
+"menu type": [
+"PATH type index",
+"Return the type of a menu entry.",
+"返回菜单项的类型。"
+],
+"move": [
+"PATH move tagOrId dx dy",
+"Move the items by (dx, dy).",
+"把图元平移 (dx, dy)。"
+],
+"nearest": [
+"PATH nearest y",
+"Return the index of the element nearest to the y coordinate.",
+"返回最接近纵坐标 y 的元素序号。"
+],
+"next": [
+"PATH next item",
+"Return the next sibling of an item.",
+"返回某项的下一个兄弟项。"
+],
+"pane": [
+"PATH pane pane ?-option value ...?",
+"Query or change pane options (-weight).",
+"查询或修改窗格选项（-weight）。"
+],
+"paneconfigure": [
+"PATH paneconfigure window ?-option value ...?",
+"Query or change pane options (-minsize, -padx, -stretch, -sticky ...).",
+"查询或修改窗格选项（-minsize、-padx、-stretch、-sticky 等）。"
+],
+"panedwindow add": [
+"PATH add window ?window ...? ?-option value?",
+"Add windows as new panes.",
+"添加窗口作为新窗格。"
+],
+"panedwindow forget": [
+"PATH forget window",
+"Remove a pane.",
+"移除窗格。"
+],
+"parent": [
+"PATH parent item",
+"Return the parent of an item ({} for top-level).",
+"返回某项的父项（顶层项返回空）。"
+],
+"peer": [
+"PATH peer option ?arg ...?",
+"Create or list peer text widgets sharing the same text.",
+"创建或列出共享同一份文本的对等 text 控件。"
+],
+"pendingsync": [
+"PATH pendingsync",
+"Return 1 if line-height calculations are still pending.",
+"行高计算尚未完成时返回 1。"
+],
+"post": [
+"PATH post x y",
+"Display the menu at screen position x, y.",
+"在屏幕坐标 x、y 处显示菜单。"
+],
+"postscript": [
+"PATH postscript ?-option value ...?",
+"Render the canvas as PostScript (-file, -colormode, -pagewidth ...).",
+"把画布渲染成 PostScript（-file、-colormode、-pagewidth 等）。"
+],
+"prev": [
+"PATH prev item",
+"Return the previous sibling of an item.",
+"返回某项的上一个兄弟项。"
+],
+"raise": [
+"PATH raise tagOrId ?aboveThis?",
+"Move items up in the display list (drawn on top).",
+"把图元提到显示顺序的上层。"
+],
+"rchars": [
+"PATH rchars tagOrId first last string",
+"Replace characters in a text item.",
+"替换文本图元中的字符。"
+],
+"replace": [
+"PATH replace index1 index2 chars ?tagList ...?",
+"Replace the text between the indices with chars (like delete then insert).",
+"用 chars 替换两个位置之间的文本（相当于先 delete 再 insert）。"
+],
+"rotate": [
+"PATH rotate tagOrId x y angle",
+"Rotate items around (x, y).",
+"以 (x, y) 为中心旋转图元。"
+],
+"sashpos": [
+"PATH sashpos index ?newpos?",
+"Query or set the position of a sash.",
+"查询或设置分隔条位置。"
+],
+"scale get": [
+"PATH get ?x y?",
+"Return the current value (or the value at the given pixel position).",
+"返回当前值，或指定像素位置对应的值。"
+],
+"scale set": [
+"PATH set value",
+"Set the scale value.",
+"设置滑块的值。"
+],
+"scan": [
+"PATH scan mark|dragto x ?y?",
+"Fast scrolling by dragging: mark records a point, dragto scrolls relative to it.",
+"拖动滚动：mark 记录起点，dragto 按相对位移滚动。"
+],
+"scrollbar get": [
+"PATH get",
+"Return the current {first last} fractions.",
+"返回当前的 {first last} 比例。"
+],
+"scrollbar set": [
+"PATH set first last",
+"Tell the scrollbar the visible fraction (first, last in 0..1); called by a widget's -yscrollcommand.",
+"告诉滚动条当前可见范围（first、last 取 0..1），由被滚动控件的 -yscrollcommand 调用。"
+],
+"search": [
+"PATH search ?switches? pattern index ?stopIndex?",
+"Search the text for pattern (-exact, -regexp, -nocase, -backwards, -count var ...); returns the match index.",
+"在文本中查找 pattern（-exact、-regexp、-nocase、-backwards、-count var 等），返回匹配位置。"
+],
+"see": [
+"PATH see index",
+"Scroll so that the index is visible.",
+"滚动视图，使 index 处可见。"
+],
+"select": [
+"PATH select",
+"Select the widget (set its variable to the on value).",
+"选中该控件（把关联变量设为选中值）。"
+],
+"selection": [
+"PATH selection option ?arg?",
+"Manipulate the selection: clear, present, range, from, to, adjust, element.",
+"操作选区：clear、present、range、from、to、adjust、element 等子命令。"
+],
+"set": [
+"PATH set value",
+"Set the value (scale, spinbox, combobox) or the scrollbar position.",
+"设置值（滑块、微调框、组合框），滚动条上则设置滑块位置。"
+],
+"size": [
+"PATH size",
+"Return the number of elements.",
+"返回元素总数。"
+],
+"spinbox invoke": [
+"PATH invoke up|down",
+"Invoke the up or down button of the spinbox.",
+"触发微调框的向上或向下按钮。"
+],
+"start": [
+"PATH start ?interval?",
+"Start autoincrement mode, stepping every interval ms (default 50).",
+"开启自动步进模式，每隔 interval 毫秒步进一次（默认 50）。"
+],
+"state": [
+"PATH state ?stateSpec?",
+"Query or modify the widget state flags (e.g. disabled, readonly, !disabled). Returns the flags that were changed.",
+"查询或修改 ttk 控件的状态标志（如 disabled、readonly、!disabled），修改时返回被改动的标志。"
+],
+"step": [
+"PATH step ?amount?",
+"Increase the value by amount (default 1.0).",
+"把进度值增加 amount（默认 1.0）。"
+],
+"stop": [
+"PATH stop",
+"Stop autoincrement mode.",
+"停止自动步进。"
+],
+"sync": [
+"PATH sync ?-command script?",
+"Wait for (or schedule a callback after) pending line-height calculations.",
+"等待（或在完成后回调）行高计算完成。"
+],
+"tab": [
+"PATH tab tabid ?-option value ...?",
+"Query or change options of one tab.",
+"查询或修改单个标签页的选项。"
+],
+"tabs": [
+"PATH tabs",
+"Return the windows of all tabs in order.",
+"按顺序返回所有标签页的窗口。"
+],
+"tag": [
+"PATH tag option ?arg ...?",
+"Manage tags: add, remove, configure, bind, delete, names, ranges, nextrange, prevrange, raise, lower.",
+"管理标签：add、remove、configure、bind、delete、names、ranges、nextrange、prevrange、raise、lower。"
+],
+"text delete": [
+"PATH delete index1 ?index2 ...?",
+"Delete text from index1 up to but not including index2.",
+"删除 index1 到 index2（不含）之间的文本。"
+],
+"text get": [
+"PATH get ?-displaychars? index1 ?index2 ...?",
+"Return the text between index1 and index2 (a single character when index2 is omitted).",
+"返回 index1 到 index2 之间的文本；省略 index2 时只返回一个字符。"
+],
+"text index": [
+"PATH index index",
+"Return the normalised line.char form of an index.",
+"把索引规范化成 line.char 形式。"
+],
+"text insert": [
+"PATH insert index chars ?tagList chars tagList ...?",
+"Insert text at index, optionally with tags.",
+"在 index 处插入文本，可同时指定标签。"
+],
+"toggle": [
+"PATH toggle",
+"Toggle between selected and deselected.",
+"在选中与未选中之间切换。"
+],
+"ttk::combobox set": [
+"PATH set value",
+"Set the text of the combobox.",
+"设置组合框的文本。"
+],
+"ttk::notebook add": [
+"PATH add window ?-option value ...?",
+"Add a new tab holding window (-text, -image, -state, -sticky, -padding).",
+"添加一个以 window 为内容的新标签页（-text、-image、-state、-sticky、-padding）。"
+],
+"ttk::notebook index": [
+"PATH index tabid",
+"Return the numeric index of a tab (end gives the tab count).",
+"返回标签页的数字序号；传 end 得到标签总数。"
+],
+"ttk::notebook insert": [
+"PATH insert pos subwindow ?-option value ...?",
+"Insert a tab at position (or move an existing one).",
+"在指定位置插入标签页（或移动已有的）。"
+],
+"ttk::notebook select": [
+"PATH select ?tabid?",
+"Select a tab, or return the currently selected one.",
+"选中某标签页；不带参数时返回当前选中的标签页。"
+],
+"ttk::panedwindow add": [
+"PATH add window ?-weight n?",
+"Add a pane holding window.",
+"添加一个以 window 为内容的窗格。"
+],
+"ttk::panedwindow insert": [
+"PATH insert pos subwindow ?-option value ...?",
+"Insert a pane at position.",
+"在指定位置插入窗格。"
+],
+"ttk::scale get": [
+"PATH get ?x y?",
+"Return the current value (or the value at a pixel position).",
+"返回当前值，或指定像素位置对应的值。"
+],
+"ttk::scrollbar get": [
+"PATH get",
+"Return the current {first last} fractions.",
+"返回当前的 {first last} 比例。"
+],
+"ttk::scrollbar set": [
+"PATH set first last",
+"Tell the scrollbar the visible fraction (first, last in 0..1); called by a widget's -yscrollcommand.",
+"告诉滚动条当前可见范围（first、last 取 0..1），由被滚动控件的 -yscrollcommand 调用。"
+],
+"ttk::spinbox set": [
+"PATH set value",
+"Set the spinbox text.",
+"设置微调框的文本。"
+],
+"ttk::treeview bbox": [
+"PATH bbox item ?column?",
+"Return the bounding box of an item or cell.",
+"返回某项或某单元格的外框。"
+],
+"ttk::treeview delete": [
+"PATH delete itemList",
+"Delete items and all their descendants.",
+"删除这些项及其全部子孙。"
+],
+"ttk::treeview focus": [
+"PATH focus ?item?",
+"Query or set the item that has the focus.",
+"查询或设置拥有焦点的项。"
+],
+"ttk::treeview get": [
+"PATH get item column",
+"Return the value of one column of an item.",
+"返回某项在某列上的值。"
+],
+"ttk::treeview identify": [
+"PATH identify component x y",
+"Describe what is at x, y (region, item, column, element ...).",
+"说明坐标 x、y 处是什么（region、item、column、element 等）。"
+],
+"ttk::treeview index": [
+"PATH index item",
+"Return the position of an item among its siblings.",
+"返回某项在其兄弟项中的位置。"
+],
+"ttk::treeview insert": [
+"PATH insert parent index ?-id id? ?-option value ...?",
+"Create a new item under parent at index and return its id.",
+"在 parent 下的 index 位置创建新项，返回其 id。"
+],
+"ttk::treeview move": [
+"PATH move item parent index",
+"Move an item to a new parent and position.",
+"把某项移到新的父项与位置。"
+],
+"ttk::treeview see": [
+"PATH see item",
+"Open ancestors and scroll so the item is visible.",
+"展开其所有祖先并滚动到该项可见。"
+],
+"ttk::treeview selection": [
+"PATH selection ?set|add|remove|toggle items?",
+"Query or change the selected items.",
+"查询或修改选中的项。"
+],
+"ttk::treeview set": [
+"PATH set item ?column ?value??",
+"Query or set column values of an item.",
+"查询或设置某项的列值。"
+],
+"ttk::treeview tag": [
+"PATH tag bind|configure|has tagName ...",
+"Bind events to or configure tags used by treeview items.",
+"给 Treeview 的标签绑定事件或配置外观。"
+],
+"type": [
+"PATH type tagOrId",
+"Return the type of the first matching item.",
+"返回第一个匹配图元的类型。"
+],
+"unpost": [
+"PATH unpost",
+"Remove the menu from the screen.",
+"隐藏菜单。"
+],
+"validate": [
+"PATH validate",
+"Run the -validatecommand now; returns 1 if the contents are valid, 0 otherwise.",
+"立即执行 -validatecommand，内容有效返回 1，否则返回 0。"
+],
+"window": [
+"PATH window option ?arg ...?",
+"Manage embedded windows: create, configure, cget, names.",
+"管理嵌入子窗口：create、configure、cget、names。"
+],
+"xposition": [
+"PATH xposition index",
+"Return the x offset of a menu entry.",
+"返回菜单项的横向偏移。"
+],
+"xview": [
+"PATH xview ?args?",
+"Query or change the horizontal view (also the command for a horizontal scrollbar).",
+"查询或改变水平视图；也是水平滚动条的 -command 目标。"
+],
+"yposition": [
+"PATH yposition index",
+"Return the y offset of a menu entry.",
+"返回菜单项的纵向偏移。"
+],
+"yview": [
+"PATH yview ?args?",
+"Query or change the vertical view (also the command for a vertical scrollbar).",
+"查询或改变垂直视图；也是垂直滚动条的 -command 目标。"
+]
+}

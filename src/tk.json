@@ -1,0 +1,1873 @@
+{
+ "commands": {
+  "button": [
+   "button pathName ?option value ...?",
+   "Create a button widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "label": [
+   "label pathName ?option value ...?",
+   "Create a label widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "checkbutton": [
+   "checkbutton pathName ?option value ...?",
+   "Create a checkbutton widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "radiobutton": [
+   "radiobutton pathName ?option value ...?",
+   "Create a radiobutton widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "entry": [
+   "entry pathName ?option value ...?",
+   "Create a entry widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "spinbox": [
+   "spinbox pathName ?option value ...?",
+   "Create a spinbox widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "text": [
+   "text pathName ?option value ...?",
+   "Create a text widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "listbox": [
+   "listbox pathName ?option value ...?",
+   "Create a listbox widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "scale": [
+   "scale pathName ?option value ...?",
+   "Create a scale widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "scrollbar": [
+   "scrollbar pathName ?option value ...?",
+   "Create a scrollbar widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "frame": [
+   "frame pathName ?option value ...?",
+   "Create a frame widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "labelframe": [
+   "labelframe pathName ?option value ...?",
+   "Create a labelframe widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "toplevel": [
+   "toplevel pathName ?option value ...?",
+   "Create a toplevel widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "canvas": [
+   "canvas pathName ?option value ...?",
+   "Create a canvas widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "menu": [
+   "menu pathName ?option value ...?",
+   "Create a menu widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "menubutton": [
+   "menubutton pathName ?option value ...?",
+   "Create a menubutton widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "message": [
+   "message pathName ?option value ...?",
+   "Create a message widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "panedwindow": [
+   "panedwindow pathName ?option value ...?",
+   "Create a panedwindow widget. Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::button": [
+   "ttk::button pathName ?option value ...?",
+   "Create a button widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::label": [
+   "ttk::label pathName ?option value ...?",
+   "Create a label widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::checkbutton": [
+   "ttk::checkbutton pathName ?option value ...?",
+   "Create a checkbutton widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::radiobutton": [
+   "ttk::radiobutton pathName ?option value ...?",
+   "Create a radiobutton widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::entry": [
+   "ttk::entry pathName ?option value ...?",
+   "Create a entry widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::combobox": [
+   "ttk::combobox pathName ?option value ...?",
+   "Create a combobox widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::frame": [
+   "ttk::frame pathName ?option value ...?",
+   "Create a frame widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::labelframe": [
+   "ttk::labelframe pathName ?option value ...?",
+   "Create a labelframe widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::notebook": [
+   "ttk::notebook pathName ?option value ...?",
+   "Create a notebook widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::panedwindow": [
+   "ttk::panedwindow pathName ?option value ...?",
+   "Create a panedwindow widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::progressbar": [
+   "ttk::progressbar pathName ?option value ...?",
+   "Create a progressbar widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::scale": [
+   "ttk::scale pathName ?option value ...?",
+   "Create a scale widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::scrollbar": [
+   "ttk::scrollbar pathName ?option value ...?",
+   "Create a scrollbar widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::separator": [
+   "ttk::separator pathName ?option value ...?",
+   "Create a separator widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::spinbox": [
+   "ttk::spinbox pathName ?option value ...?",
+   "Create a spinbox widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "ttk::treeview": [
+   "ttk::treeview pathName ?option value ...?",
+   "Create a treeview widget (themed). Options: type `-` for the list. Returns pathName."
+  ],
+  "pack": [
+   "pack window ?window ...? ?-option value ...?",
+   "Place widgets in the parent in order (side/fill/expand ...). Subcommands: pack forget, pack propagate, pack slaves."
+  ],
+  "grid": [
+   "grid window ?window ...? ?-option value ...?",
+   "Place widgets in a table. Also: grid columnconfigure/rowconfigure window index ?-weight n?, grid forget, grid remove."
+  ],
+  "place": [
+   "place window ?-option value ...?",
+   "Place a widget at an absolute or relative position."
+  ],
+  "bind": [
+   "bind window ?sequence? ?script?",
+   "Bind a script to an event sequence such as <Button-1> or <Key-Return>. %K = keysym, %x %y = position, %W = widget."
+  ],
+  "bindtags": [
+   "bindtags window ?tagList?",
+   "Query or set the binding tags of a widget."
+  ],
+  "bell": [
+   "bell ?-displayof window?",
+   "Ring the bell."
+  ],
+  "destroy": [
+   "destroy ?window ...?",
+   "Destroy windows and their children. `destroy .` ends the application."
+  ],
+  "focus": [
+   "focus ?-force? ?window?",
+   "Query or set the input focus."
+  ],
+  "grab": [
+   "grab ?set|release|current? ?window?",
+   "Confine pointer/keyboard events to a window (modal dialogs)."
+  ],
+  "raise": [
+   "raise window ?aboveThis?",
+   "Raise a window in the stacking order."
+  ],
+  "lower": [
+   "lower window ?belowThis?",
+   "Lower a window in the stacking order."
+  ],
+  "event": [
+   "event generate window event ?option value ...?",
+   "Generate a synthetic event (also: event add/delete/info)."
+  ],
+  "image": [
+   "image create photo|bitmap ?name? ?options?",
+   "Create images, e.g. `image create photo -file x.png`."
+  ],
+  "option": [
+   "option add pattern value ?priority?",
+   "Manage the option database."
+  ],
+  "selection": [
+   "selection get|clear|own ...",
+   "Access the X selection."
+  ],
+  "clipboard": [
+   "clipboard clear|append|get ?args?",
+   "Access the clipboard, e.g. `clipboard append text`."
+  ],
+  "tkwait": [
+   "tkwait variable|visibility|window name",
+   "Wait (running the event loop) until a variable changes, a window is visible or destroyed."
+  ],
+  "tk": [
+   "tk appname|scaling|windowingsystem ...",
+   "Tk application-wide settings."
+  ],
+  "font": [
+   "font create|configure|actual|families|measure ...",
+   "Create and inspect fonts."
+  ],
+  "winfo": [
+   "winfo subcommand ?window?",
+   "Query window information."
+  ],
+  "wm": [
+   "wm subcommand window ?args?",
+   "Window-manager interaction (title, geometry ...)."
+  ],
+  "tk_messageBox": [
+   "tk_messageBox ?-icon icon? ?-message string? ?-parent window? ?-title string? ?-type type?",
+   "Show a message dialog; returns the pressed button (ok, yes, no ...)."
+  ],
+  "tk_getOpenFile": [
+   "tk_getOpenFile ?-filetypes list? ?-initialdir dir? ?-title string?",
+   "Choose a file to open; returns '' if cancelled."
+  ],
+  "tk_getSaveFile": [
+   "tk_getSaveFile ?-filetypes list? ?-initialfile name? ?-defaultextension ext?",
+   "Choose a file name to save to."
+  ],
+  "tk_chooseDirectory": [
+   "tk_chooseDirectory ?-initialdir dir? ?-title string?",
+   "Choose a directory."
+  ],
+  "tk_chooseColor": [
+   "tk_chooseColor ?-initialcolor color? ?-title string?",
+   "Choose a color; returns e.g. #ff0000."
+  ],
+  "tk_popup": [
+   "tk_popup menu x y ?entry?",
+   "Post a popup menu at a screen position."
+  ]
+ },
+ "ensembles": {
+  "wm": {
+   "title": [
+    "wm title window ?args?",
+    "Set or get the window title."
+   ],
+   "geometry": [
+    "wm geometry window ?args?",
+    "Set or get size/position, e.g. 350x200+100+50."
+   ],
+   "resizable": [
+    "wm resizable window ?args?",
+    "wm resizable window width height (booleans)."
+   ],
+   "minsize": [
+    "wm minsize window ?args?",
+    "Minimum size."
+   ],
+   "maxsize": [
+    "wm maxsize window ?args?",
+    "Maximum size."
+   ],
+   "iconify": [
+    "wm iconify window ?args?",
+    "Minimize the window."
+   ],
+   "deiconify": [
+    "wm deiconify window ?args?",
+    "Show / restore the window."
+   ],
+   "withdraw": [
+    "wm withdraw window ?args?",
+    "Hide the window."
+   ],
+   "protocol": [
+    "wm protocol window ?args?",
+    "wm protocol window WM_DELETE_WINDOW script - run a script when the close button is pressed."
+   ],
+   "attributes": [
+    "wm attributes window ?args?",
+    "Platform attributes such as -topmost 1."
+   ],
+   "state": [
+    "wm state window ?args?",
+    "normal, iconic, withdrawn or zoomed."
+   ],
+   "transient": [
+    "wm transient window ?args?",
+    "Make the window a transient child of another."
+   ],
+   "overrideredirect": [
+    "wm overrideredirect window ?args?",
+    "Remove the window decorations."
+   ],
+   "iconbitmap": [
+    "wm iconbitmap window ?args?",
+    "Set the window icon."
+   ],
+   "focusmodel": [
+    "wm focusmodel window ?args?",
+    "Focus model."
+   ],
+   "grid": [
+    "wm grid window ?args?",
+    "Gridded geometry."
+   ],
+   "frame": [
+    "wm frame window ?args?",
+    "Outer window id."
+   ]
+  },
+  "winfo": {
+   "exists": [
+    "winfo exists window",
+    "1 if the window exists."
+   ],
+   "width": [
+    "winfo width window",
+    "Current width in pixels."
+   ],
+   "height": [
+    "winfo height window",
+    "Current height in pixels."
+   ],
+   "reqwidth": [
+    "winfo reqwidth window",
+    "Requested width."
+   ],
+   "reqheight": [
+    "winfo reqheight window",
+    "Requested height."
+   ],
+   "children": [
+    "winfo children window",
+    "List of child windows."
+   ],
+   "parent": [
+    "winfo parent window",
+    "Parent window."
+   ],
+   "toplevel": [
+    "winfo toplevel window",
+    "Toplevel containing the window."
+   ],
+   "screenwidth": [
+    "winfo screenwidth window",
+    "Screen width."
+   ],
+   "screenheight": [
+    "winfo screenheight window",
+    "Screen height."
+   ],
+   "rootx": [
+    "winfo rootx window",
+    "Screen x of the window."
+   ],
+   "rooty": [
+    "winfo rooty window",
+    "Screen y of the window."
+   ],
+   "x": [
+    "winfo x window",
+    "x relative to the parent."
+   ],
+   "y": [
+    "winfo y window",
+    "y relative to the parent."
+   ],
+   "pointerx": [
+    "winfo pointerx window",
+    "Pointer screen x."
+   ],
+   "pointery": [
+    "winfo pointery window",
+    "Pointer screen y."
+   ],
+   "class": [
+    "winfo class window",
+    "Widget class name."
+   ],
+   "ismapped": [
+    "winfo ismapped window",
+    "1 if the window is mapped."
+   ],
+   "viewable": [
+    "winfo viewable window",
+    "1 if the window and ancestors are mapped."
+   ],
+   "name": [
+    "winfo name window",
+    "Name of the window within its parent."
+   ],
+   "id": [
+    "winfo id window",
+    "Window id."
+   ]
+  },
+  "tk": {
+   "appname": [
+    "tk appname ?args?",
+    "Query or set the application name."
+   ],
+   "scaling": [
+    "tk scaling ?args?",
+    "Pixels per point."
+   ],
+   "windowingsystem": [
+    "tk windowingsystem ?args?",
+    "x11, win32 or aqua."
+   ],
+   "inactive": [
+    "tk inactive ?args?",
+    "Milliseconds of user inactivity."
+   ]
+  },
+  "tkwait": {
+   "variable": [
+    "tkwait variable name",
+    "Wait until a variable is written."
+   ],
+   "visibility": [
+    "tkwait visibility name",
+    "Wait until visibility changes."
+   ],
+   "window": [
+    "tkwait window name",
+    "Wait until a window is destroyed."
+   ]
+  },
+  "clipboard": {
+   "clear": [
+    "clipboard clear ?args?",
+    "Clear the clipboard."
+   ],
+   "append": [
+    "clipboard append ?args?",
+    "Append data."
+   ],
+   "get": [
+    "clipboard get ?args?",
+    "Get the clipboard contents."
+   ]
+  },
+  "grab": {
+   "set": [
+    "grab set ?window?",
+    "Grab events for the window."
+   ],
+   "release": [
+    "grab release ?window?",
+    "Release the grab."
+   ],
+   "current": [
+    "grab current ?window?",
+    "Window that currently has the grab."
+   ]
+  },
+  "event": {
+   "generate": [
+    "event generate ?args?",
+    "event generate window <Event> ?-option value?"
+   ],
+   "add": [
+    "event add ?args?",
+    "Define a virtual event."
+   ],
+   "delete": [
+    "event delete ?args?",
+    "Remove a virtual event."
+   ],
+   "info": [
+    "event info ?args?",
+    "List virtual events."
+   ]
+  }
+ },
+ "widgets": {
+  "button": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-text",
+   "-textvariable",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-anchor",
+   "-justify",
+   "-padx",
+   "-pady",
+   "-wraplength",
+   "-underline",
+   "-image",
+   "-compound",
+   "-bitmap",
+   "-width",
+   "-height",
+   "-activebackground",
+   "-activeforeground",
+   "-disabledforeground",
+   "-state",
+   "-command",
+   "-default",
+   "-overrelief"
+  ],
+  "label": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-text",
+   "-textvariable",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-anchor",
+   "-justify",
+   "-padx",
+   "-pady",
+   "-wraplength",
+   "-underline",
+   "-image",
+   "-compound",
+   "-bitmap",
+   "-width",
+   "-height",
+   "-state",
+   "-disabledforeground"
+  ],
+  "checkbutton": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-text",
+   "-textvariable",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-anchor",
+   "-justify",
+   "-padx",
+   "-pady",
+   "-wraplength",
+   "-underline",
+   "-image",
+   "-compound",
+   "-bitmap",
+   "-width",
+   "-height",
+   "-activebackground",
+   "-activeforeground",
+   "-disabledforeground",
+   "-state",
+   "-command",
+   "-variable",
+   "-onvalue",
+   "-offvalue",
+   "-indicatoron",
+   "-selectcolor"
+  ],
+  "radiobutton": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-text",
+   "-textvariable",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-anchor",
+   "-justify",
+   "-padx",
+   "-pady",
+   "-wraplength",
+   "-underline",
+   "-image",
+   "-compound",
+   "-bitmap",
+   "-width",
+   "-height",
+   "-activebackground",
+   "-activeforeground",
+   "-disabledforeground",
+   "-state",
+   "-command",
+   "-variable",
+   "-value",
+   "-indicatoron",
+   "-selectcolor"
+  ],
+  "entry": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-textvariable",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-justify",
+   "-width",
+   "-show",
+   "-state",
+   "-validate",
+   "-validatecommand",
+   "-xscrollcommand",
+   "-exportselection",
+   "-insertbackground",
+   "-readonlybackground",
+   "-selectbackground",
+   "-selectforeground"
+  ],
+  "spinbox": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-textvariable",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-justify",
+   "-width",
+   "-from",
+   "-to",
+   "-increment",
+   "-values",
+   "-state",
+   "-command",
+   "-wrap",
+   "-validate",
+   "-validatecommand"
+  ],
+  "text": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-width",
+   "-height",
+   "-wrap",
+   "-state",
+   "-padx",
+   "-pady",
+   "-undo",
+   "-maxundo",
+   "-autoseparators",
+   "-xscrollcommand",
+   "-yscrollcommand",
+   "-insertbackground",
+   "-selectbackground",
+   "-selectforeground",
+   "-spacing1",
+   "-spacing3",
+   "-tabs",
+   "-exportselection"
+  ],
+  "listbox": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-width",
+   "-height",
+   "-selectmode",
+   "-listvariable",
+   "-exportselection",
+   "-xscrollcommand",
+   "-yscrollcommand",
+   "-selectbackground",
+   "-selectforeground",
+   "-state"
+  ],
+  "scale": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-from",
+   "-to",
+   "-orient",
+   "-length",
+   "-resolution",
+   "-tickinterval",
+   "-showvalue",
+   "-sliderlength",
+   "-variable",
+   "-command",
+   "-label",
+   "-troughcolor",
+   "-state",
+   "-font",
+   "-foreground",
+   "-fg"
+  ],
+  "scrollbar": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-orient",
+   "-command",
+   "-troughcolor",
+   "-width"
+  ],
+  "frame": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-width",
+   "-height",
+   "-padx",
+   "-pady",
+   "-class"
+  ],
+  "labelframe": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-text",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-labelanchor",
+   "-width",
+   "-height",
+   "-padx",
+   "-pady"
+  ],
+  "toplevel": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-width",
+   "-height",
+   "-padx",
+   "-pady",
+   "-menu",
+   "-class"
+  ],
+  "canvas": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-width",
+   "-height",
+   "-scrollregion",
+   "-confine",
+   "-closeenough",
+   "-xscrollcommand",
+   "-yscrollcommand",
+   "-xscrollincrement",
+   "-yscrollincrement",
+   "-state"
+  ],
+  "menu": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-tearoff",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-activebackground",
+   "-activeforeground",
+   "-postcommand"
+  ],
+  "menubutton": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-text",
+   "-textvariable",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-anchor",
+   "-justify",
+   "-padx",
+   "-pady",
+   "-wraplength",
+   "-underline",
+   "-image",
+   "-compound",
+   "-bitmap",
+   "-width",
+   "-height",
+   "-activebackground",
+   "-activeforeground",
+   "-disabledforeground",
+   "-state",
+   "-menu",
+   "-indicatoron"
+  ],
+  "message": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-text",
+   "-textvariable",
+   "-font",
+   "-foreground",
+   "-fg",
+   "-width",
+   "-justify",
+   "-padx",
+   "-pady",
+   "-anchor"
+  ],
+  "panedwindow": [
+   "-background",
+   "-bg",
+   "-borderwidth",
+   "-bd",
+   "-cursor",
+   "-relief",
+   "-takefocus",
+   "-highlightthickness",
+   "-highlightbackground",
+   "-highlightcolor",
+   "-orient",
+   "-width",
+   "-height"
+  ],
+  "ttk::button": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-text",
+   "-textvariable",
+   "-command",
+   "-image",
+   "-compound",
+   "-width",
+   "-state",
+   "-underline",
+   "-default"
+  ],
+  "ttk::label": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-text",
+   "-textvariable",
+   "-image",
+   "-compound",
+   "-width",
+   "-anchor",
+   "-justify",
+   "-wraplength",
+   "-font",
+   "-foreground",
+   "-background",
+   "-relief",
+   "-state"
+  ],
+  "ttk::checkbutton": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-text",
+   "-textvariable",
+   "-command",
+   "-variable",
+   "-onvalue",
+   "-offvalue",
+   "-image",
+   "-compound",
+   "-width",
+   "-state",
+   "-underline"
+  ],
+  "ttk::radiobutton": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-text",
+   "-textvariable",
+   "-command",
+   "-variable",
+   "-value",
+   "-image",
+   "-compound",
+   "-width",
+   "-state",
+   "-underline"
+  ],
+  "ttk::entry": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-textvariable",
+   "-width",
+   "-show",
+   "-state",
+   "-validate",
+   "-validatecommand",
+   "-justify",
+   "-font",
+   "-exportselection",
+   "-xscrollcommand"
+  ],
+  "ttk::combobox": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-textvariable",
+   "-values",
+   "-state",
+   "-width",
+   "-height",
+   "-postcommand",
+   "-justify",
+   "-font",
+   "-exportselection"
+  ],
+  "ttk::frame": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-width",
+   "-height",
+   "-relief",
+   "-borderwidth"
+  ],
+  "ttk::labelframe": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-text",
+   "-labelanchor",
+   "-width",
+   "-height",
+   "-relief",
+   "-borderwidth",
+   "-underline"
+  ],
+  "ttk::notebook": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-width",
+   "-height"
+  ],
+  "ttk::panedwindow": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-orient",
+   "-width",
+   "-height"
+  ],
+  "ttk::progressbar": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-orient",
+   "-length",
+   "-mode",
+   "-maximum",
+   "-value",
+   "-variable"
+  ],
+  "ttk::scale": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-from",
+   "-to",
+   "-orient",
+   "-length",
+   "-value",
+   "-variable",
+   "-command"
+  ],
+  "ttk::scrollbar": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-orient",
+   "-command"
+  ],
+  "ttk::separator": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-orient"
+  ],
+  "ttk::spinbox": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-textvariable",
+   "-from",
+   "-to",
+   "-increment",
+   "-values",
+   "-state",
+   "-width",
+   "-command",
+   "-wrap",
+   "-format"
+  ],
+  "ttk::treeview": [
+   "-style",
+   "-padding",
+   "-takefocus",
+   "-cursor",
+   "-class",
+   "-columns",
+   "-displaycolumns",
+   "-height",
+   "-selectmode",
+   "-show",
+   "-xscrollcommand",
+   "-yscrollcommand"
+  ],
+  "pack": [
+   "-side",
+   "-fill",
+   "-expand",
+   "-padx",
+   "-pady",
+   "-ipadx",
+   "-ipady",
+   "-anchor",
+   "-before",
+   "-after",
+   "-in"
+  ],
+  "grid": [
+   "-row",
+   "-column",
+   "-rowspan",
+   "-columnspan",
+   "-sticky",
+   "-padx",
+   "-pady",
+   "-ipadx",
+   "-ipady",
+   "-in"
+  ],
+  "place": [
+   "-x",
+   "-y",
+   "-relx",
+   "-rely",
+   "-width",
+   "-height",
+   "-relwidth",
+   "-relheight",
+   "-anchor",
+   "-in"
+  ],
+  "tk_messageBox": [
+   "-icon",
+   "-message",
+   "-parent",
+   "-title",
+   "-type",
+   "-default"
+  ],
+  "tk_getOpenFile": [
+   "-defaultextension",
+   "-filetypes",
+   "-initialdir",
+   "-initialfile",
+   "-parent",
+   "-title"
+  ],
+  "tk_getSaveFile": [
+   "-defaultextension",
+   "-filetypes",
+   "-initialdir",
+   "-initialfile",
+   "-parent",
+   "-title"
+  ],
+  "tk_chooseDirectory": [
+   "-initialdir",
+   "-parent",
+   "-title"
+  ],
+  "tk_chooseColor": [
+   "-initialcolor",
+   "-parent",
+   "-title"
+  ]
+ },
+ "options": {
+  "-text": "Text displayed in the widget.",
+  "-textvariable": "Variable whose value is shown; updates both ways.",
+  "-command": "Script (usually a proc name) run when the widget is activated.",
+  "-font": "Font, e.g. {Helvetica 12 bold}.",
+  "-foreground": "Text color.",
+  "-fg": "Text color (same as -foreground).",
+  "-background": "Background color.",
+  "-bg": "Background color (same as -background).",
+  "-width": "Width: characters for text widgets, pixels/screen units otherwise.",
+  "-height": "Height: lines for text widgets, pixels/screen units otherwise.",
+  "-padx": "Horizontal padding.",
+  "-pady": "Vertical padding.",
+  "-relief": "3-D border style: flat raised sunken groove ridge solid.",
+  "-borderwidth": "Border width.",
+  "-bd": "Border width (same as -borderwidth).",
+  "-state": "normal, disabled (also active / readonly for some widgets).",
+  "-anchor": "Where the content sits: n ne e se s sw w nw center.",
+  "-justify": "Line alignment: left, center or right.",
+  "-image": "Image to display (created with `image create`).",
+  "-compound": "Where the image goes relative to the text: none text image center top bottom left right.",
+  "-cursor": "Mouse cursor shape, e.g. hand2, arrow, watch.",
+  "-takefocus": "Whether Tab traversal visits the widget.",
+  "-wraplength": "Wrap text at this width.",
+  "-underline": "Index of the character to underline (keyboard mnemonic).",
+  "-activebackground": "Background while the mouse is over it / pressed.",
+  "-activeforeground": "Text color while active.",
+  "-disabledforeground": "Text color when disabled.",
+  "-highlightthickness": "Width of the focus highlight ring.",
+  "-bitmap": "Bitmap to display.",
+  "-default": "Default button / value.",
+  "-overrelief": "Relief while the mouse is over it.",
+  "-variable": "Variable linked to the widget's value / selection.",
+  "-value": "Value stored in -variable when selected (radiobutton).",
+  "-onvalue": "Value of -variable when on (checkbutton).",
+  "-offvalue": "Value of -variable when off (checkbutton).",
+  "-from": "Lower bound.",
+  "-to": "Upper bound.",
+  "-orient": "horizontal or vertical.",
+  "-length": "Long dimension of the widget.",
+  "-resolution": "Step between values.",
+  "-show": "Display this character instead of the text (e.g. * for passwords).",
+  "-validate": "When to validate: none focus focusin focusout key all.",
+  "-validatecommand": "Script that returns true if the value is valid (use %P for the proposed value).",
+  "-xscrollcommand": "Script to update a horizontal scrollbar.",
+  "-yscrollcommand": "Script to update a vertical scrollbar.",
+  "-selectmode": "single browse multiple extended.",
+  "-listvariable": "Variable holding the list of items.",
+  "-exportselection": "Whether the selection is exported to the X selection.",
+  "-wrap": "none, char or word.",
+  "-undo": "Enable undo/redo.",
+  "-values": "List of choices (combobox / spinbox).",
+  "-tearoff": "Whether a menu has a tear-off entry (usually 0).",
+  "-label": "Label text.",
+  "-menu": "Menu shown by the widget.",
+  "-indicatoron": "Show the check/radio indicator.",
+  "-selectcolor": "Indicator color when selected.",
+  "-troughcolor": "Color of the slider trough.",
+  "-sliderlength": "Length of the slider.",
+  "-tickinterval": "Distance between tick marks.",
+  "-showvalue": "Show the current value.",
+  "-increment": "Step of the spin buttons.",
+  "-insertbackground": "Color of the insertion cursor.",
+  "-readonlybackground": "Background when readonly.",
+  "-scrollregion": "Scrollable area {x1 y1 x2 y2}.",
+  "-confine": "Keep the view inside -scrollregion.",
+  "-closeenough": "Pick distance for canvas items.",
+  "-style": "ttk style name.",
+  "-padding": "ttk internal padding.",
+  "-postcommand": "Script run before the dropdown is shown.",
+  "-maximum": "Maximum value (progressbar).",
+  "-mode": "determinate or indeterminate.",
+  "-columns": "Column identifiers (treeview).",
+  "-displaycolumns": "Columns to display (treeview).",
+  "-selectbackground": "Background of selected text.",
+  "-selectforeground": "Foreground of selected text.",
+  "-highlightbackground": "Highlight ring color when unfocused.",
+  "-highlightcolor": "Highlight ring color when focused.",
+  "-class": "Widget class (toplevel/frame).",
+  "-labelanchor": "Position of the label (labelframe).",
+  "-xscrollincrement": "Horizontal scroll unit.",
+  "-yscrollincrement": "Vertical scroll unit.",
+  "-spacing1": "Extra space above paragraphs.",
+  "-spacing3": "Extra space below paragraphs.",
+  "-tabs": "Tab stops.",
+  "-maxundo": "Maximum undo depth.",
+  "-autoseparators": "Insert undo separators automatically.",
+  "-side": "Which side of the parent to pack against: top bottom left right.",
+  "-fill": "Stretch: none, x, y or both.",
+  "-expand": "Give the widget extra space (1/0).",
+  "-ipadx": "Internal horizontal padding.",
+  "-ipady": "Internal vertical padding.",
+  "-before": "Pack before this window.",
+  "-after": "Pack after this window.",
+  "-in": "Parent to manage the widget in.",
+  "-row": "Grid row (0-based).",
+  "-column": "Grid column (0-based).",
+  "-rowspan": "Rows spanned.",
+  "-columnspan": "Columns spanned.",
+  "-sticky": "Edges to stick to: any of n s e w (e.g. nsew).",
+  "-x": "Absolute x position.",
+  "-y": "Absolute y position.",
+  "-relx": "x as a fraction of the parent width.",
+  "-rely": "y as a fraction of the parent height.",
+  "-relwidth": "Width as a fraction of the parent.",
+  "-relheight": "Height as a fraction of the parent.",
+  "-accelerator": "Accelerator text shown in a menu entry.",
+  "-icon": "Dialog icon: error info question warning.",
+  "-message": "Message text.",
+  "-title": "Window title.",
+  "-type": "Dialog button set, e.g. ok, okcancel, yesno.",
+  "-parent": "Parent window of the dialog.",
+  "-initialdir": "Initial directory.",
+  "-initialfile": "Initial file name.",
+  "-filetypes": "List of {label {patterns}} pairs.",
+  "-defaultextension": "Extension appended when none is typed.",
+  "-format": "printf-style format for the displayed value.",
+  "-initialcolor": "Color initially selected."
+ },
+ "values": {
+  "-side": [
+   "top",
+   "bottom",
+   "left",
+   "right"
+  ],
+  "-fill": [
+   "none",
+   "x",
+   "y",
+   "both"
+  ],
+  "-expand": [
+   "0",
+   "1",
+   "yes",
+   "no"
+  ],
+  "-anchor": [
+   "n",
+   "ne",
+   "e",
+   "se",
+   "s",
+   "sw",
+   "w",
+   "nw",
+   "center"
+  ],
+  "-relief": [
+   "flat",
+   "raised",
+   "sunken",
+   "groove",
+   "ridge",
+   "solid"
+  ],
+  "-state": [
+   "normal",
+   "disabled",
+   "active",
+   "readonly"
+  ],
+  "-justify": [
+   "left",
+   "center",
+   "right"
+  ],
+  "-orient": [
+   "horizontal",
+   "vertical"
+  ],
+  "-sticky": [
+   "n",
+   "s",
+   "e",
+   "w",
+   "ns",
+   "ew",
+   "nsew",
+   "news"
+  ],
+  "-compound": [
+   "none",
+   "text",
+   "image",
+   "center",
+   "top",
+   "bottom",
+   "left",
+   "right"
+  ],
+  "-selectmode": [
+   "single",
+   "browse",
+   "multiple",
+   "extended"
+  ],
+  "-wrap": [
+   "none",
+   "char",
+   "word"
+  ],
+  "-default": [
+   "normal",
+   "active",
+   "disabled"
+  ],
+  "-validate": [
+   "none",
+   "focus",
+   "focusin",
+   "focusout",
+   "key",
+   "all"
+  ],
+  "-cursor": [
+   "arrow",
+   "hand2",
+   "watch",
+   "xterm",
+   "cross",
+   "fleur",
+   "question_arrow"
+  ],
+  "-icon": [
+   "error",
+   "info",
+   "question",
+   "warning"
+  ],
+  "-type": [
+   "ok",
+   "okcancel",
+   "yesno",
+   "yesnocancel",
+   "retrycancel",
+   "abortretryignore"
+  ],
+  "-mode": [
+   "determinate",
+   "indeterminate"
+  ],
+  "-labelanchor": [
+   "n",
+   "nw",
+   "ne",
+   "s",
+   "sw",
+   "se",
+   "w",
+   "e"
+  ],
+  "-show": [
+   "*",
+   "headings",
+   "tree"
+  ]
+ },
+ "methods": {
+  "button": [
+   "configure",
+   "cget",
+   "invoke",
+   "flash"
+  ],
+  "ttk::button": [
+   "configure",
+   "cget",
+   "invoke",
+   "state",
+   "instate"
+  ],
+  "label": [
+   "configure",
+   "cget"
+  ],
+  "ttk::label": [
+   "configure",
+   "cget",
+   "state",
+   "instate"
+  ],
+  "checkbutton": [
+   "configure",
+   "cget",
+   "invoke",
+   "select",
+   "deselect",
+   "flash",
+   "toggle"
+  ],
+  "radiobutton": [
+   "configure",
+   "cget",
+   "invoke",
+   "select",
+   "deselect",
+   "flash"
+  ],
+  "ttk::checkbutton": [
+   "configure",
+   "cget",
+   "invoke",
+   "state",
+   "instate"
+  ],
+  "ttk::radiobutton": [
+   "configure",
+   "cget",
+   "invoke",
+   "state",
+   "instate"
+  ],
+  "entry": [
+   "configure",
+   "cget",
+   "get",
+   "insert",
+   "delete",
+   "icursor",
+   "selection",
+   "xview",
+   "index"
+  ],
+  "ttk::entry": [
+   "configure",
+   "cget",
+   "get",
+   "insert",
+   "delete",
+   "icursor",
+   "selection",
+   "xview",
+   "index",
+   "state",
+   "instate",
+   "validate"
+  ],
+  "ttk::combobox": [
+   "configure",
+   "cget",
+   "get",
+   "insert",
+   "delete",
+   "icursor",
+   "selection",
+   "xview",
+   "index",
+   "state",
+   "instate",
+   "validate",
+   "current",
+   "set"
+  ],
+  "spinbox": [
+   "configure",
+   "cget",
+   "get",
+   "insert",
+   "delete",
+   "icursor",
+   "selection",
+   "xview",
+   "index",
+   "invoke"
+  ],
+  "ttk::spinbox": [
+   "configure",
+   "cget",
+   "get",
+   "insert",
+   "delete",
+   "icursor",
+   "selection",
+   "xview",
+   "index",
+   "state",
+   "instate",
+   "validate",
+   "set"
+  ],
+  "text": [
+   "configure",
+   "cget",
+   "insert",
+   "get",
+   "delete",
+   "see",
+   "index",
+   "mark",
+   "tag",
+   "search",
+   "edit",
+   "yview",
+   "xview",
+   "count",
+   "replace"
+  ],
+  "listbox": [
+   "configure",
+   "cget",
+   "insert",
+   "delete",
+   "get",
+   "curselection",
+   "size",
+   "see",
+   "selection",
+   "activate",
+   "index",
+   "yview",
+   "xview",
+   "itemconfigure"
+  ],
+  "scale": [
+   "configure",
+   "cget",
+   "get",
+   "set"
+  ],
+  "ttk::scale": [
+   "configure",
+   "cget",
+   "get",
+   "set",
+   "state",
+   "instate"
+  ],
+  "scrollbar": [
+   "configure",
+   "cget",
+   "set",
+   "get",
+   "activate"
+  ],
+  "ttk::scrollbar": [
+   "configure",
+   "cget",
+   "set",
+   "get",
+   "state",
+   "instate"
+  ],
+  "canvas": [
+   "configure",
+   "cget",
+   "create",
+   "delete",
+   "move",
+   "coords",
+   "itemconfigure",
+   "itemcget",
+   "bbox",
+   "find",
+   "bind",
+   "tag",
+   "scale",
+   "raise",
+   "lower",
+   "xview",
+   "yview",
+   "postscript",
+   "canvasx",
+   "canvasy"
+  ],
+  "menu": [
+   "configure",
+   "cget",
+   "add",
+   "delete",
+   "entryconfigure",
+   "entrycget",
+   "insert",
+   "post",
+   "unpost",
+   "index",
+   "invoke"
+  ],
+  "frame": [
+   "configure",
+   "cget"
+  ],
+  "labelframe": [
+   "configure",
+   "cget"
+  ],
+  "toplevel": [
+   "configure",
+   "cget"
+  ],
+  "ttk::frame": [
+   "configure",
+   "cget",
+   "state",
+   "instate"
+  ],
+  "ttk::labelframe": [
+   "configure",
+   "cget",
+   "state",
+   "instate"
+  ],
+  "ttk::notebook": [
+   "configure",
+   "cget",
+   "add",
+   "forget",
+   "hide",
+   "select",
+   "tab",
+   "tabs",
+   "index",
+   "insert",
+   "state",
+   "instate"
+  ],
+  "ttk::progressbar": [
+   "configure",
+   "cget",
+   "start",
+   "stop",
+   "step",
+   "state",
+   "instate"
+  ],
+  "ttk::treeview": [
+   "configure",
+   "cget",
+   "insert",
+   "delete",
+   "item",
+   "children",
+   "heading",
+   "column",
+   "selection",
+   "focus",
+   "get",
+   "set",
+   "see",
+   "parent",
+   "next",
+   "prev",
+   "exists",
+   "index",
+   "move",
+   "tag",
+   "identify"
+  ],
+  "ttk::panedwindow": [
+   "configure",
+   "cget",
+   "add",
+   "forget",
+   "insert",
+   "pane",
+   "sashpos"
+  ],
+  "ttk::separator": [
+   "configure",
+   "cget"
+  ],
+  "menubutton": [
+   "configure",
+   "cget"
+  ],
+  "message": [
+   "configure",
+   "cget"
+  ],
+  "panedwindow": [
+   "configure",
+   "cget",
+   "add",
+   "forget",
+   "paneconfigure"
+  ]
+ },
+ "events": [
+  "<Button-1>",
+  "<Button-2>",
+  "<Button-3>",
+  "<ButtonRelease-1>",
+  "<Double-Button-1>",
+  "<B1-Motion>",
+  "<Motion>",
+  "<Enter>",
+  "<Leave>",
+  "<FocusIn>",
+  "<FocusOut>",
+  "<KeyPress>",
+  "<KeyRelease>",
+  "<Key-Return>",
+  "<Return>",
+  "<Escape>",
+  "<Tab>",
+  "<space>",
+  "<BackSpace>",
+  "<Delete>",
+  "<Up>",
+  "<Down>",
+  "<Left>",
+  "<Right>",
+  "<Control-c>",
+  "<Control-s>",
+  "<Control-Key-a>",
+  "<Configure>",
+  "<Destroy>",
+  "<MouseWheel>",
+  "<<Copy>>",
+  "<<Paste>>",
+  "<<Cut>>",
+  "<<ListboxSelect>>",
+  "<<ComboboxSelected>>",
+  "<<NotebookTabChanged>>"
+ ],
+ "geometry": [
+  "pack",
+  "grid",
+  "place"
+ ],
+ "dialogs": [
+  "tk_messageBox",
+  "tk_getOpenFile",
+  "tk_getSaveFile",
+  "tk_chooseDirectory",
+  "tk_chooseColor"
+ ]
+}

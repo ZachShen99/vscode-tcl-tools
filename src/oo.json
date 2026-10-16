@@ -1,0 +1,226 @@
+{
+ "commands": {
+  "oo::class": [
+   "subcommand ?arg ...?",
+   "The class of all classes. `oo::class create Name ?script?` defines a class; the script holds constructor / method / superclass declarations.",
+   "所有类的类。`oo::class create 名字 ?脚本?` 定义一个类;脚本里写 constructor / method / superclass 等声明。"
+  ],
+  "oo::object": [
+   "subcommand ?arg ...?",
+   "The root class of all objects.",
+   "所有对象的根类。"
+  ],
+  "oo::define": [
+   "className defScript | className subcommand ?arg ...?",
+   "Change a class: oo::define Foo {method bar {} {...}} or oo::define Foo method bar {} {...}.",
+   "修改一个类:oo::define Foo {method bar {} {...}} 或 oo::define Foo method bar {} {...}。"
+  ],
+  "oo::objdefine": [
+   "objectName defScript | objectName subcommand ?arg ...?",
+   "Change a single object (add methods, mixins, filters ...), not its class.",
+   "修改单个对象(增加方法、mixin、filter 等),而不是它的类。"
+  ],
+  "oo::copy": [
+   "sourceObject ?targetObject? ?targetNamespace?",
+   "Copy an object (or class); returns the new object.",
+   "复制一个对象(或类),返回新对象。"
+  ],
+  "oo::configurable": [
+   "",
+   "Metaclass (Tcl 9.0) that gives classes `property` declarations and a configure method.",
+   "元类(Tcl 9.0):让类支持 property 声明和 configure 方法。"
+  ]
+ },
+ "decls": {
+  "constructor": [
+   "argList body",
+   "Constructor run by `new` / `create`. Its arguments are those given after the class name.",
+   "构造函数,在 new / create 时运行;参数就是类名之后给出的参数。"
+  ],
+  "destructor": [
+   "body",
+   "Run when the object is destroyed.",
+   "对象销毁时运行。"
+  ],
+  "method": [
+   "name argList body",
+   "Define a method. Names starting with an upper-case letter are private (not exported) by default.",
+   "定义方法。名字以大写字母开头的方法默认是私有的(不导出)。"
+  ],
+  "forward": [
+   "name cmdPrefix ?arg ...?",
+   "Define a method that forwards to another command, with extra leading arguments.",
+   "定义转发到另一个命令的方法,可附加前置参数。"
+  ],
+  "export": [
+   "name ?name ...?",
+   "Make methods publicly callable.",
+   "让方法可被外部调用。"
+  ],
+  "unexport": [
+   "name ?name ...?",
+   "Make methods private (callable only through `my`).",
+   "让方法变为私有(只能通过 my 调用)。"
+  ],
+  "filter": [
+   "?methodName ...?",
+   "Methods run around every public method call.",
+   "在每次公开方法调用外层执行的过滤方法。"
+  ],
+  "mixin": [
+   "?className ...?",
+   "Classes whose methods are mixed in ahead of the class's own.",
+   "混入的类,其方法优先于本类自己的方法。"
+  ],
+  "superclass": [
+   "?className ...?",
+   "Set the superclass(es).",
+   "设置父类。"
+  ],
+  "variable": [
+   "?name ...?",
+   "Instance variables that are visible in every method without declaring them.",
+   "实例变量:在每个方法中无需声明即可使用。"
+  ],
+  "renamemethod": [
+   "fromName toName",
+   "Rename a method.",
+   "重命名方法。"
+  ],
+  "deletemethod": [
+   "name ?name ...?",
+   "Remove methods defined by the class.",
+   "删除本类定义的方法。"
+  ],
+  "self": [
+   "subcommand ?arg ...?",
+   "Declare things on the class object itself, e.g. `self method create_default {} {...}` (class methods).",
+   "在类对象自身上声明,如 `self method ...`(类方法)。"
+  ],
+  "private": [
+   "subcommand ?arg ...?",
+   "Declare private members (Tcl 8.7/9.0): `private method name args body`, `private variable ...`.",
+   "声明私有成员(Tcl 8.7/9.0):`private method 名 参数 体`、`private variable ...`。"
+  ],
+  "classmethod": [
+   "name ?argList body?",
+   "Define a method on the class object itself (Tcl 9.0), same as `self method`.",
+   "在类对象自身上定义方法(Tcl 9.0),等同 `self method`。"
+  ],
+  "class": [
+   "className",
+   "Change the class of the object (objdefine).",
+   "改变对象所属的类(objdefine)。"
+  ],
+  "initialise": [
+   "script",
+   "Run a script in the class when it is defined (Tcl 9.0; also spelled initialize).",
+   "定义类时在类内执行的脚本(Tcl 9.0,也可拼作 initialize)。"
+  ],
+  "definitionnamespace": [
+   "?-class|-instance? namespace",
+   "Namespace searched for definition commands (Tcl 9.0).",
+   "搜索定义命令的命名空间(Tcl 9.0)。"
+  ],
+  "property": [
+   "name ?name ...?",
+   "Declare configurable properties (oo::configurable, Tcl 9.0).",
+   "声明可配置属性(oo::configurable,Tcl 9.0)。"
+  ]
+ },
+ "methodWords": {
+  "my": [
+   "methodName ?arg ...?",
+   "Call a method (also private ones) of this object.",
+   "调用当前对象的方法(包括私有方法)。"
+  ],
+  "self": [
+   "?subcommand?",
+   "The object's name; subcommands: caller class filter method namespace next object target.",
+   "当前对象的名字;子命令:caller class filter method namespace next object target。"
+  ],
+  "next": [
+   "?arg ...?",
+   "Call the next implementation of this method (e.g. the superclass's).",
+   "调用该方法的下一个实现(如父类中的同名方法)。"
+  ],
+  "nextto": [
+   "className ?arg ...?",
+   "Call the implementation from a specific class in the chain.",
+   "调用调用链中指定类的实现。"
+  ]
+ },
+ "selfSubs": {
+  "caller": [
+   "Object / class / method that called this method.",
+   "调用本方法的对象/类/方法。"
+  ],
+  "class": [
+   "Class that defines the running method.",
+   "定义当前方法的类。"
+  ],
+  "filter": [
+   "When called from a filter: its declaring info.",
+   "在过滤方法中:声明它的信息。"
+  ],
+  "method": [
+   "Name of the running method.",
+   "当前方法的名字。"
+  ],
+  "namespace": [
+   "The object's namespace.",
+   "对象的命名空间。"
+  ],
+  "next": [
+   "Info about the next method in the chain.",
+   "调用链中下一个方法的信息。"
+  ],
+  "object": [
+   "The object's name (same as plain `self`).",
+   "对象名(同直接写 self)。"
+  ],
+  "target": [
+   "Info about the first method call (when called via a filter).",
+   "最初被调用的方法信息(通过过滤方法调用时)。"
+  ]
+ },
+ "objectMethods": {
+  "destroy": [
+   "",
+   "Destroy the object (runs its destructor).",
+   "销毁对象(运行析构函数)。"
+  ],
+  "variable": [
+   "?name ...?",
+   "Bring object variables into the caller's scope.",
+   "把对象变量引入调用者作用域。"
+  ],
+  "varname": [
+   "name",
+   "Fully-qualified name of an object variable (for -textvariable, trace ...).",
+   "对象变量的完整名字(用于 -textvariable、trace 等)。"
+  ],
+  "eval": [
+   "arg ?arg ...?",
+   "Evaluate a script in the object's namespace (unexported).",
+   "在对象的命名空间中执行脚本(默认不导出)。"
+  ]
+ },
+ "classMethods": {
+  "create": [
+   "name ?arg ...?",
+   "Create an instance with a given name; arguments go to the constructor.",
+   "创建指定名字的实例;参数传给构造函数。"
+  ],
+  "new": [
+   "?arg ...?",
+   "Create an instance with a generated name; returns the name.",
+   "创建名字自动生成的实例,返回名字。"
+  ],
+  "createWithNamespace": [
+   "name nsName ?arg ...?",
+   "Create an instance with a chosen name and namespace.",
+   "创建指定名字和命名空间的实例。"
+  ]
+ }
+}

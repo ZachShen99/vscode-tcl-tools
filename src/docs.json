@@ -1,0 +1,2522 @@
+{
+ "after": [
+  null,
+  "延迟 ms 毫秒;或安排一段脚本在 ms 毫秒后执行(after idle 在空闲时执行,after cancel 取消)。"
+ ],
+ "append": [
+  null,
+  "把值追加到变量保存的字符串末尾;变量不存在则创建。"
+ ],
+ "apply": [
+  null,
+  "调用匿名函数 {参数列表 函数体 ?命名空间?}。"
+ ],
+ "break": [
+  null,
+  "跳出最内层的循环。"
+ ],
+ "catch": [
+  null,
+  "执行脚本;出错或产生其他异常时返回非 0。错误信息存入 resultVarName。"
+ ],
+ "cd": [
+  null,
+  "切换当前工作目录。"
+ ],
+ "close": [
+  null,
+  "关闭通道(文件、套接字、管道)。"
+ ],
+ "concat": [
+  null,
+  "把参数连接成一个列表,并去掉每个参数首尾的空白。"
+ ],
+ "continue": [
+  null,
+  "跳到最内层循环的下一次迭代。"
+ ],
+ "coroutine": [
+  null,
+  "创建协程并开始运行 command;协程内可用 yield 暂停。"
+ ],
+ "eof": [
+  null,
+  "判断通道是否已读到文件末尾。"
+ ],
+ "error": [
+  null,
+  "抛出一个错误,message 为错误信息。可用 catch / try 捕获。"
+ ],
+ "eval": [
+  null,
+  "把参数拼接成脚本并执行。优先用 list 构造参数,避免二次解析带来的问题。"
+ ],
+ "exec": [
+  null,
+  "运行外部程序(或管道)并返回其输出;程序返回非 0 或写 stderr 会报错。"
+ ],
+ "exit": [
+  null,
+  "结束进程,returnCode 为退出码(默认 0)。"
+ ],
+ "expr": [
+  null,
+  "计算表达式。表达式一定要加花括号:expr {$a + $b},否则更慢也不安全。"
+ ],
+ "fconfigure": [
+  null,
+  "读取或设置通道选项(-blocking、-buffering、-encoding、-translation 等)。"
+ ],
+ "fileevent": [
+  null,
+  "给通道注册可读/可写时的回调脚本(需要事件循环,如 vwait)。"
+ ],
+ "flush": [
+  null,
+  "立即写出通道的输出缓冲。"
+ ],
+ "for": [
+  null,
+  "C 风格循环:start 先执行一次,每轮先判断 test,再执行 body,最后执行 next。"
+ ],
+ "foreach": [
+  null,
+  "遍历一个或多个列表的元素,每次把元素赋给 varList 中的变量。"
+ ],
+ "format": [
+  null,
+  "类似 printf 的字符串格式化,如 format \"%05.2f\" $x。"
+ ],
+ "gets": [
+  null,
+  "从通道读取一行。给出 varName 时返回读到的字符数(文件末尾返回 -1),否则返回这一行。"
+ ],
+ "glob": [
+  null,
+  "返回匹配通配符的文件名。常用:glob -nocomplain -directory dir *.tcl。"
+ ],
+ "global": [
+  null,
+  "在当前作用域中引用全局变量。"
+ ],
+ "if": [
+  null,
+  "条件执行:if {条件} {...} elseif {...} {...} else {...}。条件要加花括号。"
+ ],
+ "incr": [
+  null,
+  "给整数变量加上 increment(默认 1);变量不存在时按 0 处理。"
+ ],
+ "join": [
+  null,
+  "用 joinString(默认空格)把列表元素连接成字符串。"
+ ],
+ "lappend": [
+  null,
+  "向列表变量末尾追加元素;变量不存在则创建。"
+ ],
+ "lassign": [
+  null,
+  "把列表元素依次赋给多个变量,返回没被赋值的剩余元素。"
+ ],
+ "lindex": [
+  null,
+  "取列表中的元素,可给多个索引取嵌套元素;索引可用 end、end-1。"
+ ],
+ "linsert": [
+  null,
+  "在列表指定位置插入元素,返回新列表(不修改原变量)。"
+ ],
+ "list": [
+  null,
+  "用参数创建列表,会正确处理含空格或特殊字符的元素。"
+ ],
+ "llength": [
+  null,
+  "列表的元素个数。"
+ ],
+ "lmap": [
+  null,
+  "类似 foreach,但把每次 body 的结果收集成列表返回(Tcl 8.6+)。"
+ ],
+ "lrange": [
+  null,
+  "返回列表的一段子列表(first 到 last)。"
+ ],
+ "lrepeat": [
+  null,
+  "重复元素构造列表,如 lrepeat 3 a b → a b a b a b。"
+ ],
+ "lreplace": [
+  null,
+  "替换列表中的一段元素,返回新列表。"
+ ],
+ "lreverse": [
+  null,
+  "反转列表。"
+ ],
+ "lsearch": [
+  null,
+  "在列表中查找元素,返回索引或 -1。选项:-exact、-glob、-regexp、-all、-inline、-sorted。"
+ ],
+ "lset": [
+  null,
+  "修改列表变量中指定位置的元素(原地修改)。"
+ ],
+ "lsort": [
+  null,
+  "排序列表。选项:-integer、-real、-dictionary、-decreasing、-unique、-index、-command。"
+ ],
+ "namespace": [
+  null,
+  "创建和管理命名空间(子命令见补全)。"
+ ],
+ "open": [
+  null,
+  "打开文件或命令管道,返回通道。access 如 r、w、a、r+,管道写成 \"|cmd\"。"
+ ],
+ "pid": [
+  null,
+  "返回进程号。"
+ ],
+ "proc": [
+  null,
+  "定义过程。带默认值的参数写成 {名字 默认值};最后的 args 收集剩余参数。"
+ ],
+ "puts": [
+  null,
+  "向通道输出字符串(默认 stdout),末尾换行;-nonewline 不换行。"
+ ],
+ "pwd": [
+  null,
+  "返回当前工作目录。"
+ ],
+ "read": [
+  null,
+  "从通道读取字节或字符;不给 numChars 则读到末尾。"
+ ],
+ "regexp": [
+  null,
+  "正则匹配。选项:-nocase、-all、-inline、-indices、-line;返回匹配数,并可把子匹配存入变量。"
+ ],
+ "regsub": [
+  null,
+  "正则替换,返回替换次数或结果。选项:-all、-nocase。替换文本中 & 和 \\\\1 引用匹配内容。"
+ ],
+ "rename": [
+  null,
+  "重命名命令;newName 为空字符串 {} 则删除该命令。"
+ ],
+ "return": [
+  null,
+  "从过程返回。-code error 可抛出错误,-level 控制返回层数。"
+ ],
+ "scan": [
+  null,
+  "按格式解析字符串(类似 sscanf);给出变量时返回成功解析的个数。"
+ ],
+ "seek": [
+  null,
+  "设置通道的读写位置。origin 为 start、current 或 end。"
+ ],
+ "set": [
+  null,
+  "读取或设置变量:set x 5 赋值,set x 返回当前值。"
+ ],
+ "socket": [
+  null,
+  "打开 TCP 客户端套接字;加 -server 命令则创建服务端。"
+ ],
+ "source": [
+  null,
+  "把文件当作 Tcl 脚本执行。"
+ ],
+ "split": [
+  null,
+  "按分隔字符把字符串拆成列表(默认按空白)。"
+ ],
+ "subst": [
+  null,
+  "对字符串做变量、命令和反斜杠替换,但不执行它。"
+ ],
+ "switch": [
+  null,
+  "多路分支。字符串前建议加 --,最后一个模式可用 default;可用 -glob、-regexp。"
+ ],
+ "tailcall": [
+  null,
+  "用另一个命令的调用替换当前过程(尾调用,不增加栈深度)。"
+ ],
+ "tell": [
+  null,
+  "返回通道当前的读写位置。"
+ ],
+ "throw": [
+  null,
+  "抛出带错误码类型的错误,配合 try ... trap 使用(Tcl 8.6+)。"
+ ],
+ "time": [
+  null,
+  "测量脚本执行时间(微秒/次);count 指定重复次数。"
+ ],
+ "try": [
+  null,
+  "结构化错误处理:on error {msg opts} {...}、trap 模式 {...}、finally {...}(Tcl 8.6+)。"
+ ],
+ "unset": [
+  null,
+  "删除变量;-nocomplain 时变量不存在也不报错。"
+ ],
+ "update": [
+  null,
+  "处理待处理的事件;update idletasks 只处理空闲任务(如刷新界面)。"
+ ],
+ "uplevel": [
+  null,
+  "在调用者(或指定层级)的作用域中执行脚本。#0 表示全局。"
+ ],
+ "upvar": [
+  null,
+  "把局部变量链接到调用者作用域中的变量(按名字传递变量)。"
+ ],
+ "variable": [
+  null,
+  "声明命名空间变量,可同时赋初值。"
+ ],
+ "vwait": [
+  null,
+  "进入事件循环,直到变量被写入;常用来等待事件或 Tk 窗口关闭。"
+ ],
+ "while": [
+  null,
+  "当条件为真时循环执行 body。条件要加花括号。"
+ ],
+ "yield": [
+  null,
+  "暂停当前协程,把 value 返回给调用者;下次调用时从这里继续。"
+ ],
+ "const": [
+  null,
+  "定义常量变量,之后不能再修改(Tcl 9.0)。"
+ ],
+ "coroinject": [
+  null,
+  "向暂停中的协程注入一条命令,协程恢复时先执行它(调试用)。"
+ ],
+ "coroprobe": [
+  null,
+  "在暂停的协程里运行命令并返回结果(调试用)。"
+ ],
+ "fblocked": [
+  null,
+  "如果上一次读取因为没有更多输入而读得比请求的少,返回 1。"
+ ],
+ "fcopy": [
+  null,
+  "把数据从一个通道复制到另一个通道,可用 -command 在后台进行。"
+ ],
+ "fpclassify": [
+  null,
+  "判断浮点数类别:zero、subnormal、normal、infinite、nan(Tcl 9.0)。"
+ ],
+ "ledit": [
+  null,
+  "原地替换列表变量中的一段元素(Tcl 9.0)。"
+ ],
+ "load": [
+  null,
+  "加载二进制扩展(动态库)。"
+ ],
+ "lpop": [
+  null,
+  "移除并返回列表变量的最后一个(或指定位置的)元素(Tcl 9.0)。"
+ ],
+ "lremove": [
+  null,
+  "返回去掉指定索引元素后的列表(Tcl 9.0)。"
+ ],
+ "lseq": [
+  null,
+  "生成数列,类似 seq:lseq 1 to 10、lseq 10 .. 1 by -3(Tcl 9.0)。"
+ ],
+ "timerate": [
+  null,
+  "多次运行脚本测量平均耗时(Tcl 8.6.10+)。"
+ ],
+ "unknown": [
+  null,
+  "找不到命令时被调用;默认会尝试自动加载和 exec。"
+ ],
+ "unload": [
+  null,
+  "卸载二进制扩展。"
+ ],
+ "yieldto": [
+  null,
+  "在协程里转而运行另一个命令,命令回调时协程恢复。"
+ ],
+ "zipfs": [
+  null,
+  "把 zip 归档挂载为文件系统(Tcl 9.0):mount、unmount、mkzip、mkimg、list、exists、find、info。"
+ ],
+ "parray": [
+  null,
+  "按 名字 = 值 的形式打印整个数组(库过程)。"
+ ],
+ "auto_mkindex": [
+  null,
+  "为目录生成 tclIndex,使其中的过程可以自动加载。"
+ ],
+ "auto_execok": [
+  null,
+  "返回 PATH 中可执行文件的完整路径,找不到返回空字符串。"
+ ],
+ "auto_load": [
+  null,
+  "尝试通过 auto_path 自动加载命令。"
+ ],
+ "auto_import": [
+  null,
+  "把可自动加载的、匹配 pattern 的命令导入当前命名空间。"
+ ],
+ "auto_qualify": [
+  null,
+  "给命令名补全命名空间,用于自动加载。"
+ ],
+ "string cat": [
+  null,
+  "连接多个字符串(Tcl 8.6.2+)。"
+ ],
+ "string compare": [
+  null,
+  "按字典序比较,返回 -1、0、1。"
+ ],
+ "string equal": [
+  null,
+  "两个字符串相等则为真;-nocase 忽略大小写。"
+ ],
+ "string first": [
+  null,
+  "needle 在 haystack 中第一次出现的位置,没有则为 -1。"
+ ],
+ "string index": [
+  null,
+  "取指定位置的字符(可用 end)。"
+ ],
+ "string is": [
+  null,
+  "判断字符串是否属于某类:integer、double、alpha、digit、boolean、space 等。-strict 时空串为假。"
+ ],
+ "string last": [
+  null,
+  "needle 最后一次出现的位置,没有则为 -1。"
+ ],
+ "string length": [
+  null,
+  "字符数。"
+ ],
+ "string map": [
+  null,
+  "按 {旧 新 旧 新 ...} 映射表批量替换。"
+ ],
+ "string match": [
+  null,
+  "通配符匹配(* ? [a-z]),不是正则。"
+ ],
+ "string range": [
+  null,
+  "取子串(first 到 last,含两端)。"
+ ],
+ "string repeat": [
+  null,
+  "重复字符串 count 次。"
+ ],
+ "string replace": [
+  null,
+  "替换指定范围的字符。"
+ ],
+ "string reverse": [
+  null,
+  "反转字符串。"
+ ],
+ "string tolower": [
+  null,
+  "转小写。"
+ ],
+ "string toupper": [
+  null,
+  "转大写。"
+ ],
+ "string totitle": [
+  null,
+  "首字母大写,其余小写。"
+ ],
+ "string trim": [
+  null,
+  "去掉两端的指定字符(默认空白)。"
+ ],
+ "string trimleft": [
+  null,
+  "去掉开头的指定字符(默认空白)。"
+ ],
+ "string trimright": [
+  null,
+  "去掉末尾的指定字符(默认空白)。"
+ ],
+ "string wordend": [
+  null,
+  "包含 charIndex 的单词之后的位置。"
+ ],
+ "string wordstart": [
+  null,
+  "包含 charIndex 的单词的起始位置。"
+ ],
+ "string insert": [
+  null,
+  "在指定位置插入字符串(Tcl 9.0)。"
+ ],
+ "string bytelength": [
+  null,
+  "内部表示的字节数(已过时)。"
+ ],
+ "dict append": [
+  "Append to the string value at a key.",
+  "把字符串追加到字典中某个键的值后面。"
+ ],
+ "dict create": [
+  null,
+  "创建字典:dict create k1 v1 k2 v2。"
+ ],
+ "dict exists": [
+  null,
+  "键(路径)是否存在。"
+ ],
+ "dict filter": [
+  null,
+  "按键、值或脚本过滤字典:dict filter $d key a*。"
+ ],
+ "dict for": [
+  null,
+  "遍历键值对:dict for {k v} $d {...}。"
+ ],
+ "dict get": [
+  null,
+  "按键取值,可以给多个键取嵌套值;键不存在会报错。"
+ ],
+ "dict getdef": [
+  null,
+  "按键取值,不存在时返回默认值(Tcl 8.7+)。"
+ ],
+ "dict getwithdefault": [
+  null,
+  "同 dict getdef(Tcl 9.0)。"
+ ],
+ "dict incr": [
+  "Increment an integer value at a key (missing counts as 0).",
+  "给字典中某键的整数值加上 increment(默认 1),键不存在视为 0。"
+ ],
+ "dict info": [
+  "Statistics about the internal hash table.",
+  "字典内部哈希表的统计信息。"
+ ],
+ "dict keys": [
+  null,
+  "所有键的列表,可用通配符过滤。"
+ ],
+ "dict lappend": [
+  "Append list elements to the value at a key.",
+  "向字典中某个键的列表值追加元素。"
+ ],
+ "dict map": [
+  null,
+  "遍历并用 body 的结果生成新字典。"
+ ],
+ "dict merge": [
+  null,
+  "合并多个字典,后面的覆盖前面的。"
+ ],
+ "dict remove": [
+  "Return the dictionary without the given keys.",
+  "返回去掉指定键之后的字典(不修改原变量)。"
+ ],
+ "dict replace": [
+  "Return the dictionary with keys set to new values.",
+  "返回把指定键设为新值后的字典(不修改原变量)。"
+ ],
+ "dict set": [
+  null,
+  "给字典变量设置值,可用多个键写入嵌套字典。"
+ ],
+ "dict size": [
+  "Number of key/value pairs.",
+  "键值对的个数。"
+ ],
+ "dict unset": [
+  "Remove a key from a dictionary variable.",
+  "从字典变量里删除某个键。"
+ ],
+ "dict update": [
+  "Bind dictionary keys to variables for the duration of a body.",
+  "把键临时绑定为变量,body 里修改这些变量会写回字典。"
+ ],
+ "dict values": [
+  "List of values, optionally filtered by a glob pattern.",
+  "所有值的列表,可用通配符过滤。"
+ ],
+ "dict with": [
+  "Expose all keys of a dictionary as variables inside a body.",
+  "把字典所有键展开成变量供 body 使用,body 里的修改会写回字典。"
+ ],
+ "file atime": [
+  "Last access time (seconds since the epoch).",
+  "最后访问时间(自 1970 年起的秒数);可传入时间来设置。"
+ ],
+ "file attributes": [
+  "Get or set platform-specific file attributes.",
+  "读取或设置文件的系统属性(权限、所有者等,因平台而异)。"
+ ],
+ "file copy": [
+  "Copy files or directories.",
+  "复制文件或目录;-force 覆盖已有目标。"
+ ],
+ "file delete": [
+  "Delete files or directories.",
+  "删除文件或目录;-force 强制删除非空目录。"
+ ],
+ "file dirname": [
+  null,
+  "路径中的目录部分。"
+ ],
+ "file executable": [
+  "True if the file is executable.",
+  "文件是否可执行。"
+ ],
+ "file exists": [
+  null,
+  "文件是否存在。"
+ ],
+ "file extension": [
+  null,
+  "扩展名,包含点号。"
+ ],
+ "file isdirectory": [
+  "True if the path is a directory.",
+  "是否是目录。"
+ ],
+ "file isfile": [
+  "True if the path is a regular file.",
+  "是否是普通文件。"
+ ],
+ "file join": [
+  null,
+  "拼接路径,自动处理分隔符。"
+ ],
+ "file mkdir": [
+  null,
+  "创建目录(包括中间目录)。"
+ ],
+ "file mtime": [
+  "Last modification time (seconds since the epoch).",
+  "最后修改时间(自 1970 年起的秒数);可传入时间来设置。"
+ ],
+ "file nativename": [
+  "Path in the platform's native form.",
+  "转换成平台原生的路径写法(如 Windows 的反斜杠)。"
+ ],
+ "file normalize": [
+  null,
+  "绝对、规范化的路径(解析 . 和 ..)。"
+ ],
+ "file readable": [
+  "True if the file is readable.",
+  "文件是否可读。"
+ ],
+ "file rename": [
+  "Rename or move files.",
+  "重命名或移动文件;-force 覆盖已有目标。"
+ ],
+ "file rootname": [
+  null,
+  "去掉扩展名的路径。"
+ ],
+ "file separator": [
+  "The path separator of the platform.",
+  "平台使用的路径分隔符。"
+ ],
+ "file size": [
+  null,
+  "文件大小(字节)。"
+ ],
+ "file split": [
+  null,
+  "把路径拆成各个组成部分。"
+ ],
+ "file stat": [
+  "Fill an array with the file's attributes (size, mtime, type, ...).",
+  "把文件属性(size、mtime、type 等)写入数组变量。"
+ ],
+ "file tail": [
+  null,
+  "路径的最后一部分(文件名)。"
+ ],
+ "file tempfile": [
+  "Create a temporary file; returns an open channel.",
+  "创建临时文件并返回已打开的通道,文件路径存入 nameVar。"
+ ],
+ "file type": [
+  "file, directory, link, ...",
+  "文件类型:file、directory、link 等。"
+ ],
+ "file writable": [
+  "True if the file is writable.",
+  "文件是否可写。"
+ ],
+ "file channels": [
+  null,
+  "列出已打开的通道。"
+ ],
+ "file home": [
+  null,
+  "用户的主目录(Tcl 9.0)。"
+ ],
+ "file link": [
+  null,
+  "创建或读取链接。"
+ ],
+ "file lstat": [
+  null,
+  "同 file stat,但不跟随符号链接。"
+ ],
+ "file owned": [
+  null,
+  "文件是否属于当前用户。"
+ ],
+ "file pathtype": [
+  null,
+  "路径类型:absolute、relative、volumerelative。"
+ ],
+ "file readlink": [
+  null,
+  "符号链接指向的目标。"
+ ],
+ "file system": [
+  null,
+  "路径所属的文件系统。"
+ ],
+ "file tempdir": [
+  null,
+  "创建临时目录(Tcl 9.0)。"
+ ],
+ "file tildeexpand": [
+  null,
+  "展开开头的 ~(Tcl 9.0)。"
+ ],
+ "file volumes": [
+  null,
+  "列出已挂载的卷(Windows 上是盘符)。"
+ ],
+ "info args": [
+  null,
+  "过程的参数名列表。"
+ ],
+ "info body": [
+  null,
+  "过程的主体代码。"
+ ],
+ "info class": [
+  "Information about a TclOO class.",
+  "TclOO 类的信息(superclasses、methods、instances 等)。"
+ ],
+ "info cmdcount": [
+  "Number of commands executed so far.",
+  "到目前为止执行过的命令总数。"
+ ],
+ "info commands": [
+  null,
+  "当前命名空间可见的命令。"
+ ],
+ "info complete": [
+  null,
+  "判断字符串是否是语法完整的脚本(括号、引号配平)。"
+ ],
+ "info coroutine": [
+  "Name of the current coroutine, or empty.",
+  "当前协程的名字,不在协程中则为空。"
+ ],
+ "info default": [
+  null,
+  "过程参数的默认值,有默认值返回 1 并把值存入变量。"
+ ],
+ "info exists": [
+  null,
+  "变量是否存在。"
+ ],
+ "info frame": [
+  null,
+  "栈帧信息(含文件名与行号)。"
+ ],
+ "info functions": [
+  "Math functions usable in expr.",
+  "expr 里可用的数学函数列表。"
+ ],
+ "info globals": [
+  "Global variables.",
+  "全局变量名,可用通配符过滤。"
+ ],
+ "info hostname": [
+  "Name of the host.",
+  "主机名。"
+ ],
+ "info level": [
+  null,
+  "当前调用栈深度,或指定层级的命令。"
+ ],
+ "info library": [
+  "Directory of the Tcl library scripts.",
+  "Tcl 库脚本所在目录。"
+ ],
+ "info loaded": [
+  "Binary extensions loaded into the interpreter.",
+  "已加载的二进制扩展。"
+ ],
+ "info locals": [
+  "Local variables of the current frame.",
+  "当前作用域的局部变量名。"
+ ],
+ "info nameofexecutable": [
+  "Full path of the running tclsh/wish.",
+  "正在运行的 tclsh/wish 的完整路径。"
+ ],
+ "info object": [
+  "Information about a TclOO object.",
+  "TclOO 对象的信息(class、methods、vars 等)。"
+ ],
+ "info patchlevel": [
+  null,
+  "完整的 Tcl 版本号,如 8.6.13。"
+ ],
+ "info procs": [
+  null,
+  "当前命名空间中的过程(不含内置命令)。"
+ ],
+ "info script": [
+  null,
+  "正在执行的脚本文件路径。"
+ ],
+ "info sharedlibextension": [
+  "Shared library suffix (.so, .dll, .dylib).",
+  "动态库后缀(.so、.dll、.dylib)。"
+ ],
+ "info tclversion": [
+  "Major.minor version, e.g. 8.6.",
+  "主次版本号,如 8.6。"
+ ],
+ "info vars": [
+  "Variables visible in the current scope.",
+  "当前作用域可见的变量名。"
+ ],
+ "info cmdtype": [
+  null,
+  "命令的类型:native、proc、alias、ensemble、object 等(Tcl 8.7/9.0)。"
+ ],
+ "info constant": [
+  null,
+  "变量是否为常量(Tcl 9.0)。"
+ ],
+ "info consts": [
+  null,
+  "列出常量(Tcl 9.0)。"
+ ],
+ "info errorstack": [
+  null,
+  "最近一次错误的结构化调用栈。"
+ ],
+ "array exists": [
+  "True if the name is an array.",
+  "名字是否是数组。"
+ ],
+ "array get": [
+  "Flatten an array into a name/value list.",
+  "把数组展开成 {名 值 名 值 ...} 列表。"
+ ],
+ "array names": [
+  "List the element names.",
+  "数组的所有键,可用通配符或 -regexp 过滤。"
+ ],
+ "array set": [
+  "Set elements from a name/value list.",
+  "用 {名 值 ...} 列表给数组赋值。"
+ ],
+ "array size": [
+  "Number of elements.",
+  "元素个数。"
+ ],
+ "array statistics": [
+  "Hash table statistics.",
+  "内部哈希表的统计信息。"
+ ],
+ "array unset": [
+  "Delete elements matching a pattern (or the whole array).",
+  "删除匹配的元素,不给模式则删除整个数组。"
+ ],
+ "array startsearch": [
+  "Start an element-by-element search.",
+  "开始逐个遍历数组元素,返回 searchId。"
+ ],
+ "array nextelement": [
+  "Next element name of a search.",
+  "遍历中的下一个键。"
+ ],
+ "array anymore": [
+  "True if a search has more elements.",
+  "遍历是否还有元素。"
+ ],
+ "array donesearch": [
+  "End a search.",
+  "结束遍历。"
+ ],
+ "array default": [
+  null,
+  "查询或设置缺失元素的默认值:get、set、exists、unset(Tcl 8.7/9.0)。"
+ ],
+ "array for": [
+  null,
+  "遍历数组元素:array for {k v} arr {...}(Tcl 8.7/9.0)。"
+ ],
+ "namespace children": [
+  "Child namespaces.",
+  "子命名空间。"
+ ],
+ "namespace code": [
+  "Wrap a script so it runs in the current namespace later.",
+  "把脚本包装起来,使其以后在当前命名空间中执行(用于回调)。"
+ ],
+ "namespace current": [
+  null,
+  "当前命名空间的完整名字。"
+ ],
+ "namespace delete": [
+  "Delete namespaces.",
+  "删除命名空间。"
+ ],
+ "namespace ensemble": [
+  "Create or configure an ensemble command.",
+  "创建或配置 ensemble 命令(带子命令的命令)。"
+ ],
+ "namespace eval": [
+  null,
+  "在命名空间中执行脚本,命名空间不存在则创建。"
+ ],
+ "namespace exists": [
+  "True if the namespace exists.",
+  "命名空间是否存在。"
+ ],
+ "namespace export": [
+  "Declare which commands can be imported.",
+  "声明哪些命令可以被导入。"
+ ],
+ "namespace forget": [
+  "Remove imported commands.",
+  "撤销导入的命令。"
+ ],
+ "namespace import": [
+  "Import commands from another namespace.",
+  "从其他命名空间导入命令。"
+ ],
+ "namespace inscope": [
+  "Run a script in a namespace.",
+  "在指定命名空间中执行脚本。"
+ ],
+ "namespace origin": [
+  "The original (fully qualified) name of an imported command.",
+  "导入命令的原始完整名字。"
+ ],
+ "namespace parent": [
+  "Parent namespace.",
+  "父命名空间。"
+ ],
+ "namespace path": [
+  "Query or set the command resolution path.",
+  "查询或设置命令查找路径。"
+ ],
+ "namespace qualifiers": [
+  "Namespace part of a qualified name.",
+  "限定名中的命名空间部分。"
+ ],
+ "namespace tail": [
+  "Last component of a qualified name.",
+  "限定名的最后一部分。"
+ ],
+ "namespace upvar": [
+  "Link namespace variables to local names.",
+  "把命名空间变量链接为局部变量名。"
+ ],
+ "namespace which": [
+  "Resolve a command or variable name.",
+  "解析命令或变量的完整名字。"
+ ],
+ "namespace unknown": [
+  null,
+  "查询或设置命名空间中找不到命令时的处理程序。"
+ ],
+ "package forget": [
+  "Forget a package.",
+  "忘掉已知的包。"
+ ],
+ "package ifneeded": [
+  "Register how to load a package.",
+  "登记包的加载方式(通常出现在 pkgIndex.tcl 里)。"
+ ],
+ "package names": [
+  null,
+  "已知的包名。"
+ ],
+ "package present": [
+  "Like package require, but does not load anything.",
+  "类似 package require,但不会加载,没有则报错。"
+ ],
+ "package provide": [
+  "Declare that the current script provides a package.",
+  "声明当前脚本提供某个包(及版本)。"
+ ],
+ "package require": [
+  null,
+  "加载包并返回其版本号。"
+ ],
+ "package versions": [
+  "Known versions of a package.",
+  "某个包的已知版本。"
+ ],
+ "package vcompare": [
+  "Compare two versions: -1, 0, 1.",
+  "比较两个版本,返回 -1、0、1。"
+ ],
+ "package vsatisfies": [
+  "Test a version against requirements.",
+  "判断版本是否满足要求。"
+ ],
+ "package files": [
+  null,
+  "已加载包的文件列表(Tcl 9.0)。"
+ ],
+ "package prefer": [
+  null,
+  "查询或设置版本选择策略(latest 或 stable)。"
+ ],
+ "package unknown": [
+  null,
+  "查询或设置找不到包时的处理程序。"
+ ],
+ "clock add": [
+  "Add an offset to a time.",
+  "给时间加上偏移,如 clock add $t 1 day。"
+ ],
+ "clock clicks": [
+  "High-resolution timer.",
+  "高精度计时器,选项 -milliseconds、-microseconds。"
+ ],
+ "clock format": [
+  "Format a time as text.",
+  "把时间格式化成文本:clock format $t -format \"%Y-%m-%d\"。"
+ ],
+ "clock microseconds": [
+  "Microseconds since the epoch.",
+  "自 1970 年起的微秒数。"
+ ],
+ "clock milliseconds": [
+  "Milliseconds since the epoch.",
+  "自 1970 年起的毫秒数。"
+ ],
+ "clock scan": [
+  "Parse text into a time.",
+  "把文本解析成时间。"
+ ],
+ "clock seconds": [
+  null,
+  "当前时间(自 1970 年起的秒数)。"
+ ],
+ "trace add": [
+  null,
+  "添加追踪,类型:command | execution | variable。"
+ ],
+ "trace remove": [
+  "Remove a trace.",
+  "移除追踪。"
+ ],
+ "trace info": [
+  "List traces on a name.",
+  "列出某个名字上的追踪。"
+ ],
+ "trace variable": [
+  null,
+  "trace add variable 的旧写法。"
+ ],
+ "trace vdelete": [
+  null,
+  "trace remove variable 的旧写法。"
+ ],
+ "trace vinfo": [
+  null,
+  "trace info variable 的旧写法。"
+ ],
+ "chan close": [
+  "Close a channel (or one direction of it).",
+  "关闭通道(或只关闭一个方向)。"
+ ],
+ "chan configure": [
+  "Get or set channel options.",
+  "读取或设置通道选项。"
+ ],
+ "chan eof": [
+  "True at end of file.",
+  "是否已读到末尾。"
+ ],
+ "chan flush": [
+  "Flush buffered output.",
+  "写出缓冲的输出。"
+ ],
+ "chan gets": [
+  "Read a line.",
+  "读取一行。"
+ ],
+ "chan names": [
+  "List open channels.",
+  "列出已打开的通道。"
+ ],
+ "chan puts": [
+  "Write a string to a channel.",
+  "向通道写出字符串。"
+ ],
+ "chan read": [
+  "Read from a channel.",
+  "从通道读取。"
+ ],
+ "chan blocked": [
+  null,
+  "上一次读取是否因为没有更多输入而读得较少。"
+ ],
+ "chan copy": [
+  null,
+  "在通道之间复制数据。"
+ ],
+ "chan create": [
+  null,
+  "创建由 Tcl 实现的反射通道。"
+ ],
+ "chan event": [
+  null,
+  "注册通道可读/可写时执行的脚本。"
+ ],
+ "chan isbinary": [
+  null,
+  "通道是否处于二进制模式(Tcl 9.0)。"
+ ],
+ "chan pending": [
+  null,
+  "通道缓冲区里待处理的字节数。"
+ ],
+ "chan pipe": [
+  null,
+  "创建管道,返回 {读端 写端}。"
+ ],
+ "chan pop": [
+  null,
+  "移除通道最上层的变换。"
+ ],
+ "chan postevent": [
+  null,
+  "向反射通道发送事件。"
+ ],
+ "chan push": [
+  null,
+  "给通道叠加一个变换。"
+ ],
+ "chan seek": [
+  null,
+  "移动读写位置。"
+ ],
+ "chan tell": [
+  null,
+  "当前读写位置。"
+ ],
+ "chan truncate": [
+  null,
+  "截断通道。"
+ ],
+ "binary format": [
+  null,
+  "按格式字符串把值打包成二进制数据。"
+ ],
+ "binary scan": [
+  null,
+  "按格式字符串把二进制数据解析到变量。"
+ ],
+ "binary encode": [
+  null,
+  "编码二进制数据(base64、hex、uuencode;Tcl 8.6+)。"
+ ],
+ "binary decode": [
+  null,
+  "把 base64、hex、uuencode 文本解码成二进制数据(Tcl 8.6+)。"
+ ],
+ "encoding convertfrom": [
+  null,
+  "把指定编码的字节转换成 Tcl 字符串。"
+ ],
+ "encoding convertto": [
+  null,
+  "把 Tcl 字符串转换成指定编码的字节。"
+ ],
+ "encoding dirs": [
+  null,
+  "查询或设置编码文件的搜索目录。"
+ ],
+ "encoding names": [
+  null,
+  "列出可用的编码。"
+ ],
+ "encoding system": [
+  null,
+  "查询或设置系统编码。"
+ ],
+ "encoding profiles": [
+  null,
+  "列出可用的错误处理策略(Tcl 9.0)。"
+ ],
+ "history add": [
+  null,
+  "向历史列表添加命令。"
+ ],
+ "history change": [
+  null,
+  "替换一条历史记录。"
+ ],
+ "history clear": [
+  null,
+  "清空历史列表。"
+ ],
+ "history event": [
+  null,
+  "取一条历史记录。"
+ ],
+ "history info": [
+  null,
+  "带事件号的历史列表。"
+ ],
+ "history keep": [
+  null,
+  "设置历史记录的最大条数。"
+ ],
+ "history nextid": [
+  null,
+  "下一条事件的编号。"
+ ],
+ "history redo": [
+  null,
+  "重新执行一条历史记录。"
+ ],
+ "interp alias": [
+  null,
+  "在解释器之间创建、查询或删除命令别名。"
+ ],
+ "interp aliases": [
+  null,
+  "列出解释器中定义的别名。"
+ ],
+ "interp bgerror": [
+  null,
+  "查询或设置解释器的后台错误处理程序。"
+ ],
+ "interp cancel": [
+  null,
+  "取消解释器中正在执行的脚本。"
+ ],
+ "interp children": [
+  null,
+  "列出子解释器。"
+ ],
+ "interp create": [
+  null,
+  "创建子解释器;-safe 创建受限的安全解释器。"
+ ],
+ "interp debug": [
+  null,
+  "查询或设置解释器的调试选项。"
+ ],
+ "interp delete": [
+  null,
+  "删除解释器。"
+ ],
+ "interp eval": [
+  null,
+  "在另一个解释器中执行脚本。"
+ ],
+ "interp exists": [
+  null,
+  "解释器是否存在。"
+ ],
+ "interp expose": [
+  null,
+  "让被隐藏的命令重新可见。"
+ ],
+ "interp hidden": [
+  null,
+  "列出被隐藏的命令。"
+ ],
+ "interp hide": [
+  null,
+  "在(安全)解释器中隐藏命令。"
+ ],
+ "interp invokehidden": [
+  null,
+  "执行被隐藏的命令。"
+ ],
+ "interp issafe": [
+  null,
+  "解释器是否安全。"
+ ],
+ "interp limit": [
+  null,
+  "设置解释器的资源限制(命令数、时间)。"
+ ],
+ "interp marktrusted": [
+  null,
+  "把解释器标记为可信。"
+ ],
+ "interp recursionlimit": [
+  null,
+  "查询或设置最大嵌套深度。"
+ ],
+ "interp share": [
+  null,
+  "在解释器之间共享通道。"
+ ],
+ "interp slaves": [
+  null,
+  "interp children 的旧名字。"
+ ],
+ "interp target": [
+  null,
+  "别名指向的解释器。"
+ ],
+ "interp transfer": [
+  null,
+  "把通道转移给另一个解释器。"
+ ],
+ "zlib adler32": [
+  null,
+  "Adler-32 校验和。"
+ ],
+ "zlib compress": [
+  null,
+  "用 zlib 格式压缩。"
+ ],
+ "zlib crc32": [
+  null,
+  "CRC-32 校验和。"
+ ],
+ "zlib decompress": [
+  null,
+  "解压 zlib 数据。"
+ ],
+ "zlib deflate": [
+  null,
+  "原始 deflate 压缩。"
+ ],
+ "zlib gunzip": [
+  null,
+  "解压 gzip 数据。"
+ ],
+ "zlib gzip": [
+  null,
+  "压缩成 gzip 格式。"
+ ],
+ "zlib inflate": [
+  null,
+  "原始 deflate 解压。"
+ ],
+ "zlib push": [
+  null,
+  "给通道叠加压缩/解压变换。"
+ ],
+ "zlib stream": [
+  null,
+  "创建压缩/解压流命令。"
+ ],
+ "button": [
+  null,
+  "创建按钮控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "label": [
+  null,
+  "创建标签控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "checkbutton": [
+  null,
+  "创建复选框控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "radiobutton": [
+  null,
+  "创建单选按钮控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "entry": [
+  null,
+  "创建单行输入框控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "spinbox": [
+  null,
+  "创建数字微调框控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "text": [
+  null,
+  "创建多行文本框控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "listbox": [
+  null,
+  "创建列表框控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "scale": [
+  null,
+  "创建滑块控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "scrollbar": [
+  null,
+  "创建滚动条控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "frame": [
+  null,
+  "创建框架(容器)控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "labelframe": [
+  null,
+  "创建带标题的框架控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "toplevel": [
+  null,
+  "创建顶层窗口控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "canvas": [
+  null,
+  "创建画布控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "menu": [
+  null,
+  "创建菜单控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "menubutton": [
+  null,
+  "创建菜单按钮控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "message": [
+  null,
+  "创建消息文本控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "panedwindow": [
+  null,
+  "创建分隔窗格控件。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::button": [
+  null,
+  "创建按钮控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::label": [
+  null,
+  "创建标签控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::checkbutton": [
+  null,
+  "创建复选框控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::radiobutton": [
+  null,
+  "创建单选按钮控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::entry": [
+  null,
+  "创建单行输入框控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::combobox": [
+  null,
+  "创建下拉组合框控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::frame": [
+  null,
+  "创建框架(容器)控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::labelframe": [
+  null,
+  "创建带标题的框架控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::notebook": [
+  null,
+  "创建标签页控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::panedwindow": [
+  null,
+  "创建分隔窗格控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::progressbar": [
+  null,
+  "创建进度条控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::scale": [
+  null,
+  "创建滑块控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::scrollbar": [
+  null,
+  "创建滚动条控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::separator": [
+  null,
+  "创建分隔线控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::spinbox": [
+  null,
+  "创建数字微调框控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "ttk::treeview": [
+  null,
+  "创建树/表格视图控件(ttk 主题版)。输入 `-` 可列出选项;返回控件路径名 pathName。"
+ ],
+ "pack": [
+  null,
+  "按顺序把控件放入父容器(side / fill / expand ...)。子命令:pack forget、pack propagate、pack slaves。"
+ ],
+ "grid": [
+  null,
+  "把控件按行列放进表格。另有 grid columnconfigure / rowconfigure 窗口 索引 ?-weight n?、grid forget、grid remove。"
+ ],
+ "place": [
+  null,
+  "把控件放在绝对或相对位置。"
+ ],
+ "bind": [
+  null,
+  "给事件序列(如 <Button-1>、<Key-Return>)绑定脚本。%K = 键名,%x %y = 位置,%W = 控件。"
+ ],
+ "bindtags": [
+  null,
+  "查询或设置控件的绑定标签。"
+ ],
+ "bell": [
+  null,
+  "响铃。"
+ ],
+ "destroy": [
+  null,
+  "销毁窗口及其子窗口。`destroy .` 会结束整个程序。"
+ ],
+ "focus": [
+  null,
+  "查询或设置输入焦点。"
+ ],
+ "grab": [
+  null,
+  "把指针/键盘事件限制在某个窗口内(模态对话框)。"
+ ],
+ "raise": [
+  null,
+  "把窗口提到堆叠顺序的上层。"
+ ],
+ "lower": [
+  null,
+  "把窗口降到堆叠顺序的下层。"
+ ],
+ "event": [
+  null,
+  "生成合成事件(另有 event add / delete / info)。"
+ ],
+ "image": [
+  null,
+  "创建图像,例如 `image create photo -file x.png`。"
+ ],
+ "option": [
+  null,
+  "管理选项数据库。"
+ ],
+ "selection": [
+  null,
+  "访问 X 选择区(选中的文本)。"
+ ],
+ "clipboard": [
+  null,
+  "访问剪贴板,例如 `clipboard append 文本`。"
+ ],
+ "tkwait": [
+  null,
+  "运行事件循环并等待:变量改变、窗口可见或被销毁。"
+ ],
+ "tk": [
+  null,
+  "Tk 应用级设置。"
+ ],
+ "font": [
+  null,
+  "创建和查询字体。"
+ ],
+ "winfo": [
+  null,
+  "查询窗口信息。"
+ ],
+ "wm": [
+  null,
+  "与窗口管理器交互(标题、几何尺寸等)。"
+ ],
+ "tk_messageBox": [
+  null,
+  "弹出消息对话框,返回按下的按钮(ok、yes、no ...)。"
+ ],
+ "tk_getOpenFile": [
+  null,
+  "选择要打开的文件;取消则返回空字符串。"
+ ],
+ "tk_getSaveFile": [
+  null,
+  "选择要保存的文件名。"
+ ],
+ "tk_chooseDirectory": [
+  null,
+  "选择目录。"
+ ],
+ "tk_chooseColor": [
+  null,
+  "选择颜色,返回如 #ff0000。"
+ ],
+ "tk_popup": [
+  null,
+  "在屏幕位置弹出菜单。"
+ ],
+ "wm title": [
+  null,
+  "设置或读取窗口标题。"
+ ],
+ "wm geometry": [
+  null,
+  "设置或读取大小/位置,如 350x200+100+50。"
+ ],
+ "wm resizable": [
+  null,
+  "wm resizable 窗口 宽 高(布尔值):是否允许调整大小。"
+ ],
+ "wm minsize": [
+  null,
+  "最小尺寸。"
+ ],
+ "wm maxsize": [
+  null,
+  "最大尺寸。"
+ ],
+ "wm iconify": [
+  null,
+  "最小化窗口。"
+ ],
+ "wm deiconify": [
+  null,
+  "显示/还原窗口。"
+ ],
+ "wm withdraw": [
+  null,
+  "隐藏窗口。"
+ ],
+ "wm protocol": [
+  null,
+  "wm protocol 窗口 WM_DELETE_WINDOW 脚本:点击关闭按钮时执行脚本。"
+ ],
+ "wm attributes": [
+  null,
+  "平台属性,如 -topmost 1(置顶)。"
+ ],
+ "wm state": [
+  null,
+  "normal、iconic、withdrawn 或 zoomed。"
+ ],
+ "wm transient": [
+  null,
+  "把窗口设为另一个窗口的临时子窗口。"
+ ],
+ "wm overrideredirect": [
+  null,
+  "去掉窗口边框和标题栏。"
+ ],
+ "wm iconbitmap": [
+  null,
+  "设置窗口图标。"
+ ],
+ "wm focusmodel": [
+  null,
+  "焦点模型。"
+ ],
+ "wm grid": [
+  null,
+  "网格化几何。"
+ ],
+ "wm frame": [
+  null,
+  "外层窗口 id。"
+ ],
+ "winfo exists": [
+  null,
+  "窗口是否存在(1/0)。"
+ ],
+ "winfo width": [
+  null,
+  "当前宽度(像素)。"
+ ],
+ "winfo height": [
+  null,
+  "当前高度(像素)。"
+ ],
+ "winfo reqwidth": [
+  null,
+  "请求的宽度。"
+ ],
+ "winfo reqheight": [
+  null,
+  "请求的高度。"
+ ],
+ "winfo children": [
+  null,
+  "子窗口列表。"
+ ],
+ "winfo parent": [
+  null,
+  "父窗口。"
+ ],
+ "winfo toplevel": [
+  null,
+  "包含该窗口的顶层窗口。"
+ ],
+ "winfo screenwidth": [
+  null,
+  "屏幕宽度。"
+ ],
+ "winfo screenheight": [
+  null,
+  "屏幕高度。"
+ ],
+ "winfo rootx": [
+  null,
+  "窗口在屏幕上的 x 坐标。"
+ ],
+ "winfo rooty": [
+  null,
+  "窗口在屏幕上的 y 坐标。"
+ ],
+ "winfo x": [
+  null,
+  "相对父窗口的 x。"
+ ],
+ "winfo y": [
+  null,
+  "相对父窗口的 y。"
+ ],
+ "winfo pointerx": [
+  null,
+  "指针的屏幕 x。"
+ ],
+ "winfo pointery": [
+  null,
+  "指针的屏幕 y。"
+ ],
+ "winfo class": [
+  null,
+  "控件类名。"
+ ],
+ "winfo ismapped": [
+  null,
+  "窗口是否已映射(显示)。"
+ ],
+ "winfo viewable": [
+  null,
+  "窗口及其祖先是否都已映射。"
+ ],
+ "winfo name": [
+  null,
+  "窗口在父窗口中的名字。"
+ ],
+ "winfo id": [
+  null,
+  "窗口 id。"
+ ],
+ "tk appname": [
+  null,
+  "查询或设置应用名。"
+ ],
+ "tk scaling": [
+  null,
+  "每点的像素数(缩放)。"
+ ],
+ "tk windowingsystem": [
+  null,
+  "窗口系统:x11、win32 或 aqua。"
+ ],
+ "tk inactive": [
+  null,
+  "用户无操作的毫秒数。"
+ ],
+ "tkwait variable": [
+  null,
+  "等待变量被写入。"
+ ],
+ "tkwait visibility": [
+  null,
+  "等待可见性变化。"
+ ],
+ "tkwait window": [
+  null,
+  "等待窗口被销毁。"
+ ],
+ "clipboard clear": [
+  null,
+  "清空剪贴板。"
+ ],
+ "clipboard append": [
+  null,
+  "追加数据。"
+ ],
+ "clipboard get": [
+  null,
+  "读取剪贴板内容。"
+ ],
+ "grab set": [
+  null,
+  "让窗口独占事件。"
+ ],
+ "grab release": [
+  null,
+  "释放独占。"
+ ],
+ "grab current": [
+  null,
+  "当前独占事件的窗口。"
+ ],
+ "event generate": [
+  null,
+  "event generate 窗口 <事件> ?-选项 值?:生成事件。"
+ ],
+ "event add": [
+  null,
+  "定义虚拟事件。"
+ ],
+ "event delete": [
+  null,
+  "删除虚拟事件。"
+ ],
+ "event info": [
+  null,
+  "列出虚拟事件。"
+ ],
+ "opt -text": [
+  null,
+  "控件上显示的文字。"
+ ],
+ "opt -textvariable": [
+  null,
+  "其值被显示的变量;双向同步。"
+ ],
+ "opt -command": [
+  null,
+  "控件被触发时执行的脚本(通常是过程名)。"
+ ],
+ "opt -font": [
+  null,
+  "字体,如 {Helvetica 12 bold}。"
+ ],
+ "opt -foreground": [
+  null,
+  "文字颜色。"
+ ],
+ "opt -fg": [
+  null,
+  "文字颜色(同 -foreground)。"
+ ],
+ "opt -background": [
+  null,
+  "背景颜色。"
+ ],
+ "opt -bg": [
+  null,
+  "背景颜色(同 -background)。"
+ ],
+ "opt -width": [
+  null,
+  "宽度:文本类控件按字符数,其他按像素/屏幕单位。"
+ ],
+ "opt -height": [
+  null,
+  "高度:文本类控件按行数,其他按像素/屏幕单位。"
+ ],
+ "opt -padx": [
+  null,
+  "水平内边距。"
+ ],
+ "opt -pady": [
+  null,
+  "垂直内边距。"
+ ],
+ "opt -relief": [
+  null,
+  "3D 边框样式:flat raised sunken groove ridge solid。"
+ ],
+ "opt -borderwidth": [
+  null,
+  "边框宽度。"
+ ],
+ "opt -bd": [
+  null,
+  "边框宽度(同 -borderwidth)。"
+ ],
+ "opt -state": [
+  null,
+  "normal、disabled(部分控件还有 active / readonly)。"
+ ],
+ "opt -anchor": [
+  null,
+  "内容的位置:n ne e se s sw w nw center。"
+ ],
+ "opt -justify": [
+  null,
+  "多行对齐:left、center 或 right。"
+ ],
+ "opt -image": [
+  null,
+  "要显示的图像(用 `image create` 创建)。"
+ ],
+ "opt -compound": [
+  null,
+  "图像相对文字的位置:none text image center top bottom left right。"
+ ],
+ "opt -cursor": [
+  null,
+  "鼠标指针形状,如 hand2、arrow、watch。"
+ ],
+ "opt -takefocus": [
+  null,
+  "Tab 键遍历是否经过该控件。"
+ ],
+ "opt -wraplength": [
+  null,
+  "文字在此宽度处换行。"
+ ],
+ "opt -underline": [
+  null,
+  "要加下划线的字符序号(键盘助记符)。"
+ ],
+ "opt -activebackground": [
+  null,
+  "鼠标悬停/按下时的背景色。"
+ ],
+ "opt -activeforeground": [
+  null,
+  "激活状态的文字颜色。"
+ ],
+ "opt -disabledforeground": [
+  null,
+  "禁用状态的文字颜色。"
+ ],
+ "opt -highlightthickness": [
+  null,
+  "焦点高亮环的宽度。"
+ ],
+ "opt -bitmap": [
+  null,
+  "要显示的位图。"
+ ],
+ "opt -default": [
+  null,
+  "默认按钮 / 默认值。"
+ ],
+ "opt -overrelief": [
+  null,
+  "鼠标悬停时的边框样式。"
+ ],
+ "opt -variable": [
+  null,
+  "与控件的值/选择关联的变量。"
+ ],
+ "opt -value": [
+  null,
+  "选中时写入 -variable 的值(单选按钮)。"
+ ],
+ "opt -onvalue": [
+  null,
+  "选中时 -variable 的值(复选框)。"
+ ],
+ "opt -offvalue": [
+  null,
+  "未选中时 -variable 的值(复选框)。"
+ ],
+ "opt -from": [
+  null,
+  "下限。"
+ ],
+ "opt -to": [
+  null,
+  "上限。"
+ ],
+ "opt -orient": [
+  null,
+  "horizontal(水平)或 vertical(垂直)。"
+ ],
+ "opt -length": [
+  null,
+  "控件长边的长度。"
+ ],
+ "opt -resolution": [
+  null,
+  "取值的步长。"
+ ],
+ "opt -show": [
+  null,
+  "用该字符代替实际文字显示(如密码用 *)。"
+ ],
+ "opt -validate": [
+  null,
+  "何时校验:none focus focusin focusout key all。"
+ ],
+ "opt -validatecommand": [
+  null,
+  "返回真表示值有效的脚本(用 %P 表示将要输入的值)。"
+ ],
+ "opt -xscrollcommand": [
+  null,
+  "更新水平滚动条的脚本。"
+ ],
+ "opt -yscrollcommand": [
+  null,
+  "更新垂直滚动条的脚本。"
+ ],
+ "opt -selectmode": [
+  null,
+  "选择模式:single browse multiple extended。"
+ ],
+ "opt -listvariable": [
+  null,
+  "保存条目列表的变量。"
+ ],
+ "opt -exportselection": [
+  null,
+  "是否把选中内容导出到 X 选择区。"
+ ],
+ "opt -wrap": [
+  null,
+  "换行方式:none、char 或 word。"
+ ],
+ "opt -undo": [
+  null,
+  "启用撤销/重做。"
+ ],
+ "opt -values": [
+  null,
+  "可选项列表(combobox / spinbox)。"
+ ],
+ "opt -tearoff": [
+  null,
+  "菜单是否带虚线分离条(通常设为 0)。"
+ ],
+ "opt -label": [
+  null,
+  "标签文字。"
+ ],
+ "opt -menu": [
+  null,
+  "控件弹出的菜单。"
+ ],
+ "opt -indicatoron": [
+  null,
+  "是否显示勾选/单选指示器。"
+ ],
+ "opt -selectcolor": [
+  null,
+  "选中时指示器的颜色。"
+ ],
+ "opt -troughcolor": [
+  null,
+  "滑槽颜色。"
+ ],
+ "opt -sliderlength": [
+  null,
+  "滑块长度。"
+ ],
+ "opt -tickinterval": [
+  null,
+  "刻度间隔。"
+ ],
+ "opt -showvalue": [
+  null,
+  "是否显示当前值。"
+ ],
+ "opt -increment": [
+  null,
+  "微调按钮的步长。"
+ ],
+ "opt -insertbackground": [
+  null,
+  "插入光标的颜色。"
+ ],
+ "opt -readonlybackground": [
+  null,
+  "只读时的背景色。"
+ ],
+ "opt -scrollregion": [
+  null,
+  "可滚动区域 {x1 y1 x2 y2}。"
+ ],
+ "opt -confine": [
+  null,
+  "视图是否限制在 -scrollregion 内。"
+ ],
+ "opt -closeenough": [
+  null,
+  "画布元素的拾取距离。"
+ ],
+ "opt -style": [
+  null,
+  "ttk 样式名。"
+ ],
+ "opt -padding": [
+  null,
+  "ttk 内边距。"
+ ],
+ "opt -postcommand": [
+  null,
+  "显示下拉列表前执行的脚本。"
+ ],
+ "opt -maximum": [
+  null,
+  "最大值(进度条)。"
+ ],
+ "opt -mode": [
+  null,
+  "determinate(确定)或 indeterminate(不确定)。"
+ ],
+ "opt -columns": [
+  null,
+  "列标识符(treeview)。"
+ ],
+ "opt -displaycolumns": [
+  null,
+  "要显示的列(treeview)。"
+ ],
+ "opt -selectbackground": [
+  null,
+  "选中文字的背景色。"
+ ],
+ "opt -selectforeground": [
+  null,
+  "选中文字的前景色。"
+ ],
+ "opt -highlightbackground": [
+  null,
+  "无焦点时高亮环的颜色。"
+ ],
+ "opt -highlightcolor": [
+  null,
+  "有焦点时高亮环的颜色。"
+ ],
+ "opt -class": [
+  null,
+  "控件类名(toplevel/frame)。"
+ ],
+ "opt -labelanchor": [
+  null,
+  "标题的位置(labelframe)。"
+ ],
+ "opt -xscrollincrement": [
+  null,
+  "水平滚动单位。"
+ ],
+ "opt -yscrollincrement": [
+  null,
+  "垂直滚动单位。"
+ ],
+ "opt -spacing1": [
+  null,
+  "段落上方的额外间距。"
+ ],
+ "opt -spacing3": [
+  null,
+  "段落下方的额外间距。"
+ ],
+ "opt -tabs": [
+  null,
+  "制表位。"
+ ],
+ "opt -maxundo": [
+  null,
+  "最大撤销深度。"
+ ],
+ "opt -autoseparators": [
+  null,
+  "是否自动插入撤销分隔。"
+ ],
+ "opt -side": [
+  null,
+  "贴着父容器的哪一边打包:top bottom left right。"
+ ],
+ "opt -fill": [
+  null,
+  "拉伸方向:none、x、y 或 both。"
+ ],
+ "opt -expand": [
+  null,
+  "是否占用多余空间(1/0)。"
+ ],
+ "opt -ipadx": [
+  null,
+  "内部水平内边距。"
+ ],
+ "opt -ipady": [
+  null,
+  "内部垂直内边距。"
+ ],
+ "opt -before": [
+  null,
+  "打包到该窗口之前。"
+ ],
+ "opt -after": [
+  null,
+  "打包到该窗口之后。"
+ ],
+ "opt -in": [
+  null,
+  "管理该控件的父容器。"
+ ],
+ "opt -row": [
+  null,
+  "网格行号(从 0 开始)。"
+ ],
+ "opt -column": [
+  null,
+  "网格列号(从 0 开始)。"
+ ],
+ "opt -rowspan": [
+  null,
+  "跨越的行数。"
+ ],
+ "opt -columnspan": [
+  null,
+  "跨越的列数。"
+ ],
+ "opt -sticky": [
+  null,
+  "贴靠的边:n s e w 的任意组合(如 nsew 表示填满)。"
+ ],
+ "opt -x": [
+  null,
+  "绝对 x 位置。"
+ ],
+ "opt -y": [
+  null,
+  "绝对 y 位置。"
+ ],
+ "opt -relx": [
+  null,
+  "x 占父容器宽度的比例。"
+ ],
+ "opt -rely": [
+  null,
+  "y 占父容器高度的比例。"
+ ],
+ "opt -relwidth": [
+  null,
+  "宽度占父容器的比例。"
+ ],
+ "opt -relheight": [
+  null,
+  "高度占父容器的比例。"
+ ],
+ "opt -accelerator": [
+  null,
+  "菜单项上显示的快捷键文字。"
+ ],
+ "opt -icon": [
+  null,
+  "对话框图标:error info question warning。"
+ ],
+ "opt -message": [
+  null,
+  "消息文字。"
+ ],
+ "opt -title": [
+  null,
+  "窗口标题。"
+ ],
+ "opt -type": [
+  null,
+  "对话框按钮组合,如 ok、okcancel、yesno。"
+ ],
+ "opt -parent": [
+  null,
+  "对话框的父窗口。"
+ ],
+ "opt -initialdir": [
+  null,
+  "初始目录。"
+ ],
+ "opt -initialfile": [
+  null,
+  "初始文件名。"
+ ],
+ "opt -filetypes": [
+  null,
+  "{标签 {模式}} 对的列表。"
+ ],
+ "opt -defaultextension": [
+  null,
+  "未输入扩展名时自动追加的扩展名。"
+ ],
+ "opt -format": [
+  null,
+  "显示值的 printf 风格格式。"
+ ],
+ "opt -initialcolor": [
+  null,
+  "初始选中的颜色。"
+ ],
+ "sqlite3 authorizer": [
+  null,
+  "安装(或清除)SQL 编译时调用的授权回调。"
+ ],
+ "sqlite3 backup": [
+  null,
+  "把 SOURCE-DB(默认 main)备份到数据库文件 FILENAME。"
+ ],
+ "sqlite3 bind_fallback": [
+  null,
+  "SQL 中的 $变量 不是 Tcl 变量时调用的回调。"
+ ],
+ "sqlite3 busy": [
+  null,
+  "注册数据库被锁定时调用的忙处理回调。"
+ ],
+ "sqlite3 cache": [
+  null,
+  "控制预编译语句的缓存。"
+ ],
+ "sqlite3 changes": [
+  null,
+  "最近一次 INSERT/UPDATE/DELETE 影响的行数。"
+ ],
+ "sqlite3 close": [
+  null,
+  "关闭数据库并删除该句柄命令。"
+ ],
+ "sqlite3 collate": [
+  null,
+  "用 Tcl 脚本定义排序规则。"
+ ],
+ "sqlite3 collation_needed": [
+  null,
+  "需要未知排序规则时调用的脚本。"
+ ],
+ "sqlite3 commit_hook": [
+  null,
+  "每次提交前执行的脚本;返回非 0 会把提交变成回滚。"
+ ],
+ "sqlite3 complete": [
+  null,
+  "SQL 是完整语句(以分号结尾)则返回 1。"
+ ],
+ "sqlite3 config": [
+  null,
+  "查询或设置数据库连接选项。"
+ ],
+ "sqlite3 copy": [
+  null,
+  "把文本文件中的行导入表 TABLE。"
+ ],
+ "sqlite3 deserialize": [
+  null,
+  "加载序列化的数据库映像。"
+ ],
+ "sqlite3 enable_load_extension": [
+  null,
+  "允许或禁止加载 SQLite 扩展。"
+ ],
+ "sqlite3 errorcode": [
+  null,
+  "最近一次失败调用的数字错误码。"
+ ],
+ "sqlite3 erroroffset": [
+  null,
+  "最近一次失败语句中 SQL 错误的字节偏移。"
+ ],
+ "sqlite3 eval": [
+  null,
+  "执行 SQL。带 SCRIPT 时,每个结果行执行一次脚本,列值存入变量(或 ARRAY-NAME 的元素);不带脚本则返回所有值组成的列表。"
+ ],
+ "sqlite3 exists": [
+  null,
+  "SQL 至少返回一行则返回 1。"
+ ],
+ "sqlite3 format": [
+  null,
+  "执行 SQL 并按格式化文本返回结果。"
+ ],
+ "sqlite3 function": [
+  null,
+  "用 Tcl 脚本实现一个 SQL 函数。"
+ ],
+ "sqlite3 incrblob": [
+  null,
+  "打开 BLOB 做增量读写,返回通道。"
+ ],
+ "sqlite3 interrupt": [
+  null,
+  "中止当前正在执行的 SQL。"
+ ],
+ "sqlite3 last_insert_rowid": [
+  null,
+  "最近一次成功 INSERT 的 rowid。"
+ ],
+ "sqlite3 nullvalue": [
+  null,
+  "结果中表示 SQL NULL 的字符串(默认空串)。"
+ ],
+ "sqlite3 onecolumn": [
+  null,
+  "执行 SQL,返回第一行的第一列。"
+ ],
+ "sqlite3 preupdate": [
+  null,
+  "在 preupdate 钩子中访问新旧行值。"
+ ],
+ "sqlite3 profile": [
+  null,
+  "每条语句结束后执行的脚本,参数为语句文本和耗时。"
+ ],
+ "sqlite3 progress": [
+  null,
+  "每执行 N 条虚拟机指令调用一次 SCRIPT。"
+ ],
+ "sqlite3 rekey": [
+  null,
+  "更改加密密钥(仅加密版本)。"
+ ],
+ "sqlite3 restore": [
+  null,
+  "用文件 FILENAME 的内容替换 TARGET-DB(默认 main)。"
+ ],
+ "sqlite3 rollback_hook": [
+  null,
+  "事务回滚时执行的脚本。"
+ ],
+ "sqlite3 serialize": [
+  null,
+  "把数据库序列化成二进制映像返回。"
+ ],
+ "sqlite3 status": [
+  null,
+  "最近一条语句的计数器。"
+ ],
+ "sqlite3 timeout": [
+  null,
+  "数据库被锁定时等待多少毫秒再失败。"
+ ],
+ "sqlite3 total_changes": [
+  null,
+  "连接打开以来改变的总行数。"
+ ],
+ "sqlite3 trace": [
+  null,
+  "每条 SQL 执行前,用其文本调用脚本。"
+ ],
+ "sqlite3 trace_v2": [
+  null,
+  "扩展的追踪;MASK 为 statement、profile、row、close 的列表。"
+ ],
+ "sqlite3 transaction": [
+  null,
+  "在 BEGIN ... COMMIT 内执行 SCRIPT;出错会回滚。"
+ ],
+ "sqlite3 unlock_notify": [
+  null,
+  "阻塞的锁被释放时执行的脚本。"
+ ],
+ "sqlite3 update_hook": [
+  null,
+  "每次行插入/更新/删除后执行脚本:操作、库、表、rowid。"
+ ],
+ "sqlite3 version": [
+  null,
+  "SQLite 库的版本号。"
+ ],
+ "sqlite3 wal_hook": [
+  null,
+  "WAL 模式下每次提交后执行的脚本。"
+ ],
+ "pkg_mkIndex": [
+  null,
+  "为目录中的包生成 pkgIndex.tcl(库过程)。"
+ ],
+ "lfilter": [
+  null,
+  "筛选列表:对每组元素执行 body,把结果为真的首个列表元素收集并返回(Tcl 9.1)。"
+ ],
+ "divmod": [
+  null,
+  "整数相除,以两个元素的列表返回商和余数(Tcl 9.1)。"
+ ],
+ "frexp": [
+  null,
+  "把浮点数拆成小数部分和以 2 为底的指数(Tcl 9.1)。"
+ ],
+ "modf": [
+  null,
+  "把浮点数拆成整数部分和小数部分(Tcl 9.1)。"
+ ],
+ "remquo": [
+  null,
+  "返回浮点余数以及可确定象限的商信息(Tcl 9.1)。"
+ ],
+ "timer": [
+  null,
+  "安排、查询、取消定时事件,或同步等待一段时间(Tcl 9.1)。"
+ ],
+ "timer in": [
+  null,
+  "按单调时钟在指定延迟后执行脚本(Tcl 9.1)。"
+ ],
+ "timer at": [
+  null,
+  "在指定的墙上时钟时间点执行脚本(Tcl 9.1)。"
+ ],
+ "timer idle": [
+  null,
+  "把脚本安排为空闲回调执行(Tcl 9.1)。"
+ ],
+ "timer sleep": [
+  null,
+  "阻塞到延迟结束或到达指定时间点(Tcl 9.1)。"
+ ],
+ "timer cancel": [
+  null,
+  "取消 timer 或 after 创建的定时事件(Tcl 9.1)。"
+ ],
+ "timer info": [
+  null,
+  "列出定时事件,或返回指定事件的详细信息(Tcl 9.1)。"
+ ],
+ "unicode": [
+  null,
+  "执行 Unicode 字符串规范化转换(Tcl 9.1)。"
+ ],
+ "unicode tonfc": [
+  null,
+  "把字符串规范化为 Unicode NFC 形式(Tcl 9.1)。"
+ ],
+ "unicode tonfd": [
+  null,
+  "把字符串规范化为 Unicode NFD 形式(Tcl 9.1)。"
+ ],
+ "unicode tonfkc": [
+  null,
+  "把字符串规范化为 Unicode NFKC 形式(Tcl 9.1)。"
+ ],
+ "unicode tonfkd": [
+  null,
+  "把字符串规范化为 Unicode NFKD 形式(Tcl 9.1)。"
+ ]
+}

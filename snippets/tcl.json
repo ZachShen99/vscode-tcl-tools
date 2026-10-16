@@ -1,0 +1,16 @@
+{
+  "proc": { "prefix": "proc", "body": ["proc ${1:name} {${2:args}} {", "\t$0", "}"], "description": "Procedure" },
+  "if": { "prefix": "if", "body": ["if {${1:cond}} {", "\t$0", "}"] },
+  "ifelse": { "prefix": "ifelse", "body": ["if {${1:cond}} {", "\t$2", "} else {", "\t$0", "}"] },
+  "foreach": { "prefix": "foreach", "body": ["foreach ${1:item} ${2:\\$list} {", "\t$0", "}"] },
+  "for": { "prefix": "for", "body": ["for {set ${1:i} 0} {\\$${1:i} < ${2:n}} {incr ${1:i}} {", "\t$0", "}"] },
+  "while": { "prefix": "while", "body": ["while {${1:cond}} {", "\t$0", "}"] },
+  "switch": { "prefix": "switch", "body": ["switch -- ${1:\\$value} {", "\t${2:pattern} {", "\t\t$3", "\t}", "\tdefault {", "\t\t$0", "\t}", "}"] },
+  "catch": { "prefix": "catch", "body": ["if {[catch {", "\t$1", "} err opts]} {", "\t$0", "}"] },
+  "try": { "prefix": "try", "body": ["try {", "\t$1", "} on error {msg opts} {", "\t$2", "} finally {", "\t$0", "}"] },
+  "namespace eval": { "prefix": "nseval", "body": ["namespace eval ${1:name} {", "\t$0", "}"] },
+  "dict for": { "prefix": "dictfor", "body": ["dict for {${1:k} ${2:v}} ${3:\\$dict} {", "\t$0", "}"] },
+  "package require": { "prefix": "pkg", "body": "package require ${1:Tcl} ${2:8.6}" },
+  "puts": { "prefix": "puts", "body": "puts \"${1:text}\"" },
+  "main guard": { "prefix": "main", "body": ["if {[info exists argv0] && [file normalize \\$argv0] eq [file normalize [info script]]} {", "\t$0", "}"], "description": "Run only when executed directly" }
+}

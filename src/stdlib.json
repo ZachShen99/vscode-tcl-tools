@@ -1,0 +1,1684 @@
+{
+ "mathfuncs": {
+  "abs": [
+   "abs(arg)",
+   "Absolute value.",
+   "绝对值。"
+  ],
+  "acos": [
+   "acos(arg)",
+   "Arc cosine (radians).",
+   "反余弦(弧度)。"
+  ],
+  "acosh": [
+   "acosh(arg)",
+   "Inverse hyperbolic cosine.",
+   "反双曲余弦。"
+  ],
+  "asin": [
+   "asin(arg)",
+   "Arc sine (radians).",
+   "反正弦(弧度)。"
+  ],
+  "asinh": [
+   "asinh(arg)",
+   "Inverse hyperbolic sine.",
+   "反双曲正弦。"
+  ],
+  "atan": [
+   "atan(arg)",
+   "Arc tangent (radians).",
+   "反正切(弧度)。"
+  ],
+  "atan2": [
+   "atan2(y, x)",
+   "Arc tangent of y/x, using both signs to pick the quadrant.",
+   "y/x 的反正切,根据两者符号确定象限。"
+  ],
+  "atanh": [
+   "atanh(arg)",
+   "Inverse hyperbolic tangent.",
+   "反双曲正切。"
+  ],
+  "bool": [
+   "bool(arg)",
+   "Convert to a boolean (0 or 1).",
+   "转换为布尔值(0 或 1)。"
+  ],
+  "cbrt": [
+   "cbrt(arg)",
+   "Cube root (Tcl 9.1).",
+   "立方根(Tcl 9.1)。"
+  ],
+  "ceil": [
+   "ceil(arg)",
+   "Smallest integral value not less than arg (as a float).",
+   "不小于 arg 的最小整数值(浮点数)。"
+  ],
+  "copysign": [
+   "copysign(x, y)",
+   "Magnitude of x with the sign of y (Tcl 9.1).",
+   "取 x 的绝对值并使用 y 的符号(Tcl 9.1)。"
+  ],
+  "cos": [
+   "cos(arg)",
+   "Cosine (radians).",
+   "余弦(弧度)。"
+  ],
+  "cosh": [
+   "cosh(arg)",
+   "Hyperbolic cosine.",
+   "双曲余弦。"
+  ],
+  "dim": [
+   "dim(x, y)",
+   "Positive difference max(x-y, 0) (Tcl 9.1).",
+   "正差 max(x-y, 0)(Tcl 9.1)。"
+  ],
+  "double": [
+   "double(arg)",
+   "Convert to a floating-point number.",
+   "转换为浮点数。"
+  ],
+  "entier": [
+   "entier(arg)",
+   "Truncate to an integer of arbitrary size.",
+   "截断为任意精度整数。"
+  ],
+  "erf": [
+   "erf(arg)",
+   "Error function (Tcl 9.1).",
+   "误差函数(Tcl 9.1)。"
+  ],
+  "erfc": [
+   "erfc(arg)",
+   "Complementary error function (Tcl 9.1).",
+   "互补误差函数(Tcl 9.1)。"
+  ],
+  "exp": [
+   "exp(arg)",
+   "e raised to the power arg.",
+   "e 的 arg 次方。"
+  ],
+  "exp2": [
+   "exp2(arg)",
+   "2 raised to the power arg (Tcl 9.1).",
+   "2 的 arg 次方(Tcl 9.1)。"
+  ],
+  "expm1": [
+   "expm1(arg)",
+   "e raised to arg minus 1, accurate near zero (Tcl 9.1).",
+   "计算 e 的 arg 次方减 1,在零附近保持精度(Tcl 9.1)。"
+  ],
+  "floor": [
+   "floor(arg)",
+   "Largest integral value not greater than arg (as a float).",
+   "不大于 arg 的最大整数值(浮点数)。"
+  ],
+  "fma": [
+   "fma(x, y, z)",
+   "Compute x*y+z with a single rounding (Tcl 9.1).",
+   "只舍入一次地计算 x*y+z(Tcl 9.1)。"
+  ],
+  "fmod": [
+   "fmod(x, y)",
+   "Floating-point remainder of x/y.",
+   "x/y 的浮点余数。"
+  ],
+  "gamma": [
+   "gamma(arg)",
+   "Gamma function (Tcl 9.1).",
+   "伽马函数(Tcl 9.1)。"
+  ],
+  "hypot": [
+   "hypot(x, y)",
+   "Length of the hypotenuse: sqrt(x*x + y*y).",
+   "斜边长度:sqrt(x*x + y*y)。"
+  ],
+  "int": [
+   "int(arg)",
+   "Truncate to an integer (wraps to the machine word size).",
+   "截断为整数(超出机器字长时会回绕)。"
+  ],
+  "isfinite": [
+   "isfinite(arg)",
+   "1 if arg is neither infinite nor NaN (Tcl 8.7/9.0).",
+   "arg 既不是无穷也不是 NaN 时为 1(Tcl 8.7/9.0)。"
+  ],
+  "isinf": [
+   "isinf(arg)",
+   "1 if arg is infinite (Tcl 8.7/9.0).",
+   "arg 为无穷时为 1(Tcl 8.7/9.0)。"
+  ],
+  "isnan": [
+   "isnan(arg)",
+   "1 if arg is NaN (Tcl 8.7/9.0).",
+   "arg 为 NaN 时为 1(Tcl 8.7/9.0)。"
+  ],
+  "isnormal": [
+   "isnormal(arg)",
+   "1 if arg is a normal floating-point number (Tcl 8.7/9.0).",
+   "arg 为规格化浮点数时为 1(Tcl 8.7/9.0)。"
+  ],
+  "isqrt": [
+   "isqrt(arg)",
+   "Integer square root (floor of the exact root).",
+   "整数平方根(向下取整)。"
+  ],
+  "issubnormal": [
+   "issubnormal(arg)",
+   "1 if arg is a subnormal (denormal) number (Tcl 8.7/9.0).",
+   "arg 为非规格化数时为 1(Tcl 8.7/9.0)。"
+  ],
+  "isunordered": [
+   "isunordered(x, y)",
+   "1 if x and y cannot be ordered (one is NaN) (Tcl 8.7/9.0).",
+   "x、y 无法比较大小(其一为 NaN)时为 1(Tcl 8.7/9.0)。"
+  ],
+  "ldexp": [
+   "ldexp(x, exponent)",
+   "Multiply x by 2 raised to exponent (Tcl 9.1).",
+   "计算 x 乘以 2 的 exponent 次方(Tcl 9.1)。"
+  ],
+  "lgamma": [
+   "lgamma(arg)",
+   "Natural logarithm of the absolute gamma function (Tcl 9.1).",
+   "伽马函数绝对值的自然对数(Tcl 9.1)。"
+  ],
+  "log": [
+   "log(arg)",
+   "Natural logarithm.",
+   "自然对数。"
+  ],
+  "log10": [
+   "log10(arg)",
+   "Base-10 logarithm.",
+   "以 10 为底的对数。"
+  ],
+  "log1p": [
+   "log1p(arg)",
+   "Natural logarithm of 1+arg, accurate near zero (Tcl 9.1).",
+   "计算 1+arg 的自然对数,在零附近保持精度(Tcl 9.1)。"
+  ],
+  "log2": [
+   "log2(arg)",
+   "Base-2 logarithm (Tcl 9.1).",
+   "以 2 为底的对数(Tcl 9.1)。"
+  ],
+  "logb": [
+   "logb(arg)",
+   "Unbiased exponent of a floating-point value (Tcl 9.1).",
+   "浮点数的无偏指数(Tcl 9.1)。"
+  ],
+  "max": [
+   "max(arg, ...)",
+   "Largest of the arguments.",
+   "参数中的最大值。"
+  ],
+  "min": [
+   "min(arg, ...)",
+   "Smallest of the arguments.",
+   "参数中的最小值。"
+  ],
+  "nextafter": [
+   "nextafter(x, y)",
+   "Next representable value after x toward y (Tcl 9.1).",
+   "从 x 朝 y 方向的下一个可表示浮点数(Tcl 9.1)。"
+  ],
+  "pow": [
+   "pow(x, y)",
+   "x raised to the power y.",
+   "x 的 y 次方。"
+  ],
+  "rand": [
+   "rand()",
+   "Pseudo-random float in [0, 1).",
+   "[0, 1) 内的伪随机浮点数。"
+  ],
+  "remainder": [
+   "remainder(x, y)",
+   "IEEE floating-point remainder of x/y (Tcl 9.1).",
+   "x/y 的 IEEE 浮点余数(Tcl 9.1)。"
+  ],
+  "round": [
+   "round(arg)",
+   "Round to the nearest integer (halves away from zero).",
+   "四舍五入取整(正中间远离零)。"
+  ],
+  "signbit": [
+   "signbit(arg)",
+   "1 if the floating-point sign bit is set (Tcl 9.1).",
+   "浮点数符号位为 1 时返回 1(Tcl 9.1)。"
+  ],
+  "sin": [
+   "sin(arg)",
+   "Sine (radians).",
+   "正弦(弧度)。"
+  ],
+  "sinh": [
+   "sinh(arg)",
+   "Hyperbolic sine.",
+   "双曲正弦。"
+  ],
+  "sqrt": [
+   "sqrt(arg)",
+   "Square root.",
+   "平方根。"
+  ],
+  "srand": [
+   "srand(seed)",
+   "Seed the random number generator; returns a random value.",
+   "设置随机数种子,并返回一个随机数。"
+  ],
+  "tan": [
+   "tan(arg)",
+   "Tangent (radians).",
+   "正切(弧度)。"
+  ],
+  "tanh": [
+   "tanh(arg)",
+   "Hyperbolic tangent.",
+   "双曲正切。"
+  ],
+  "trunc": [
+   "trunc(arg)",
+   "Round toward zero, returning a floating-point value (Tcl 9.1).",
+   "向零取整并返回浮点数(Tcl 9.1)。"
+  ],
+  "wide": [
+   "wide(arg)",
+   "Truncate to a 64-bit integer.",
+   "截断为 64 位整数。"
+  ]
+ },
+ "mathops": {
+  "+": [
+   "+ ?arg ...?",
+   "Sum of the arguments (0 with none).",
+   "参数之和(无参数时为 0)。"
+  ],
+  "-": [
+   "- arg ?arg ...?",
+   "Negation, or arg minus the rest.",
+   "取负;或第一个参数减去其余参数。"
+  ],
+  "*": [
+   "* ?arg ...?",
+   "Product of the arguments (1 with none).",
+   "参数之积(无参数时为 1)。"
+  ],
+  "/": [
+   "/ arg ?arg ...?",
+   "Divide the first argument by the rest.",
+   "第一个参数依次除以其余参数。"
+  ],
+  "%": [
+   "% arg arg",
+   "Remainder (result has the sign of the divisor).",
+   "取余(结果符号与除数相同)。"
+  ],
+  "**": [
+   "** ?arg ...?",
+   "Exponentiation (right-associative).",
+   "乘方(右结合)。"
+  ],
+  "==": [
+   "== ?arg ...?",
+   "Numeric equality chain.",
+   "数值相等(可链式比较)。"
+  ],
+  "!=": [
+   "!= arg arg",
+   "Numeric inequality.",
+   "数值不等。"
+  ],
+  "<": [
+   "< ?arg ...?",
+   "Strictly increasing chain.",
+   "严格递增(可链式)。"
+  ],
+  "<=": [
+   "<= ?arg ...?",
+   "Non-decreasing chain.",
+   "非递减(可链式)。"
+  ],
+  ">": [
+   "> ?arg ...?",
+   "Strictly decreasing chain.",
+   "严格递减(可链式)。"
+  ],
+  ">=": [
+   ">= ?arg ...?",
+   "Non-increasing chain.",
+   "非递增(可链式)。"
+  ],
+  "<<": [
+   "<< arg arg",
+   "Left shift.",
+   "左移。"
+  ],
+  ">>": [
+   ">> arg arg",
+   "Right shift (arithmetic).",
+   "右移(算术)。"
+  ],
+  "&": [
+   "& ?arg ...?",
+   "Bitwise AND.",
+   "按位与。"
+  ],
+  "|": [
+   "| ?arg ...?",
+   "Bitwise OR.",
+   "按位或。"
+  ],
+  "^": [
+   "^ ?arg ...?",
+   "Bitwise XOR.",
+   "按位异或。"
+  ],
+  "~": [
+   "~ arg",
+   "Bitwise NOT.",
+   "按位取反。"
+  ],
+  "!": [
+   "! arg",
+   "Logical NOT.",
+   "逻辑非。"
+  ],
+  "eq": [
+   "eq ?arg ...?",
+   "String equality chain.",
+   "字符串相等(可链式)。"
+  ],
+  "ne": [
+   "ne arg arg",
+   "String inequality.",
+   "字符串不等。"
+  ],
+  "in": [
+   "in arg list",
+   "1 if arg is an element of list.",
+   "arg 是 list 的元素时为 1。"
+  ],
+  "ni": [
+   "ni arg list",
+   "1 if arg is not an element of list.",
+   "arg 不是 list 的元素时为 1。"
+  ],
+  "lt": [
+   "lt ?arg ...?",
+   "String less-than chain (Tcl 9.0).",
+   "字符串小于(Tcl 9.0)。"
+  ],
+  "le": [
+   "le ?arg ...?",
+   "String less-or-equal chain (Tcl 9.0).",
+   "字符串小于等于(Tcl 9.0)。"
+  ],
+  "gt": [
+   "gt ?arg ...?",
+   "String greater-than chain (Tcl 9.0).",
+   "字符串大于(Tcl 9.0)。"
+  ],
+  "ge": [
+   "ge ?arg ...?",
+   "String greater-or-equal chain (Tcl 9.0).",
+   "字符串大于等于(Tcl 9.0)。"
+  ]
+ },
+ "vars": {
+  "argc": [
+   "Number of command-line arguments (not counting the script name).",
+   "命令行参数个数(不含脚本名)。"
+  ],
+  "argv": [
+   "List of command-line arguments.",
+   "命令行参数列表。"
+  ],
+  "argv0": [
+   "Name of the script being run (or the program name).",
+   "正在运行的脚本名(或程序名)。"
+  ],
+  "auto_index": [
+   "Array used by the autoloader: command name -> script that defines it.",
+   "自动加载器使用的数组:命令名 -> 定义它的脚本。"
+  ],
+  "auto_noexec": [
+   "If set, `unknown` never runs external programs automatically.",
+   "设置后,unknown 不会自动执行外部程序。"
+  ],
+  "auto_noload": [
+   "If set, `unknown` never tries to autoload commands.",
+   "设置后,unknown 不会尝试自动加载命令。"
+  ],
+  "auto_path": [
+   "List of directories searched for tclIndex files and packages.",
+   "搜索 tclIndex 文件和包的目录列表。"
+  ],
+  "env": [
+   "Array of environment variables, e.g. $env(HOME).",
+   "环境变量数组,如 $env(HOME)。"
+  ],
+  "errorCode": [
+   "Machine-readable description of the last error (set by `error` / `return -errorcode`).",
+   "最近一次错误的机器可读描述。"
+  ],
+  "errorInfo": [
+   "Stack trace of the last error.",
+   "最近一次错误的调用栈信息。"
+  ],
+  "tcl_interactive": [
+   "1 if the shell is interactive, otherwise 0.",
+   "交互式 shell 时为 1,否则为 0。"
+  ],
+  "tcl_library": [
+   "Directory containing Tcl's standard library scripts.",
+   "Tcl 标准库脚本所在目录。"
+  ],
+  "tcl_nonwordchars": [
+   "Regular expression matching non-word characters (used by word-break procs).",
+   "匹配\"非单词字符\"的正则(用于分词过程)。"
+  ],
+  "tcl_patchLevel": [
+   "Full Tcl version, e.g. 8.6.12.",
+   "完整 Tcl 版本号,如 8.6.12。"
+  ],
+  "tcl_pkgPath": [
+   "Directories where binary packages are installed.",
+   "二进制包的安装目录。"
+  ],
+  "tcl_platform": [
+   "Array describing the platform: os, osVersion, machine, platform, byteOrder, wordSize, pointerSize, pathSeparator, engine, user, threaded.",
+   "描述平台的数组:os、osVersion、machine、platform、byteOrder、wordSize、pointerSize、pathSeparator、engine、user、threaded。"
+  ],
+  "tcl_precision": [
+   "Digits used when converting floats to strings (0 = shortest exact form).",
+   "浮点数转字符串时的有效位数(0 表示最短的精确表示)。"
+  ],
+  "tcl_rcFileName": [
+   "Startup script run by interactive shells (e.g. ~/.tclshrc).",
+   "交互式 shell 启动时执行的脚本(如 ~/.tclshrc)。"
+  ],
+  "tcl_traceCompile": [
+   "Debug level for bytecode compilation tracing.",
+   "字节码编译跟踪的调试级别。"
+  ],
+  "tcl_traceExec": [
+   "Debug level for bytecode execution tracing.",
+   "字节码执行跟踪的调试级别。"
+  ],
+  "tcl_version": [
+   "Major.minor Tcl version, e.g. 8.6.",
+   "Tcl 主.次版本号,如 8.6。"
+  ],
+  "tcl_wordchars": [
+   "Regular expression matching word characters (used by word-break procs).",
+   "匹配\"单词字符\"的正则(用于分词过程)。"
+  ],
+  "errorStack": [
+   "Structured stack of the last error (8.6+).",
+   "最近一次错误的结构化调用栈(8.6+)。"
+  ]
+ },
+ "arrayKeys": {
+  "tcl_platform": {
+   "byteOrder": [
+    "littleEndian or bigEndian.",
+    "littleEndian(小端)或 bigEndian(大端)。"
+   ],
+   "engine": [
+    "Name of the Tcl implementation (Tcl).",
+    "Tcl 实现的名称。"
+   ],
+   "machine": [
+    "CPU architecture, e.g. x86_64, arm64.",
+    "CPU 架构,如 x86_64、arm64。"
+   ],
+   "os": [
+    "Operating system name, e.g. Linux, Darwin, Windows NT.",
+    "操作系统名,如 Linux、Darwin、Windows NT。"
+   ],
+   "osVersion": [
+    "Operating system version.",
+    "操作系统版本。"
+   ],
+   "pathSeparator": [
+    "Separator in PATH-like lists: \":\" or \";\".",
+    "PATH 类列表的分隔符: \":\" 或 \";\"。"
+   ],
+   "platform": [
+    "unix, windows or macintosh.",
+    "unix、windows 或 macintosh。"
+   ],
+   "pointerSize": [
+    "Size of a pointer in bytes.",
+    "指针的字节数。"
+   ],
+   "threaded": [
+    "1 if Tcl was built with thread support.",
+    "Tcl 编译时启用线程支持则为 1。"
+   ],
+   "user": [
+    "Name of the current user.",
+    "当前用户名。"
+   ],
+   "wordSize": [
+    "Size of a C long in bytes.",
+    "C 语言 long 的字节数。"
+   ],
+   "debug": [
+    "Present (1) only in debug builds.",
+    "仅调试版本中存在(值为 1)。"
+   ]
+  },
+  "env": {
+   "HOME": [
+    "Home directory.",
+    "用户主目录。"
+   ],
+   "PATH": [
+    "Executable search path.",
+    "可执行文件搜索路径。"
+   ],
+   "USER": [
+    "User name (Unix).",
+    "用户名(Unix)。"
+   ],
+   "USERNAME": [
+    "User name (Windows).",
+    "用户名(Windows)。"
+   ],
+   "SHELL": [
+    "Login shell.",
+    "登录 shell。"
+   ],
+   "TEMP": [
+    "Temporary directory (Windows).",
+    "临时目录(Windows)。"
+   ],
+   "TMP": [
+    "Temporary directory.",
+    "临时目录。"
+   ],
+   "TMPDIR": [
+    "Temporary directory (Unix).",
+    "临时目录(Unix)。"
+   ],
+   "LANG": [
+    "Locale.",
+    "区域设置。"
+   ],
+   "PWD": [
+    "Current directory (set by the shell).",
+    "当前目录(由 shell 设置)。"
+   ],
+   "DISPLAY": [
+    "X11 display.",
+    "X11 显示器。"
+   ],
+   "EDITOR": [
+    "Preferred editor.",
+    "默认编辑器。"
+   ],
+   "TCLLIBPATH": [
+    "Extra package search directories.",
+    "额外的包搜索目录。"
+   ],
+   "TCL_LIBRARY": [
+    "Override for the Tcl library directory.",
+    "覆盖 Tcl 库目录。"
+   ],
+   "TK_LIBRARY": [
+    "Override for the Tk library directory.",
+    "覆盖 Tk 库目录。"
+   ],
+   "COMSPEC": [
+    "Command interpreter (Windows).",
+    "命令解释器(Windows)。"
+   ],
+   "USERPROFILE": [
+    "User profile directory (Windows).",
+    "用户配置目录(Windows)。"
+   ]
+  }
+ },
+ "formatSpecs": {
+  "d": [
+   "Signed decimal integer.",
+   "有符号十进制整数。"
+  ],
+  "i": [
+   "Signed decimal integer (same as d).",
+   "有符号十进制整数(同 d)。"
+  ],
+  "u": [
+   "Unsigned decimal integer.",
+   "无符号十进制整数。"
+  ],
+  "o": [
+   "Octal.",
+   "八进制。"
+  ],
+  "x": [
+   "Hexadecimal, lower-case.",
+   "十六进制(小写)。"
+  ],
+  "X": [
+   "Hexadecimal, upper-case.",
+   "十六进制(大写)。"
+  ],
+  "b": [
+   "Binary.",
+   "二进制。"
+  ],
+  "B": [
+   "Binary (same as b).",
+   "二进制(同 b)。"
+  ],
+  "c": [
+   "Character with the given code point.",
+   "给定码点对应的字符。"
+  ],
+  "s": [
+   "String.",
+   "字符串。"
+  ],
+  "f": [
+   "Fixed-point float, e.g. %.2f.",
+   "定点小数,如 %.2f。"
+  ],
+  "e": [
+   "Scientific notation, lower-case e.",
+   "科学计数法(小写 e)。"
+  ],
+  "E": [
+   "Scientific notation, upper-case E.",
+   "科学计数法(大写 E)。"
+  ],
+  "g": [
+   "Shorter of %f and %e.",
+   "%f 与 %e 中较短者。"
+  ],
+  "G": [
+   "Shorter of %f and %E.",
+   "%f 与 %E 中较短者。"
+  ],
+  "a": [
+   "Hexadecimal float (lower-case).",
+   "十六进制浮点数(小写)。"
+  ],
+  "A": [
+   "Hexadecimal float (upper-case).",
+   "十六进制浮点数(大写)。"
+  ]
+ },
+ "scanSpecs": {
+  "d": [
+   "Decimal integer.",
+   "十进制整数。"
+  ],
+  "i": [
+   "Integer, base detected from prefix (0x, 0).",
+   "整数,按前缀(0x、0)判断进制。"
+  ],
+  "o": [
+   "Octal integer.",
+   "八进制整数。"
+  ],
+  "x": [
+   "Hexadecimal integer.",
+   "十六进制整数。"
+  ],
+  "u": [
+   "Unsigned integer.",
+   "无符号整数。"
+  ],
+  "c": [
+   "Character code of one character.",
+   "单个字符的字符码。"
+  ],
+  "s": [
+   "Non-whitespace string.",
+   "非空白字符串。"
+  ],
+  "e": [
+   "Floating-point number.",
+   "浮点数。"
+  ],
+  "f": [
+   "Floating-point number.",
+   "浮点数。"
+  ],
+  "g": [
+   "Floating-point number.",
+   "浮点数。"
+  ],
+  "n": [
+   "Number of characters consumed so far.",
+   "到目前为止已读取的字符数。"
+  ],
+  "[": [
+   "Set of characters, e.g. %[a-z]. Closes with ].",
+   "字符集,如 %[a-z],以 ] 结束。"
+  ]
+ },
+ "clockSpecs": {
+  "Y": [
+   "Year with century (2026).",
+   "四位年份(2026)。"
+  ],
+  "y": [
+   "Year without century (26).",
+   "两位年份(26)。"
+  ],
+  "C": [
+   "Century.",
+   "世纪。"
+  ],
+  "G": [
+   "ISO 8601 year.",
+   "ISO 8601 年份。"
+  ],
+  "g": [
+   "ISO 8601 year without century.",
+   "ISO 8601 两位年份。"
+  ],
+  "m": [
+   "Month 01-12.",
+   "月份 01-12。"
+  ],
+  "B": [
+   "Full month name.",
+   "月份全名。"
+  ],
+  "b": [
+   "Abbreviated month name.",
+   "月份缩写。"
+  ],
+  "h": [
+   "Abbreviated month name (same as b).",
+   "月份缩写(同 b)。"
+  ],
+  "d": [
+   "Day of month 01-31.",
+   "日 01-31。"
+  ],
+  "e": [
+   "Day of month, space-padded.",
+   "日,前补空格。"
+  ],
+  "j": [
+   "Day of year 001-366.",
+   "一年中的第几天 001-366。"
+  ],
+  "a": [
+   "Abbreviated weekday name.",
+   "星期缩写。"
+  ],
+  "A": [
+   "Full weekday name.",
+   "星期全名。"
+  ],
+  "u": [
+   "Weekday 1-7 (Monday = 1).",
+   "星期 1-7(周一为 1)。"
+  ],
+  "w": [
+   "Weekday 0-6 (Sunday = 0).",
+   "星期 0-6(周日为 0)。"
+  ],
+  "U": [
+   "Week of year, Sunday first.",
+   "周数(周日为一周开始)。"
+  ],
+  "W": [
+   "Week of year, Monday first.",
+   "周数(周一为一周开始)。"
+  ],
+  "V": [
+   "ISO 8601 week number.",
+   "ISO 8601 周数。"
+  ],
+  "H": [
+   "Hour 00-23.",
+   "小时 00-23。"
+  ],
+  "k": [
+   "Hour 0-23, space-padded.",
+   "小时 0-23,前补空格。"
+  ],
+  "I": [
+   "Hour 01-12.",
+   "小时 01-12。"
+  ],
+  "l": [
+   "Hour 1-12, space-padded.",
+   "小时 1-12,前补空格。"
+  ],
+  "M": [
+   "Minute 00-59.",
+   "分钟 00-59。"
+  ],
+  "S": [
+   "Second 00-59.",
+   "秒 00-59。"
+  ],
+  "p": [
+   "AM / PM.",
+   "上午/下午(AM/PM)。"
+  ],
+  "P": [
+   "am / pm.",
+   "上午/下午(小写)。"
+  ],
+  "z": [
+   "Time zone offset, e.g. +0900.",
+   "时区偏移,如 +0900。"
+  ],
+  "Z": [
+   "Time zone name.",
+   "时区名。"
+  ],
+  "s": [
+   "Seconds since the epoch.",
+   "自纪元以来的秒数。"
+  ],
+  "D": [
+   "Same as %m/%d/%Y.",
+   "等同 %m/%d/%Y。"
+  ],
+  "T": [
+   "Same as %H:%M:%S.",
+   "等同 %H:%M:%S。"
+  ],
+  "R": [
+   "Same as %H:%M.",
+   "等同 %H:%M。"
+  ],
+  "r": [
+   "Same as %I:%M:%S %p.",
+   "等同 %I:%M:%S %p。"
+  ],
+  "F": [
+   "Same as %Y-%m-%d (ISO 8601 date).",
+   "等同 %Y-%m-%d(ISO 8601 日期)。"
+  ],
+  "c": [
+   "Locale date and time.",
+   "本地化的日期时间。"
+  ],
+  "x": [
+   "Locale date.",
+   "本地化的日期。"
+  ],
+  "X": [
+   "Locale time.",
+   "本地化的时间。"
+  ],
+  "n": [
+   "Newline.",
+   "换行。"
+  ],
+  "t": [
+   "Tab.",
+   "制表符。"
+  ],
+  "J": [
+   "Julian day number.",
+   "儒略日编号。"
+  ]
+ },
+ "binarySpecs": {
+  "a": [
+   "Byte string, padded with NULs.",
+   "字节串,以 NUL 填充。"
+  ],
+  "A": [
+   "Byte string, padded with spaces.",
+   "字节串,以空格填充。"
+  ],
+  "b": [
+   "Bit string, low bit first.",
+   "位串,低位在前。"
+  ],
+  "B": [
+   "Bit string, high bit first.",
+   "位串,高位在前。"
+  ],
+  "h": [
+   "Hex string, low nybble first.",
+   "十六进制串,低半字节在前。"
+  ],
+  "H": [
+   "Hex string, high nybble first.",
+   "十六进制串,高半字节在前。"
+  ],
+  "c": [
+   "8-bit signed integer.",
+   "8 位有符号整数。"
+  ],
+  "s": [
+   "16-bit integer, little-endian.",
+   "16 位整数(小端)。"
+  ],
+  "S": [
+   "16-bit integer, big-endian.",
+   "16 位整数(大端)。"
+  ],
+  "i": [
+   "32-bit integer, little-endian.",
+   "32 位整数(小端)。"
+  ],
+  "I": [
+   "32-bit integer, big-endian.",
+   "32 位整数(大端)。"
+  ],
+  "w": [
+   "64-bit integer, little-endian.",
+   "64 位整数(小端)。"
+  ],
+  "W": [
+   "64-bit integer, big-endian.",
+   "64 位整数(大端)。"
+  ],
+  "f": [
+   "Single-precision float, native order.",
+   "单精度浮点(本机字节序)。"
+  ],
+  "d": [
+   "Double-precision float, native order.",
+   "双精度浮点(本机字节序)。"
+  ],
+  "r": [
+   "Single float, little-endian (Tcl 8.7/9.0).",
+   "单精度浮点(小端)(Tcl 8.7/9.0)。"
+  ],
+  "R": [
+   "Single float, big-endian (Tcl 8.7/9.0).",
+   "单精度浮点(大端)(Tcl 8.7/9.0)。"
+  ],
+  "q": [
+   "64-bit integer, little-endian (Tcl 8.7/9.0).",
+   "64 位整数(小端)(Tcl 8.7/9.0)。"
+  ],
+  "Q": [
+   "64-bit integer, big-endian (Tcl 8.7/9.0).",
+   "64 位整数(大端)(Tcl 8.7/9.0)。"
+  ],
+  "t": [
+   "16-bit integer, native order (Tcl 8.7/9.0).",
+   "16 位整数(本机字节序)(Tcl 8.7/9.0)。"
+  ],
+  "n": [
+   "32-bit integer, native order (Tcl 8.7/9.0).",
+   "32 位整数(本机字节序)(Tcl 8.7/9.0)。"
+  ],
+  "m": [
+   "64-bit integer, native order (Tcl 8.7/9.0).",
+   "64 位整数(本机字节序)(Tcl 8.7/9.0)。"
+  ],
+  "e": [
+   "Double, little-endian (Tcl 8.7/9.0).",
+   "双精度浮点(小端)(Tcl 8.7/9.0)。"
+  ],
+  "E": [
+   "Double, big-endian (Tcl 8.7/9.0).",
+   "双精度浮点(大端)(Tcl 8.7/9.0)。"
+  ],
+  "x": [
+   "NUL byte (format) / skip a byte (scan).",
+   "NUL 字节(format)/ 跳过一个字节(scan)。"
+  ],
+  "X": [
+   "Back up one byte.",
+   "后退一个字节。"
+  ],
+  "@": [
+   "Move to an absolute byte position.",
+   "移动到绝对字节位置。"
+  ]
+ },
+ "argValues": {
+  "string is": {
+   "2": [
+    [
+     "alnum",
+     "Letters and digits.",
+     "字母和数字。"
+    ],
+    [
+     "alpha",
+     "Letters.",
+     "字母。"
+    ],
+    [
+     "ascii",
+     "ASCII characters (code < 128).",
+     "ASCII 字符(码点 < 128)。"
+    ],
+    [
+     "boolean",
+     "A boolean value (1, true, yes, on, ...).",
+     "布尔值(1、true、yes、on 等)。"
+    ],
+    [
+     "control",
+     "Control characters.",
+     "控制字符。"
+    ],
+    [
+     "dict",
+     "A well-formed dictionary.",
+     "格式正确的字典。"
+    ],
+    [
+     "digit",
+     "Decimal digits.",
+     "十进制数字。"
+    ],
+    [
+     "double",
+     "A floating-point number.",
+     "浮点数。"
+    ],
+    [
+     "entier",
+     "An integer of any size.",
+     "任意大小的整数。"
+    ],
+    [
+     "false",
+     "A false boolean (0, false, no, off).",
+     "假值(0、false、no、off)。"
+    ],
+    [
+     "graph",
+     "Printable characters except space.",
+     "除空格外的可打印字符。"
+    ],
+    [
+     "integer",
+     "A 32/64-bit integer.",
+     "整数。"
+    ],
+    [
+     "list",
+     "A well-formed list.",
+     "格式正确的列表。"
+    ],
+    [
+     "lower",
+     "Lower-case letters.",
+     "小写字母。"
+    ],
+    [
+     "print",
+     "Printable characters including space.",
+     "包含空格的可打印字符。"
+    ],
+    [
+     "punct",
+     "Punctuation.",
+     "标点符号。"
+    ],
+    [
+     "space",
+     "Whitespace.",
+     "空白字符。"
+    ],
+    [
+     "true",
+     "A true boolean (1, true, yes, on).",
+     "真值(1、true、yes、on)。"
+    ],
+    [
+     "upper",
+     "Upper-case letters.",
+     "大写字母。"
+    ],
+    [
+     "wideinteger",
+     "A 64-bit integer.",
+     "64 位整数。"
+    ],
+    [
+     "wordchar",
+     "Letters, digits, underscore.",
+     "字母、数字、下划线。"
+    ],
+    [
+     "xdigit",
+     "Hexadecimal digits.",
+     "十六进制数字。"
+    ]
+   ]
+  },
+  "trace add": {
+   "2": [
+    [
+     "variable",
+     "Trace a variable.",
+     "跟踪变量。"
+    ],
+    [
+     "command",
+     "Trace a command (rename/delete).",
+     "跟踪命令(重命名/删除)。"
+    ],
+    [
+     "execution",
+     "Trace command execution.",
+     "跟踪命令的执行。"
+    ]
+   ]
+  },
+  "trace remove": {
+   "2": [
+    [
+     "variable",
+     "Trace a variable.",
+     "跟踪变量。"
+    ],
+    [
+     "command",
+     "Trace a command (rename/delete).",
+     "跟踪命令(重命名/删除)。"
+    ],
+    [
+     "execution",
+     "Trace command execution.",
+     "跟踪命令的执行。"
+    ]
+   ]
+  },
+  "trace info": {
+   "2": [
+    [
+     "variable",
+     "Trace a variable.",
+     "跟踪变量。"
+    ],
+    [
+     "command",
+     "Trace a command (rename/delete).",
+     "跟踪命令(重命名/删除)。"
+    ],
+    [
+     "execution",
+     "Trace command execution.",
+     "跟踪命令的执行。"
+    ]
+   ]
+  },
+  "open": {
+   "2": [
+    [
+     "r",
+     "Read only; the file must exist.",
+     "只读;文件必须已存在。"
+    ],
+    [
+     "r+",
+     "Read and write; the file must exist.",
+     "读写;文件必须已存在。"
+    ],
+    [
+     "w",
+     "Write only; truncate or create.",
+     "只写;截断或新建。"
+    ],
+    [
+     "w+",
+     "Read and write; truncate or create.",
+     "读写;截断或新建。"
+    ],
+    [
+     "a",
+     "Append; create if missing.",
+     "追加;不存在则新建。"
+    ],
+    [
+     "a+",
+     "Read and append; create if missing.",
+     "读取并追加;不存在则新建。"
+    ]
+   ]
+  },
+  "encoding convertfrom": {
+   "2": [
+    "utf-8",
+    "utf-16",
+    "utf-32",
+    "unicode",
+    "ascii",
+    "binary",
+    "iso8859-1",
+    "iso8859-2",
+    "iso8859-15",
+    "cp1250",
+    "cp1251",
+    "cp1252",
+    "cp936",
+    "gb2312",
+    "gbk",
+    "big5",
+    "cp950",
+    "cp932",
+    "shiftjis",
+    "euc-jp",
+    "iso2022-jp",
+    "euc-kr",
+    "cp949",
+    "koi8-r",
+    "cp437",
+    "cp850",
+    "identity"
+   ]
+  },
+  "encoding convertto": {
+   "2": [
+    "utf-8",
+    "utf-16",
+    "utf-32",
+    "unicode",
+    "ascii",
+    "binary",
+    "iso8859-1",
+    "iso8859-2",
+    "iso8859-15",
+    "cp1250",
+    "cp1251",
+    "cp1252",
+    "cp936",
+    "gb2312",
+    "gbk",
+    "big5",
+    "cp950",
+    "cp932",
+    "shiftjis",
+    "euc-jp",
+    "iso2022-jp",
+    "euc-kr",
+    "cp949",
+    "koi8-r",
+    "cp437",
+    "cp850",
+    "identity"
+   ]
+  },
+  "encoding system": {
+   "2": [
+    "utf-8",
+    "utf-16",
+    "utf-32",
+    "unicode",
+    "ascii",
+    "binary",
+    "iso8859-1",
+    "iso8859-2",
+    "iso8859-15",
+    "cp1250",
+    "cp1251",
+    "cp1252",
+    "cp936",
+    "gb2312",
+    "gbk",
+    "big5",
+    "cp950",
+    "cp932",
+    "shiftjis",
+    "euc-jp",
+    "iso2022-jp",
+    "euc-kr",
+    "cp949",
+    "koi8-r",
+    "cp437",
+    "cp850",
+    "identity"
+   ]
+  },
+  "seek": {
+   "3": [
+    [
+     "start",
+     "From the beginning of the file.",
+     "从文件开头算起。"
+    ],
+    [
+     "current",
+     "From the current position.",
+     "从当前位置算起。"
+    ],
+    [
+     "end",
+     "From the end of the file.",
+     "从文件末尾算起。"
+    ]
+   ]
+  },
+  "chan seek": {
+   "4": [
+    [
+     "start",
+     "From the beginning of the file.",
+     "从文件开头算起。"
+    ],
+    [
+     "current",
+     "From the current position.",
+     "从当前位置算起。"
+    ],
+    [
+     "end",
+     "From the end of the file.",
+     "从文件末尾算起。"
+    ]
+   ]
+  },
+  "fileevent": {
+   "2": [
+    [
+     "readable",
+     "Run when the channel becomes readable.",
+     "通道可读时运行。"
+    ],
+    [
+     "writable",
+     "Run when the channel becomes writable.",
+     "通道可写时运行。"
+    ]
+   ]
+  },
+  "chan event": {
+   "3": [
+    [
+     "readable",
+     "Run when the channel becomes readable.",
+     "通道可读时运行。"
+    ],
+    [
+     "writable",
+     "Run when the channel becomes writable.",
+     "通道可写时运行。"
+    ]
+   ]
+  },
+  "chan pending": {
+   "2": [
+    [
+     "input",
+     "Bytes waiting in the input buffer.",
+     "输入缓冲区中等待的字节数。"
+    ],
+    [
+     "output",
+     "Bytes waiting in the output buffer.",
+     "输出缓冲区中等待的字节数。"
+    ]
+   ]
+  },
+  "chan create": {
+   "2": [
+    [
+     "read",
+     "Reflected channel for reading.",
+     "用于读取的反射通道。"
+    ],
+    [
+     "write",
+     "Reflected channel for writing.",
+     "用于写入的反射通道。"
+    ]
+   ]
+  },
+  "update": {
+   "1": [
+    [
+     "idletasks",
+     "Process only idle callbacks (e.g. redraw).",
+     "只处理空闲回调(如重绘)。"
+    ]
+   ]
+  },
+  "after": {
+   "1": [
+    [
+     "idle",
+     "Run once when the event loop is idle.",
+     "事件循环空闲时运行一次。"
+    ],
+    [
+     "cancel",
+     "Cancel a scheduled script.",
+     "取消已安排的脚本。"
+    ],
+    [
+     "info",
+     "List scheduled scripts.",
+     "列出已安排的脚本。"
+    ]
+   ]
+  },
+  "namespace ensemble": {
+   "2": [
+    [
+     "create",
+     "Create an ensemble command.",
+     "创建 ensemble 命令。"
+    ],
+    [
+     "configure",
+     "Query or change an ensemble.",
+     "查询或修改 ensemble。"
+    ],
+    [
+     "exists",
+     "1 if the command is an ensemble.",
+     "命令是 ensemble 时为 1。"
+    ]
+   ]
+  },
+  "package prefer": {
+   "2": [
+    [
+     "latest",
+     "Prefer the newest version.",
+     "优先选择最新版本。"
+    ],
+    [
+     "stable",
+     "Prefer stable versions.",
+     "优先选择稳定版本。"
+    ]
+   ]
+  },
+  "zlib stream": {
+   "2": [
+    [
+     "compress",
+     "zlib compression.",
+     "zlib 压缩。"
+    ],
+    [
+     "decompress",
+     "zlib decompression.",
+     "zlib 解压。"
+    ],
+    [
+     "deflate",
+     "Raw deflate.",
+     "原始 deflate 压缩。"
+    ],
+    [
+     "inflate",
+     "Raw inflate.",
+     "原始 deflate 解压。"
+    ],
+    [
+     "gzip",
+     "gzip compression.",
+     "gzip 压缩。"
+    ],
+    [
+     "gunzip",
+     "gzip decompression.",
+     "gzip 解压。"
+    ]
+   ]
+  },
+  "binary encode": {
+   "2": [
+    "base64",
+    "hex",
+    "uuencode"
+   ]
+  },
+  "binary decode": {
+   "2": [
+    "base64",
+    "hex",
+    "uuencode"
+   ]
+  },
+  "interp limit": {
+   "3": [
+    [
+     "command",
+     "Limit on the number of commands.",
+     "命令数量限制。"
+    ],
+    [
+     "time",
+     "Limit on elapsed time.",
+     "运行时间限制。"
+    ]
+   ]
+  },
+  "trace add variable": {
+   "4": [
+    [
+     "array",
+     "Fires when the variable is accessed as an array.",
+     "以数组方式访问变量时触发。"
+    ],
+    [
+     "read",
+     "Fires when the variable is read.",
+     "读变量时触发。"
+    ],
+    [
+     "write",
+     "Fires when the variable is written.",
+     "写变量时触发。"
+    ],
+    [
+     "unset",
+     "Fires when the variable is unset.",
+     "删除变量时触发。"
+    ]
+   ]
+  },
+  "trace remove variable": {
+   "4": [
+    [
+     "array",
+     "Fires when the variable is accessed as an array.",
+     "以数组方式访问变量时触发。"
+    ],
+    [
+     "read",
+     "Fires when the variable is read.",
+     "读变量时触发。"
+    ],
+    [
+     "write",
+     "Fires when the variable is written.",
+     "写变量时触发。"
+    ],
+    [
+     "unset",
+     "Fires when the variable is unset.",
+     "删除变量时触发。"
+    ]
+   ]
+  },
+  "trace add command": {
+   "4": [
+    [
+     "rename",
+     "Fires when the command is renamed.",
+     "命令被重命名时触发。"
+    ],
+    [
+     "delete",
+     "Fires when the command is deleted.",
+     "命令被删除时触发。"
+    ]
+   ]
+  },
+  "trace remove command": {
+   "4": [
+    [
+     "rename",
+     "Fires when the command is renamed.",
+     "命令被重命名时触发。"
+    ],
+    [
+     "delete",
+     "Fires when the command is deleted.",
+     "命令被删除时触发。"
+    ]
+   ]
+  },
+  "trace add execution": {
+   "4": [
+    [
+     "enter",
+     "Before the command runs.",
+     "命令运行之前。"
+    ],
+    [
+     "leave",
+     "After the command runs.",
+     "命令运行之后。"
+    ],
+    [
+     "enterstep",
+     "Before each command inside it runs.",
+     "其内部每条命令运行之前。"
+    ],
+    [
+     "leavestep",
+     "After each command inside it runs.",
+     "其内部每条命令运行之后。"
+    ]
+   ]
+  },
+  "trace remove execution": {
+   "4": [
+    [
+     "enter",
+     "Before the command runs.",
+     "命令运行之前。"
+    ],
+    [
+     "leave",
+     "After the command runs.",
+     "命令运行之后。"
+    ],
+    [
+     "enterstep",
+     "Before each command inside it runs.",
+     "其内部每条命令运行之前。"
+    ],
+    [
+     "leavestep",
+     "After each command inside it runs.",
+     "其内部每条命令运行之后。"
+    ]
+   ]
+  }
+ }
+}

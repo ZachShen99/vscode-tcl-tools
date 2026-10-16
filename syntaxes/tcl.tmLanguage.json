@@ -1,0 +1,497 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Tcl",
+  "scopeName": "source.tcl",
+  "patterns": [
+    {
+      "include": "#shebang"
+    },
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#proc"
+    },
+    {
+      "include": "#namespace-eval"
+    },
+    {
+      "include": "#subcommand"
+    },
+    {
+      "include": "#keyword"
+    },
+    {
+      "include": "#core-command"
+    },
+    {
+      "include": "#tk-command"
+    },
+    {
+      "include": "#expression"
+    }
+  ],
+  "repository": {
+    "shebang": {
+      "match": "\\A#!.*$",
+      "name": "comment.line.shebang.tcl"
+    },
+    "comment": {
+      "match": "(?:^|(?<=[;{]))\\s*(#.*)$",
+      "captures": {
+        "1": {
+          "name": "comment.line.number-sign.tcl"
+        }
+      }
+    },
+    "proc": {
+      "match": "\\b(proc)\\s+([^\\s{}\\[\\]\"]+)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.definition.tcl"
+        },
+        "2": {
+          "name": "entity.name.function.tcl"
+        }
+      }
+    },
+    "namespace-eval": {
+      "match": "\\b(namespace)\\s+(eval)\\s+([^\\s{}\\[\\]\"]+)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.tcl"
+        },
+        "2": {
+          "name": "keyword.control.tcl"
+        },
+        "3": {
+          "name": "entity.name.namespace.tcl"
+        }
+      }
+    },
+    "keyword": {
+      "match": "(?<![\\w$:.-])(if|else|elseif|then|while|for|foreach|lmap|switch|break|continue|return|error|catch|try|finally|on|trap|throw|after|vwait|exit)(?![\\w:.-])",
+      "name": "keyword.control.tcl"
+    },
+    "core-command": {
+      "match": "(?<![\\w$:.-])(set|unset|append|incr|lappend|lset|lindex|llength|lrange|lsearch|lsort|lreplace|linsert|lreverse|lassign|lrepeat|lfilter|list|concat|join|split|string|regexp|regsub|format|scan|expr|array|dict|upvar|uplevel|global|variable|namespace|package|source|eval|apply|info|rename|interp|puts|gets|read|open|close|flush|eof|seek|tell|file|glob|cd|pwd|exec|clock|timer|unicode|divmod|frexp|modf|remquo|binary|chan|fconfigure|fileevent|trace|subst|oo::class|oo::object|my|self|next|proc)(?![\\w:.-])",
+      "name": "support.function.builtin.tcl"
+    },
+    "expression": {
+      "patterns": [
+        {
+          "include": "#escape"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#variable"
+        },
+        {
+          "include": "#command-sub"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#switch-option"
+        }
+      ]
+    },
+    "escape": {
+      "match": "\\\\(?:x[0-9A-Fa-f]{1,2}|u[0-9A-Fa-f]{1,4}|[0-7]{1,3}|.)",
+      "name": "constant.character.escape.tcl"
+    },
+    "string": {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double.tcl",
+      "patterns": [
+        {
+          "include": "#escape"
+        },
+        {
+          "include": "#variable"
+        },
+        {
+          "include": "#command-sub"
+        }
+      ]
+    },
+    "variable": {
+      "patterns": [
+        {
+          "match": "\\$\\{[^}]*\\}",
+          "name": "variable.other.tcl"
+        },
+        {
+          "match": "\\$(?:::)?[A-Za-z_][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*(?:\\([^)]*\\))?",
+          "name": "variable.other.tcl"
+        }
+      ]
+    },
+    "command-sub": {
+      "begin": "\\[",
+      "end": "\\]",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.tcl"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.tcl"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#subcommand"
+        },
+        {
+          "include": "#keyword"
+        },
+        {
+          "include": "#core-command"
+        },
+        {
+          "include": "#tk-command"
+        },
+        {
+          "include": "#expression"
+        },
+        {
+          "include": "$self"
+        }
+      ]
+    },
+    "number": {
+      "match": "(?<![\\w.])(?:0[xX][0-9A-Fa-f]+|0[bB][01]+|0[oO][0-7]+|\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)(?![\\w.])",
+      "name": "constant.numeric.tcl"
+    },
+    "switch-option": {
+      "match": "(?<=\\s)(?:--(?=\\s|$)|-[A-Za-z][A-Za-z0-9_-]*)",
+      "name": "variable.parameter.option.tcl"
+    },
+    "tk-command": {
+      "match": "(?:^|(?<=[;\\[{]))[ \\t]*(tk_chooseDirectory|tk_chooseColor|tk_getOpenFile|tk_getSaveFile|tk_messageBox|checkbutton|panedwindow|radiobutton|labelframe|menubutton|clipboard|scrollbar|selection|bindtags|tk_popup|toplevel|destroy|listbox|message|spinbox|button|canvas|option|tkwait|entry|event|focus|frame|image|label|lower|place|raise|scale|winfo|bell|bind|font|grab|grid|menu|pack|text|tk|wm|ttk::\\w+)(?![\\w:.-])",
+      "captures": {
+        "1": {
+          "name": "support.function.builtin.tcl"
+        }
+      }
+    },
+    "subcommand": {
+      "patterns": [
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(after)[ \\t]+(cancel|idle|info)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "keyword.control.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(timer)[ \\t]+(cancel|idle|info|sleep|in|at)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(unicode)[ \\t]+(tonfkc|tonfkd|tonfc|tonfd)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(array)[ \\t]+(nextelement|startsearch|donesearch|statistics|anymore|default|exists|names|unset|size|for|get|set)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(binary)[ \\t]+(decode|encode|format|scan)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(chan)[ \\t]+(configure|postevent|isbinary|truncate|blocked|pending|create|close|event|flush|names|copy|gets|pipe|push|puts|read|seek|tell|eof|pop)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(clipboard)[ \\t]+(append|clear|get)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(clock)[ \\t]+(microseconds|milliseconds|seconds|clicks|format|scan|add)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(dict)[ \\t]+(getwithdefault|lappend|replace|append|create|exists|filter|getdef|remove|update|values|merge|unset|incr|info|keys|size|with|for|get|map|set)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(encoding)[ \\t]+(convertfrom|convertto|profiles|system|names|dirs)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(event)[ \\t]+(generate|delete|info|add)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(file)[ \\t]+(isdirectory|tildeexpand|attributes|executable|nativename|extension|normalize|separator|channels|pathtype|readable|readlink|rootname|tempfile|writable|dirname|tempdir|volumes|delete|exists|isfile|rename|system|atime|lstat|mkdir|mtime|owned|split|copy|home|join|link|size|stat|tail|type)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(grab)[ \\t]+(current|release|set)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(grid)[ \\t]+(columnconfigure|rowconfigure|configure|propagate|location|anchor|forget|remove|slaves|bbox|info|size)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(history)[ \\t]+(change|nextid|clear|event|info|keep|redo|add)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(info)[ \\t]+(sharedlibextension|nameofexecutable|errorstack|patchlevel|tclversion|coroutine|functions|cmdcount|commands|complete|constant|hostname|cmdtype|default|globals|library|consts|exists|loaded|locals|object|script|class|frame|level|procs|args|body|vars)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(interp)[ \\t]+(recursionlimit|invokehidden|marktrusted|children|transfer|aliases|bgerror|cancel|create|delete|exists|expose|hidden|issafe|slaves|target|alias|debug|limit|share|eval|hide)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(namespace)[ \\t]+(qualifiers|children|ensemble|current|inscope|unknown|delete|exists|export|forget|import|origin|parent|upvar|which|code|path|tail)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(pack)[ \\t]+(configure|propagate|forget|slaves|info)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(package)[ \\t]+(vsatisfies|ifneeded|vcompare|versions|present|provide|require|unknown|forget|prefer|files|names)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(place)[ \\t]+(configure|forget|slaves|info)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(string)[ \\t]+(bytelength|trimright|wordstart|trimleft|compare|replace|reverse|tolower|totitle|toupper|wordend|insert|length|repeat|equal|first|index|match|range|last|trim|cat|map|is)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(tk)[ \\t]+(windowingsystem|inactive|appname|scaling)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(tkwait)[ \\t]+(visibility|variable|window)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(trace)[ \\t]+(variable|vdelete|remove|vinfo|info|add)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(winfo)[ \\t]+(screenheight|screenwidth|reqheight|children|ismapped|pointerx|pointery|reqwidth|toplevel|viewable|exists|height|parent|class|rootx|rooty|width|name|id|x|y)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(wm)[ \\t]+(overrideredirect|attributes|focusmodel|iconbitmap|deiconify|resizable|transient|geometry|protocol|withdraw|iconify|maxsize|minsize|frame|state|title|grid)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        },
+        {
+          "match": "(?:^|(?<=[;\\[{]))[ \\t]*(zlib)[ \\t]+(decompress|compress|adler32|deflate|inflate|gunzip|stream|crc32|gzip|push)(?![\\w:.-])",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.tcl"
+            },
+            "2": {
+              "name": "support.function.subcommand.tcl"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

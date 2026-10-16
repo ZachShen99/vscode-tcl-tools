@@ -1,0 +1,8 @@
+.vscode/**
+.github/**
+*.vsix
+test/**
+scripts/**
+samples/**
+icon.svg
+old-vsix/**

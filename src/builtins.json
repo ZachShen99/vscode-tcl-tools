@@ -1,0 +1,1365 @@
+{
+  "commands": {
+    "after": [
+      "after ms ?script script ...?",
+      "Delay for ms milliseconds, or schedule a script to run after ms."
+    ],
+    "append": [
+      "append varName ?value ...?",
+      "Append values to the string held in a variable."
+    ],
+    "apply": [
+      "apply lambdaExpr ?arg ...?",
+      "Apply an anonymous function {args body ?namespace?}."
+    ],
+    "break": [
+      "break",
+      "Abort the innermost enclosing loop."
+    ],
+    "catch": [
+      "catch script ?resultVarName? ?optionsVarName?",
+      "Evaluate script; returns non-zero if it raised an error or other exception."
+    ],
+    "cd": [
+      "cd ?dirName?",
+      "Change the working directory."
+    ],
+    "close": [
+      "close channelId ?r/w?",
+      "Close a channel."
+    ],
+    "concat": [
+      "concat ?arg ...?",
+      "Join arguments into one list, trimming surrounding whitespace."
+    ],
+    "continue": [
+      "continue",
+      "Skip to the next iteration of the innermost loop."
+    ],
+    "coroutine": [
+      "coroutine name command ?arg ...?",
+      "Create a coroutine that runs command."
+    ],
+    "eof": [
+      "eof channelId",
+      "Test whether a channel has reached end-of-file."
+    ],
+    "error": [
+      "error message ?info? ?code?",
+      "Raise an error with the given message."
+    ],
+    "eval": [
+      "eval arg ?arg ...?",
+      "Concatenate the arguments and evaluate them as a script."
+    ],
+    "exec": [
+      "exec ?switches? arg ?arg ...?",
+      "Run a subprocess (or pipeline) and return its output."
+    ],
+    "exit": [
+      "exit ?returnCode?",
+      "Terminate the process."
+    ],
+    "expr": [
+      "expr arg ?arg ...?",
+      "Evaluate an expression. Brace the expression: expr {$a + $b}."
+    ],
+    "fconfigure": [
+      "fconfigure channelId ?optionName? ?value? ...",
+      "Get or set channel options (-blocking, -buffering, -encoding, ...)."
+    ],
+    "fileevent": [
+      "fileevent channelId readable|writable ?script?",
+      "Register a handler for channel readability/writability."
+    ],
+    "flush": [
+      "flush channelId",
+      "Flush buffered output on a channel."
+    ],
+    "for": [
+      "for start test next body",
+      "C-style loop."
+    ],
+    "foreach": [
+      "foreach varList list ?varList list ...? body",
+      "Iterate over the elements of one or more lists."
+    ],
+    "format": [
+      "format formatString ?arg ...?",
+      "printf-style string formatting."
+    ],
+    "gets": [
+      "gets channelId ?varName?",
+      "Read one line from a channel."
+    ],
+    "glob": [
+      "glob ?switches? pattern ?pattern ...?",
+      "Return the files matching the glob patterns."
+    ],
+    "global": [
+      "global varName ?varName ...?",
+      "Bind global variables into the current scope."
+    ],
+    "if": [
+      "if expr1 ?then? body1 elseif expr2 ?then? body2 ... ?else? ?bodyN?",
+      "Conditional execution."
+    ],
+    "incr": [
+      "incr varName ?increment?",
+      "Add an integer increment (default 1) to a variable."
+    ],
+    "join": [
+      "join list ?joinString?",
+      "Join list elements into a string."
+    ],
+    "lappend": [
+      "lappend varName ?value ...?",
+      "Append elements to a list variable."
+    ],
+    "lassign": [
+      "lassign list ?varName ...?",
+      "Assign list elements to variables; returns the unassigned elements."
+    ],
+    "lindex": [
+      "lindex list ?index ...?",
+      "Retrieve an element of a list."
+    ],
+    "linsert": [
+      "linsert list index ?element ...?",
+      "Insert elements into a list."
+    ],
+    "list": [
+      "list ?value ...?",
+      "Create a list from the arguments."
+    ],
+    "llength": [
+      "llength list",
+      "Number of elements in a list."
+    ],
+    "lmap": [
+      "lmap varList list ?varList list ...? body",
+      "Like foreach, but collects each body result into a list (Tcl 8.6+)."
+    ],
+    "lrange": [
+      "lrange list first last",
+      "Return a sublist."
+    ],
+    "lrepeat": [
+      "lrepeat count ?element ...?",
+      "Build a list by repeating elements."
+    ],
+    "lreplace": [
+      "lreplace list first last ?element ...?",
+      "Replace a range of list elements."
+    ],
+    "lreverse": [
+      "lreverse list",
+      "Reverse a list."
+    ],
+    "lsearch": [
+      "lsearch ?options? list pattern",
+      "Find an element in a list (-exact, -glob, -regexp, -all, -inline, ...)."
+    ],
+    "lset": [
+      "lset varName ?index ...? newValue",
+      "Set an element of a list held in a variable."
+    ],
+    "lsort": [
+      "lsort ?options? list",
+      "Sort a list (-integer, -real, -dictionary, -decreasing, -unique, -index, ...)."
+    ],
+    "namespace": [
+      "namespace subcommand ?arg ...?",
+      "Create and manipulate namespaces."
+    ],
+    "open": [
+      "open fileName ?access? ?permissions?",
+      "Open a file or command pipeline as a channel."
+    ],
+    "pid": [
+      "pid ?channelId?",
+      "Process id."
+    ],
+    "proc": [
+      "proc name args body",
+      "Define a procedure. Arguments with defaults are written {name default}; 'args' collects the rest."
+    ],
+    "puts": [
+      "puts ?-nonewline? ?channelId? string",
+      "Write a string to a channel (default stdout)."
+    ],
+    "pwd": [
+      "pwd",
+      "Current working directory."
+    ],
+    "read": [
+      "read ?-nonewline? channelId ?numChars?",
+      "Read bytes or characters from a channel."
+    ],
+    "regexp": [
+      "regexp ?switches? exp string ?matchVar ...?",
+      "Match a regular expression (-nocase, -all, -inline, -indices, ...)."
+    ],
+    "regsub": [
+      "regsub ?switches? exp string subSpec ?varName?",
+      "Substitute regular expression matches."
+    ],
+    "rename": [
+      "rename oldName newName",
+      "Rename or delete (newName {}) a command."
+    ],
+    "return": [
+      "return ?-code code? ?-level n? ?result?",
+      "Return from a procedure."
+    ],
+    "scan": [
+      "scan string format ?varName ...?",
+      "Parse a string according to a format."
+    ],
+    "seek": [
+      "seek channelId offset ?origin?",
+      "Set the channel access position."
+    ],
+    "set": [
+      "set varName ?newValue?",
+      "Read or write a variable."
+    ],
+    "socket": [
+      "socket ?options? host port",
+      "Open a TCP client socket (or -server for a server)."
+    ],
+    "source": [
+      "source fileName",
+      "Evaluate a file as a Tcl script."
+    ],
+    "split": [
+      "split string ?splitChars?",
+      "Split a string into a list."
+    ],
+    "subst": [
+      "subst ?-nobackslashes? ?-nocommands? ?-novariables? string",
+      "Perform substitutions on a string."
+    ],
+    "switch": [
+      "switch ?options? string pattern body ?pattern body ...?",
+      "Multi-way branch. Use -- before string; 'default' as the last pattern."
+    ],
+    "tailcall": [
+      "tailcall command ?arg ...?",
+      "Replace the current procedure with a command call."
+    ],
+    "tell": [
+      "tell channelId",
+      "Current channel access position."
+    ],
+    "throw": [
+      "throw type message",
+      "Raise an error with an error-code type (Tcl 8.6+)."
+    ],
+    "time": [
+      "time script ?count?",
+      "Time the execution of a script."
+    ],
+    "try": [
+      "try body ?handler ...? ?finally script?",
+      "Structured error handling: on code varList body / trap pattern varList body (Tcl 8.6+)."
+    ],
+    "unset": [
+      "unset ?-nocomplain? ?--? ?name ...?",
+      "Delete variables."
+    ],
+    "update": [
+      "update ?idletasks?",
+      "Process pending events."
+    ],
+    "uplevel": [
+      "uplevel ?level? arg ?arg ...?",
+      "Evaluate a script in a calling frame."
+    ],
+    "upvar": [
+      "upvar ?level? otherVar myVar ?otherVar myVar ...?",
+      "Link local variables to variables in a calling frame."
+    ],
+    "variable": [
+      "variable ?name value ...? name ?value?",
+      "Declare namespace variables."
+    ],
+    "vwait": [
+      "vwait varName",
+      "Enter the event loop until varName is written."
+    ],
+    "while": [
+      "while test body",
+      "Loop while the test expression is true."
+    ],
+    "yield": [
+      "yield ?value?",
+      "Suspend the current coroutine."
+    ],
+    "const": [
+      "const varName value",
+      "Define a constant variable that cannot be changed (Tcl 9.0)."
+    ],
+    "coroinject": [
+      "coroinject coroName cmd ?arg ...?",
+      "Inject a command into a suspended coroutine, to run when it resumes (debugging aid)."
+    ],
+    "coroprobe": [
+      "coroprobe coroName cmd ?arg ...?",
+      "Run a command inside a suspended coroutine and return its result (debugging aid)."
+    ],
+    "fblocked": [
+      "fblocked channelId",
+      "1 if the last read on the channel returned less than requested because no more input was available."
+    ],
+    "fcopy": [
+      "fcopy inChan outChan ?-size size? ?-command callback?",
+      "Copy data from one channel to another, optionally in the background."
+    ],
+    "fpclassify": [
+      "fpclassify value",
+      "Classify a floating-point number: zero, subnormal, normal, infinite or nan (Tcl 9.0)."
+    ],
+    "ledit": [
+      "ledit listVar first last ?value ...?",
+      "Replace a range of elements of the list in a variable, in place (Tcl 9.0)."
+    ],
+    "load": [
+      "load ?-global? ?-lazy? ?--? fileName ?packageName? ?interp?",
+      "Load a binary extension (shared library)."
+    ],
+    "lpop": [
+      "lpop listVar ?index ...?",
+      "Remove and return the last (or indexed) element of the list in a variable (Tcl 9.0)."
+    ],
+    "lremove": [
+      "lremove list index ?index ...?",
+      "Return the list without the elements at the given indices (Tcl 9.0)."
+    ],
+    "lseq": [
+      "lseq start ?(to|..|count) end? ?by step?",
+      "Generate a list of numbers, like seq (Tcl 9.0)."
+    ],
+    "timerate": [
+      "timerate ?-calibrate? ?-overhead double? script ?time ?max-count??",
+      "Measure the average time of a script over many runs (Tcl 8.6.10+)."
+    ],
+    "unknown": [
+      "unknown cmdName ?arg ...?",
+      "Called when a command is not found; the default tries auto-loading and exec."
+    ],
+    "unload": [
+      "unload ?-nocomplain? ?-keeplibrary? ?--? fileName ?packageName? ?interp?",
+      "Unload a binary extension."
+    ],
+    "yieldto": [
+      "yieldto command ?arg ...?",
+      "From inside a coroutine, run a command in its caller context; the coroutine resumes when it is called back."
+    ],
+    "zipfs": [
+      "zipfs subcommand ?arg ...?",
+      "Mount and create zip archives as file systems (Tcl 9.0): mount, unmount, mkzip, mkimg, list, exists, find, info."
+    ],
+    "lfilter": [
+      "lfilter varList list ?varList list ...? body",
+      "Select values from the first list for which body evaluates to true (Tcl 9.1)."
+    ],
+    "divmod": [
+      "divmod x y",
+      "Return the integer quotient and remainder as a two-element list (Tcl 9.1)."
+    ],
+    "frexp": [
+      "frexp value",
+      "Split a floating-point value into its fraction and binary exponent (Tcl 9.1)."
+    ],
+    "modf": [
+      "modf value",
+      "Split a floating-point value into its integer and fractional parts (Tcl 9.1)."
+    ],
+    "remquo": [
+      "remquo x y",
+      "Return the floating-point remainder and quotient bits (Tcl 9.1)."
+    ],
+    "timer": [
+      "timer subcommand ?arg ...?",
+      "Schedule, inspect, cancel, or synchronously wait for timer events (Tcl 9.1)."
+    ],
+    "unicode": [
+      "unicode subcommand ?arg ...?",
+      "Apply Unicode normalization transforms (Tcl 9.1)."
+    ],
+    "parray": [
+      "parray arrayName ?pattern?",
+      "Print an array in name = value form (library proc)."
+    ],
+    "auto_mkindex": [
+      "auto_mkindex dir ?pattern ...?",
+      "Generate a tclIndex file so procs in the directory are autoloaded."
+    ],
+    "auto_execok": [
+      "auto_execok name",
+      "Full path of an executable found on PATH (or \"\" if none)."
+    ],
+    "auto_load": [
+      "auto_load cmd ?namespace?",
+      "Try to autoload a command through auto_path."
+    ],
+    "auto_import": [
+      "auto_import pattern",
+      "Make autoloadable commands matching pattern available in the current namespace."
+    ],
+    "auto_qualify": [
+      "auto_qualify command namespace",
+      "Qualify a command name for autoloading."
+    ],
+    "pkg_mkIndex": [
+      "pkg_mkIndex ?-direct? ?-lazy? ?-load pkgPat? ?-verbose? dir ?pattern ...?",
+      "Build a pkgIndex.tcl for the packages in a directory (library proc)."
+    ]
+  },
+  "ensembles": {
+    "string": {
+      "cat": [
+        "string cat ?string ...?",
+        "Concatenate strings (Tcl 8.6.2+)."
+      ],
+      "compare": [
+        "string compare ?-nocase? ?-length int? string1 string2",
+        "Lexicographic comparison: -1, 0, 1."
+      ],
+      "equal": [
+        "string equal ?-nocase? ?-length int? string1 string2",
+        "True if the strings are equal."
+      ],
+      "first": [
+        "string first needleString haystackString ?startIndex?",
+        "Index of first occurrence, or -1."
+      ],
+      "index": [
+        "string index string charIndex",
+        "Character at an index."
+      ],
+      "is": [
+        "string is class ?-strict? ?-failindex var? string",
+        "Test a string against a class (integer, double, alpha, digit, boolean, ...)."
+      ],
+      "last": [
+        "string last needleString haystackString ?lastIndex?",
+        "Index of last occurrence, or -1."
+      ],
+      "length": [
+        "string length string",
+        "Number of characters."
+      ],
+      "map": [
+        "string map ?-nocase? mapping string",
+        "Replace using a {old new ...} mapping."
+      ],
+      "match": [
+        "string match ?-nocase? pattern string",
+        "Glob-style match."
+      ],
+      "range": [
+        "string range string first last",
+        "Substring."
+      ],
+      "repeat": [
+        "string repeat string count",
+        "Repeat a string."
+      ],
+      "replace": [
+        "string replace string first last ?newstring?",
+        "Replace a range of characters."
+      ],
+      "reverse": [
+        "string reverse string",
+        "Reverse a string."
+      ],
+      "tolower": [
+        "string tolower string ?first? ?last?",
+        "Lowercase."
+      ],
+      "toupper": [
+        "string toupper string ?first? ?last?",
+        "Uppercase."
+      ],
+      "totitle": [
+        "string totitle string ?first? ?last?",
+        "Title case."
+      ],
+      "trim": [
+        "string trim string ?chars?",
+        "Trim characters from both ends."
+      ],
+      "trimleft": [
+        "string trimleft string ?chars?",
+        "Trim characters from the start."
+      ],
+      "trimright": [
+        "string trimright string ?chars?",
+        "Trim characters from the end."
+      ],
+      "wordend": [
+        "string wordend string charIndex",
+        "Index after the word containing charIndex."
+      ],
+      "wordstart": [
+        "string wordstart string charIndex",
+        "Index of the start of the word containing charIndex."
+      ],
+      "insert": [
+        "string insert string index insertString",
+        "Insert a string at an index (Tcl 9.0)."
+      ],
+      "bytelength": [
+        "string bytelength string",
+        "Number of bytes in the internal representation (deprecated)."
+      ]
+    },
+    "dict": {
+      "append": [
+        "dict append dictVarName key ?string ...?"
+      ],
+      "create": [
+        "dict create ?key value ...?",
+        "Create a dictionary."
+      ],
+      "exists": [
+        "dict exists dictValue key ?key ...?",
+        "Test whether a key path exists."
+      ],
+      "filter": [
+        "dict filter dictValue key|value|script ...",
+        "Filter a dictionary."
+      ],
+      "for": [
+        "dict for {keyVar valueVar} dictValue body",
+        "Iterate over key/value pairs."
+      ],
+      "get": [
+        "dict get dictValue ?key ...?",
+        "Look up a value."
+      ],
+      "getdef": [
+        "dict getdef dictionary ?key ...? key default",
+        "The value, or default if the key is missing (Tcl 9.0)."
+      ],
+      "incr": [
+        "dict incr dictVarName key ?increment?"
+      ],
+      "info": [
+        "dict info dictValue"
+      ],
+      "keys": [
+        "dict keys dictValue ?globPattern?",
+        "List of keys."
+      ],
+      "lappend": [
+        "dict lappend dictVarName key ?value ...?"
+      ],
+      "map": [
+        "dict map {keyVar valueVar} dictValue body",
+        "Transform a dictionary."
+      ],
+      "merge": [
+        "dict merge ?dictValue ...?",
+        "Merge dictionaries."
+      ],
+      "remove": [
+        "dict remove dictValue ?key ...?"
+      ],
+      "replace": [
+        "dict replace dictValue ?key value ...?"
+      ],
+      "set": [
+        "dict set dictVarName key ?key ...? value",
+        "Set a value in a dictionary variable."
+      ],
+      "size": [
+        "dict size dictValue"
+      ],
+      "unset": [
+        "dict unset dictVarName key ?key ...?"
+      ],
+      "update": [
+        "dict update dictVarName key varName ?key varName ...? body"
+      ],
+      "values": [
+        "dict values dictValue ?globPattern?"
+      ],
+      "with": [
+        "dict with dictVarName ?key ...? body"
+      ],
+      "getwithdefault": [
+        "dict getwithdefault dictionary ?key ...? key default",
+        "Same as dict getdef (Tcl 9.0)."
+      ]
+    },
+    "file": {
+      "atime": [
+        "file atime name ?time?"
+      ],
+      "attributes": [
+        "file attributes name ?option? ?value ...?"
+      ],
+      "copy": [
+        "file copy ?-force? ?--? source target"
+      ],
+      "delete": [
+        "file delete ?-force? ?--? ?pathname ...?"
+      ],
+      "dirname": [
+        "file dirname name",
+        "Directory part of a path."
+      ],
+      "executable": [
+        "file executable name"
+      ],
+      "exists": [
+        "file exists name",
+        "True if the file exists."
+      ],
+      "extension": [
+        "file extension name",
+        "Extension including the dot."
+      ],
+      "isdirectory": [
+        "file isdirectory name"
+      ],
+      "isfile": [
+        "file isfile name"
+      ],
+      "join": [
+        "file join name ?name ...?",
+        "Join path components."
+      ],
+      "mkdir": [
+        "file mkdir ?dir ...?",
+        "Create directories."
+      ],
+      "mtime": [
+        "file mtime name ?time?"
+      ],
+      "nativename": [
+        "file nativename name"
+      ],
+      "normalize": [
+        "file normalize name",
+        "Absolute, normalized path."
+      ],
+      "readable": [
+        "file readable name"
+      ],
+      "rename": [
+        "file rename ?-force? ?--? source target"
+      ],
+      "rootname": [
+        "file rootname name",
+        "Path without extension."
+      ],
+      "separator": [
+        "file separator ?name?"
+      ],
+      "size": [
+        "file size name",
+        "Size in bytes."
+      ],
+      "split": [
+        "file split name",
+        "Split into path components."
+      ],
+      "stat": [
+        "file stat name varName"
+      ],
+      "tail": [
+        "file tail name",
+        "Last path component."
+      ],
+      "tempfile": [
+        "file tempfile ?nameVar? ?template?"
+      ],
+      "type": [
+        "file type name"
+      ],
+      "writable": [
+        "file writable name"
+      ],
+      "channels": [
+        "file channels ?pattern?",
+        "List the open channels."
+      ],
+      "home": [
+        "file home ?user?",
+        "Home directory of a user (Tcl 9.0)."
+      ],
+      "link": [
+        "file link ?-linktype? linkName ?target?",
+        "Create or read a link."
+      ],
+      "lstat": [
+        "file lstat name ?varName?",
+        "Like file stat, but does not follow a link."
+      ],
+      "owned": [
+        "file owned name",
+        "1 if the file is owned by the current user."
+      ],
+      "pathtype": [
+        "file pathtype name",
+        "absolute, relative or volumerelative."
+      ],
+      "readlink": [
+        "file readlink name",
+        "Target of a symbolic link."
+      ],
+      "system": [
+        "file system name",
+        "Which file system a path belongs to."
+      ],
+      "tempdir": [
+        "file tempdir ?template?",
+        "Create a temporary directory (Tcl 9.0)."
+      ],
+      "tildeexpand": [
+        "file tildeexpand name",
+        "Expand a leading ~ (Tcl 9.0)."
+      ],
+      "volumes": [
+        "file volumes",
+        "List the mounted volumes (drive letters on Windows)."
+      ]
+    },
+    "info": {
+      "args": [
+        "info args procname",
+        "Argument names of a procedure."
+      ],
+      "body": [
+        "info body procname",
+        "Body of a procedure."
+      ],
+      "class": [
+        "info class subcommand class ?arg ...?"
+      ],
+      "cmdcount": [
+        "info cmdcount"
+      ],
+      "commands": [
+        "info commands ?pattern?",
+        "Commands visible in the current namespace."
+      ],
+      "complete": [
+        "info complete command",
+        "True if command is a syntactically complete script."
+      ],
+      "coroutine": [
+        "info coroutine"
+      ],
+      "default": [
+        "info default procname arg varname",
+        "Default value of a procedure argument."
+      ],
+      "exists": [
+        "info exists varName",
+        "True if the variable exists."
+      ],
+      "frame": [
+        "info frame ?number?",
+        "Stack frame information."
+      ],
+      "functions": [
+        "info functions ?pattern?"
+      ],
+      "globals": [
+        "info globals ?pattern?"
+      ],
+      "hostname": [
+        "info hostname"
+      ],
+      "level": [
+        "info level ?number?",
+        "Current stack depth, or the command at a level."
+      ],
+      "library": [
+        "info library"
+      ],
+      "loaded": [
+        "info loaded ?interp?"
+      ],
+      "locals": [
+        "info locals ?pattern?"
+      ],
+      "nameofexecutable": [
+        "info nameofexecutable"
+      ],
+      "object": [
+        "info object subcommand object ?arg ...?"
+      ],
+      "patchlevel": [
+        "info patchlevel",
+        "Full Tcl version, e.g. 8.6.13."
+      ],
+      "procs": [
+        "info procs ?pattern?",
+        "Procedures visible in the current namespace."
+      ],
+      "script": [
+        "info script ?filename?",
+        "Path of the script being sourced."
+      ],
+      "sharedlibextension": [
+        "info sharedlibextension"
+      ],
+      "tclversion": [
+        "info tclversion"
+      ],
+      "vars": [
+        "info vars ?pattern?"
+      ],
+      "cmdtype": [
+        "info cmdtype commandName",
+        "Kind of a command: native, proc, alias, ensemble, object, ... (Tcl 8.7/9.0)."
+      ],
+      "constant": [
+        "info constant varName",
+        "1 if the variable is a constant (Tcl 9.0)."
+      ],
+      "consts": [
+        "info consts ?pattern?",
+        "List constants (Tcl 9.0)."
+      ],
+      "errorstack": [
+        "info errorstack ?interp?",
+        "Structured stack of the last error."
+      ]
+    },
+    "array": {
+      "exists": [
+        "array exists arrayName"
+      ],
+      "get": [
+        "array get arrayName ?pattern?"
+      ],
+      "names": [
+        "array names arrayName ?mode? ?pattern?"
+      ],
+      "set": [
+        "array set arrayName list"
+      ],
+      "size": [
+        "array size arrayName"
+      ],
+      "statistics": [
+        "array statistics arrayName"
+      ],
+      "unset": [
+        "array unset arrayName ?pattern?"
+      ],
+      "startsearch": [
+        "array startsearch arrayName"
+      ],
+      "nextelement": [
+        "array nextelement arrayName searchId"
+      ],
+      "anymore": [
+        "array anymore arrayName searchId"
+      ],
+      "donesearch": [
+        "array donesearch arrayName searchId"
+      ],
+      "default": [
+        "array default subcommand arrayName ?arg ...?",
+        "Query or set the default value of missing elements: get, set, exists, unset (Tcl 8.7/9.0)."
+      ],
+      "for": [
+        "array for {keyVar valueVar} arrayName body",
+        "Loop over the elements of an array (Tcl 8.7/9.0)."
+      ]
+    },
+    "namespace": {
+      "children": [
+        "namespace children ?namespace? ?pattern?"
+      ],
+      "code": [
+        "namespace code script"
+      ],
+      "current": [
+        "namespace current",
+        "Fully qualified name of the current namespace."
+      ],
+      "delete": [
+        "namespace delete ?namespace ...?"
+      ],
+      "ensemble": [
+        "namespace ensemble create|configure|exists ..."
+      ],
+      "eval": [
+        "namespace eval namespace arg ?arg ...?",
+        "Evaluate a script in a namespace, creating it if needed."
+      ],
+      "exists": [
+        "namespace exists namespace"
+      ],
+      "export": [
+        "namespace export ?-clear? ?pattern ...?"
+      ],
+      "forget": [
+        "namespace forget ?pattern ...?"
+      ],
+      "import": [
+        "namespace import ?-force? ?pattern ...?"
+      ],
+      "inscope": [
+        "namespace inscope namespace script ?arg ...?"
+      ],
+      "origin": [
+        "namespace origin command"
+      ],
+      "parent": [
+        "namespace parent ?namespace?"
+      ],
+      "path": [
+        "namespace path ?namespaceList?"
+      ],
+      "qualifiers": [
+        "namespace qualifiers string"
+      ],
+      "tail": [
+        "namespace tail string"
+      ],
+      "upvar": [
+        "namespace upvar namespace ?otherVar myVar ...?"
+      ],
+      "which": [
+        "namespace which ?-command? ?-variable? name"
+      ],
+      "unknown": [
+        "namespace unknown ?command?",
+        "Query or set the handler for unknown commands in the namespace."
+      ]
+    },
+    "package": {
+      "forget": [
+        "package forget ?package ...?"
+      ],
+      "ifneeded": [
+        "package ifneeded package version ?script?"
+      ],
+      "names": [
+        "package names",
+        "Known package names."
+      ],
+      "present": [
+        "package present ?-exact? package ?requirement ...?"
+      ],
+      "provide": [
+        "package provide package ?version?"
+      ],
+      "require": [
+        "package require ?-exact? package ?requirement ...?",
+        "Load a package and return its version."
+      ],
+      "versions": [
+        "package versions package"
+      ],
+      "vcompare": [
+        "package vcompare version1 version2"
+      ],
+      "vsatisfies": [
+        "package vsatisfies version requirement ..."
+      ],
+      "files": [
+        "package files package",
+        "List the files of a loaded package (Tcl 9.0)."
+      ],
+      "prefer": [
+        "package prefer ?latest|stable?",
+        "Query or set the version selection policy."
+      ],
+      "unknown": [
+        "package unknown ?command?",
+        "Query or set the handler run when a package is not found."
+      ]
+    },
+    "clock": {
+      "add": [
+        "clock add timeVal ?count unit ...? ?-option value?"
+      ],
+      "clicks": [
+        "clock clicks ?-milliseconds|-microseconds?"
+      ],
+      "format": [
+        "clock format timeVal ?-format string? ?-timezone zone?"
+      ],
+      "microseconds": [
+        "clock microseconds"
+      ],
+      "milliseconds": [
+        "clock milliseconds"
+      ],
+      "scan": [
+        "clock scan inputString ?-format format? ?-timezone zone?"
+      ],
+      "seconds": [
+        "clock seconds",
+        "Current time in seconds since the epoch."
+      ]
+    },
+    "trace": {
+      "add": [
+        "trace add type name ops ?args?",
+        "type: command | execution | variable."
+      ],
+      "remove": [
+        "trace remove type name opList command"
+      ],
+      "info": [
+        "trace info type name"
+      ],
+      "variable": [
+        "trace variable name ops command",
+        "Old form of trace add variable."
+      ],
+      "vdelete": [
+        "trace vdelete name ops command",
+        "Old form of trace remove variable."
+      ],
+      "vinfo": [
+        "trace vinfo name",
+        "Old form of trace info variable."
+      ]
+    },
+    "chan": {
+      "close": [
+        "chan close channelId ?direction?"
+      ],
+      "configure": [
+        "chan configure channelId ?optionName? ?value? ..."
+      ],
+      "eof": [
+        "chan eof channelId"
+      ],
+      "flush": [
+        "chan flush channelId"
+      ],
+      "gets": [
+        "chan gets channelId ?varName?"
+      ],
+      "names": [
+        "chan names ?pattern?"
+      ],
+      "puts": [
+        "chan puts ?-nonewline? ?channelId? string"
+      ],
+      "read": [
+        "chan read ?-nonewline? channelId ?numChars?"
+      ],
+      "blocked": [
+        "chan blocked channelId",
+        "1 if the last read was short because the channel has no more input."
+      ],
+      "copy": [
+        "chan copy inChan outChan ?-size size? ?-command callback?",
+        "Copy data between channels."
+      ],
+      "create": [
+        "chan create mode cmdPrefix",
+        "Create a reflected channel implemented in Tcl."
+      ],
+      "event": [
+        "chan event channelId readable|writable ?script?",
+        "Register a script to run when the channel is readable or writable."
+      ],
+      "isbinary": [
+        "chan isbinary channelId",
+        "1 if the channel is in binary mode (Tcl 9.0)."
+      ],
+      "pending": [
+        "chan pending input|output channelId",
+        "Number of bytes buffered on the channel."
+      ],
+      "pipe": [
+        "chan pipe",
+        "Create a pipe; returns {readChannel writeChannel}."
+      ],
+      "pop": [
+        "chan pop channelId",
+        "Remove the topmost transformation from a channel."
+      ],
+      "postevent": [
+        "chan postevent channelId eventSpec",
+        "Post an event on a reflected channel."
+      ],
+      "push": [
+        "chan push channelId cmdPrefix",
+        "Add a transformation to a channel."
+      ],
+      "seek": [
+        "chan seek channelId offset ?origin?",
+        "Move the access position."
+      ],
+      "tell": [
+        "chan tell channelId",
+        "Current access position."
+      ],
+      "truncate": [
+        "chan truncate channelId ?length?",
+        "Truncate the channel."
+      ]
+    },
+    "binary": {
+      "format": [
+        "binary format formatString ?arg ...?",
+        "Create a binary string from values."
+      ],
+      "scan": [
+        "binary scan string formatString ?varName ...?",
+        "Parse a binary string into variables."
+      ],
+      "encode": [
+        "binary encode format ?options? data",
+        "Encode binary data (base64, hex, uuencode; Tcl 8.6+)."
+      ],
+      "decode": [
+        "binary decode format ?options? string",
+        "Decode base64, hex or uuencode text to binary data (Tcl 8.6+)."
+      ]
+    },
+    "encoding": {
+      "convertfrom": [
+        "encoding convertfrom ?encoding? data",
+        "Convert bytes in the given encoding to a Tcl string."
+      ],
+      "convertto": [
+        "encoding convertto ?encoding? string",
+        "Convert a Tcl string to bytes in the given encoding."
+      ],
+      "dirs": [
+        "encoding dirs ?directoryList?",
+        "Query or set the directories searched for encoding files."
+      ],
+      "names": [
+        "encoding names",
+        "List the available encodings."
+      ],
+      "system": [
+        "encoding system ?encoding?",
+        "Query or set the system encoding."
+      ],
+      "profiles": [
+        "encoding profiles",
+        "List the available error-handling profiles (Tcl 9.0)."
+      ]
+    },
+    "history": {
+      "add": [
+        "history add command ?exec?",
+        "Add a command to the history list."
+      ],
+      "change": [
+        "history change newValue ?event?",
+        "Replace a history entry."
+      ],
+      "clear": [
+        "history clear",
+        "Clear the history list."
+      ],
+      "event": [
+        "history event ?event?",
+        "Return an entry of the history list."
+      ],
+      "info": [
+        "history info ?count?",
+        "Return the history list with event numbers."
+      ],
+      "keep": [
+        "history keep ?count?",
+        "Set the maximum history size."
+      ],
+      "nextid": [
+        "history nextid",
+        "Number of the next event."
+      ],
+      "redo": [
+        "history redo ?event?",
+        "Re-execute a history entry."
+      ]
+    },
+    "interp": {
+      "alias": [
+        "interp alias srcPath srcCmd ?targetPath targetCmd arg ...?",
+        "Create, query or delete a command alias between interpreters."
+      ],
+      "aliases": [
+        "interp aliases ?path?",
+        "List the aliases defined in an interpreter."
+      ],
+      "bgerror": [
+        "interp bgerror path ?cmdPrefix?",
+        "Query or set the background error handler of an interpreter."
+      ],
+      "cancel": [
+        "interp cancel ?-unwind? ?--? ?path? ?result?",
+        "Cancel the script being evaluated in an interpreter."
+      ],
+      "children": [
+        "interp children ?path?",
+        "List the child interpreters."
+      ],
+      "create": [
+        "interp create ?-safe? ?--? ?path?",
+        "Create a child interpreter."
+      ],
+      "debug": [
+        "interp debug path ?-frame ?bool??",
+        "Query or set debugging options of an interpreter."
+      ],
+      "delete": [
+        "interp delete ?path ...?",
+        "Delete interpreters."
+      ],
+      "eval": [
+        "interp eval path arg ?arg ...?",
+        "Evaluate a script in another interpreter."
+      ],
+      "exists": [
+        "interp exists path",
+        "1 if the interpreter exists."
+      ],
+      "expose": [
+        "interp expose path hiddenName ?exposedCmdName?",
+        "Make a hidden command visible again."
+      ],
+      "hidden": [
+        "interp hidden path",
+        "List the hidden commands."
+      ],
+      "hide": [
+        "interp hide path cmdName ?hiddenCmdName?",
+        "Hide a command in a (safe) interpreter."
+      ],
+      "invokehidden": [
+        "interp invokehidden path ?-global? hiddenCmd ?arg ...?",
+        "Run a hidden command."
+      ],
+      "issafe": [
+        "interp issafe ?path?",
+        "1 if the interpreter is safe."
+      ],
+      "limit": [
+        "interp limit path limitType ?-option value ...?",
+        "Set resource limits (command, time) of an interpreter."
+      ],
+      "marktrusted": [
+        "interp marktrusted path",
+        "Mark an interpreter as trusted."
+      ],
+      "recursionlimit": [
+        "interp recursionlimit path ?newlimit?",
+        "Query or set the maximum nesting depth."
+      ],
+      "share": [
+        "interp share srcPath channelId destPath",
+        "Share a channel between interpreters."
+      ],
+      "slaves": [
+        "interp slaves ?path?",
+        "Old name of interp children."
+      ],
+      "target": [
+        "interp target path alias",
+        "Interpreter that an alias points to."
+      ],
+      "transfer": [
+        "interp transfer srcPath channelId destPath",
+        "Move a channel to another interpreter."
+      ]
+    },
+    "zlib": {
+      "adler32": [
+        "zlib adler32 data ?initValue?",
+        "Adler-32 checksum."
+      ],
+      "compress": [
+        "zlib compress string ?level?",
+        "Compress with the zlib format."
+      ],
+      "crc32": [
+        "zlib crc32 data ?initValue?",
+        "CRC-32 checksum."
+      ],
+      "decompress": [
+        "zlib decompress string ?bufferSize?",
+        "Decompress zlib data."
+      ],
+      "deflate": [
+        "zlib deflate string ?level?",
+        "Raw deflate compression."
+      ],
+      "gunzip": [
+        "zlib gunzip string ?-headerVar varName?",
+        "Decompress gzip data."
+      ],
+      "gzip": [
+        "zlib gzip string ?-level level? ?-header dict?",
+        "Compress to the gzip format."
+      ],
+      "inflate": [
+        "zlib inflate string ?bufferSize?",
+        "Raw deflate decompression."
+      ],
+      "push": [
+        "zlib push mode channel ?options ...?",
+        "Push a compression transform onto a channel."
+      ],
+      "stream": [
+        "zlib stream mode ?options?",
+        "Create a (de)compression stream command."
+      ]
+    },
+    "timer": {
+      "in": [
+        "timer in delay unit script",
+        "Schedule script after a monotonic time delay (Tcl 9.1)."
+      ],
+      "at": [
+        "timer at timepoint unit script",
+        "Schedule script at a wall-clock time point (Tcl 9.1)."
+      ],
+      "idle": [
+        "timer idle script",
+        "Schedule script to run as an idle callback (Tcl 9.1)."
+      ],
+      "sleep": [
+        "timer sleep for delay ?unit? | timer sleep until timepoint ?unit?",
+        "Block until a delay has elapsed or a wall-clock time is reached (Tcl 9.1)."
+      ],
+      "cancel": [
+        "timer cancel id",
+        "Cancel a timer or after event (Tcl 9.1)."
+      ],
+      "info": [
+        "timer info ?id?",
+        "List timer events or describe one event (Tcl 9.1)."
+      ]
+    },
+    "unicode": {
+      "tonfc": [
+        "unicode tonfc ?-profile profile? string",
+        "Normalize a string to Unicode NFC (Tcl 9.1)."
+      ],
+      "tonfd": [
+        "unicode tonfd ?-profile profile? string",
+        "Normalize a string to Unicode NFD (Tcl 9.1)."
+      ],
+      "tonfkc": [
+        "unicode tonfkc ?-profile profile? string",
+        "Normalize a string to Unicode NFKC (Tcl 9.1)."
+      ],
+      "tonfkd": [
+        "unicode tonfkd ?-profile profile? string",
+        "Normalize a string to Unicode NFKD (Tcl 9.1)."
+      ]
+    }
+  }
+}

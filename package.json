@@ -1,0 +1,343 @@
+{
+  "name": "tcl-tools",
+  "displayName": "Tcl Tools",
+  "description": "Tcl for VS Code: highlighting, completion, Tk and SQLite support, diagnostics, and a full debugger (breakpoints, stepping, variables, Tk).",
+  "version": "0.6.12",
+  "publisher": "zach-shen",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "Background Tcl interpreter and package introspection is disabled until the workspace is trusted.",
+      "restrictedConfigurations": [
+        "tcl.interpreterPath",
+        "tcl.interpreterArgs",
+        "tcl.introspection.interpreterPath",
+        "tcl.introspection.interpreterArgs"
+      ]
+    }
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Debuggers",
+    "Testing"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onLanguage:tcl",
+    "onCommand:tcl.selectInterpreter",
+    "workspaceContains:**/*.test"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "tcl",
+        "aliases": [
+          "Tcl",
+          "tcl"
+        ],
+        "extensions": [
+          ".tcl",
+          ".tk",
+          ".tm",
+          ".test",
+          ".xdc",
+          ".sdc",
+          ".itcl"
+        ],
+        "firstLine": "^#!.*\\b(tclsh|wish)\\b",
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/tcl.svg",
+          "dark": "./icons/tcl.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tcl",
+        "scopeName": "source.tcl",
+        "path": "./syntaxes/tcl.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "tcl",
+        "path": "./snippets/tcl.json"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": ".tcl-tools.json",
+        "url": "./schemas/tcl-tools.schema.json"
+      },
+      {
+        "fileMatch": "**/.vscode/tcl-tools.json",
+        "url": "./schemas/tcl-tools.schema.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "tcl.runFile",
+        "title": "Tcl: Run Current File",
+        "icon": "$(play)"
+      },
+      {
+        "command": "tcl.runSelection",
+        "title": "Tcl: Run Selection"
+      },
+      {
+        "command": "tcl.refreshIntrospection",
+        "title": "Tcl: Refresh Introspection"
+      },
+      {
+        "command": "tcl.selectInterpreter",
+        "title": "Tcl: Select Interpreter"
+      },
+      {
+        "command": "tcl.explainUndefinedCommands",
+        "title": "Tcl: Why Is the Undefined-Command Check Inactive?"
+      },
+      {
+        "command": "tcl.showEnvironment",
+        "title": "Tcl: Show Environment Info"
+      },
+      {
+        "command": "tcl.createProjectConfig",
+        "title": "Tcl: Create Project Config"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "tcl.runFile",
+          "when": "resourceLangId == tcl",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "tcl.runFile",
+        "key": "ctrl+f5",
+        "mac": "cmd+f5",
+        "when": "editorLangId == tcl"
+      }
+    ],
+    "configuration": {
+      "title": "Tcl Tools",
+      "properties": {
+        "tcl.interpreterPath": {
+          "type": "string",
+          "default": "tclsh",
+          "description": "Default Tcl interpreter. Use Tcl: Select Interpreter to choose one for this workspace; the choice applies to Run, IntelliSense and Debug."
+        },
+        "tcl.interpreterArgs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Extra arguments placed before the script path."
+        },
+        "tcl.introspection.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run a Tcl interpreter in the background to discover commands and package procs for completion."
+        },
+        "tcl.introspection.tk": {
+          "type": "boolean",
+          "default": true,
+          "description": "In files that load Tk, start the interpreter once with Tk (its window is withdrawn at once) to learn the installed Tk's commands, widget options and values. The result is cached; 'Tcl: Refresh Introspection' repeats it. Off = built-in Tk tables only."
+        },
+        "tcl.introspection.interpreterPath": {
+          "type": "string",
+          "default": "",
+          "description": "Optional legacy override for introspection and default debugging. Leave empty to use tcl.interpreterPath; a workspace interpreter selection takes precedence. Must be a plain tclsh."
+        },
+        "tcl.introspection.interpreterArgs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Extra arguments placed before the introspection script."
+        },
+        "tcl.docLanguage": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "en",
+            "zh"
+          ],
+          "enumDescriptions": [
+            "Follow the VS Code display language",
+            "English",
+            "中文"
+          ],
+          "default": "auto",
+          "description": "Language of the descriptions of built-in Tcl commands (hover, completion, signature help). Commands without a translation fall back to English."
+        },
+        "tcl.diagnostics.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Report syntax problems, unbraced expressions, statically certain procedure and built-in argument-count errors, and invalid built-in subcommands."
+        },
+        "tcl.diagnostics.undefinedCommands": {
+          "type": "string",
+          "enum": [
+            "warning",
+            "off"
+          ],
+          "default": "warning",
+          "description": "Warn about commands that are not built in, not defined anywhere in the workspace, and cannot come from a dynamic source. Only checked with a plain tclsh/wish and introspection on; files that rename or import commands dynamically are skipped. Silence one line with `# tcl-tools: ignore`."
+        },
+        "tcl.diagnostics.knownCommands": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Extra command names (with * and ? wildcards, e.g. \"get_*\") that the undefined-command check should treat as defined."
+        },
+        "tcl.testing.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Discover tcltest tests and show them in VS Code's Test Explorer."
+        },
+        "tcl.testing.filePattern": {
+          "type": "string",
+          "default": "**/*.test",
+          "description": "Workspace glob used to discover tcltest files."
+        },
+        "tcl.testing.exclude": {
+          "type": "string",
+          "default": "**/{.git,node_modules,.venv}/**",
+          "description": "Workspace glob excluded from tcltest discovery."
+        }
+      }
+    },
+    "breakpoints": [
+      {
+        "language": "tcl"
+      }
+    ],
+    "debuggers": [
+      {
+        "type": "tcl",
+        "label": "Tcl Debug",
+        "languages": [
+          "tcl"
+        ],
+        "configurationAttributes": {
+          "launch": {
+            "required": [
+              "program"
+            ],
+            "properties": {
+              "program": {
+                "type": "string",
+                "description": "Tcl script to run.",
+                "default": "${file}"
+              },
+              "args": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Arguments passed to the script (argv).",
+                "default": []
+              },
+              "cwd": {
+                "type": "string",
+                "description": "Working directory (default: the script folder)."
+              },
+              "interpreter": {
+                "type": "string",
+                "description": "Interpreter (a plain tclsh 8.5+; default: selected workspace interpreter)."
+              },
+              "interpreterArgs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": []
+              },
+              "env": {
+                "type": "object",
+                "description": "Extra environment variables."
+              },
+              "stopOnEntry": {
+                "type": "boolean",
+                "description": "Stop at the first command (default: off, so the program runs to your breakpoints).",
+                "default": false
+              },
+              "console": {
+                "type": "string",
+                "enum": [
+                  "integratedTerminal",
+                  "internalConsole"
+                ],
+                "default": "integratedTerminal",
+                "description": "integratedTerminal runs the program in a VS Code terminal (stdin works); internalConsole captures its output in the Debug Console (no stdin)."
+              }
+            }
+          }
+        },
+        "initialConfigurations": [
+          {
+            "type": "tcl",
+            "request": "launch",
+            "name": "Debug current Tcl file",
+            "program": "${file}",
+            "stopOnEntry": false
+          }
+        ],
+        "configurationSnippets": [
+          {
+            "label": "Tcl: Launch",
+            "description": "Debug a Tcl script",
+            "body": {
+              "type": "tcl",
+              "request": "launch",
+              "name": "Debug Tcl script",
+              "program": "^\"\\${file}\"",
+              "stopOnEntry": false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "icon": "icon.png",
+  "keywords": [
+    "tcl",
+    "tk",
+    "debugger",
+    "sqlite",
+    "tclsh",
+    "eda"
+  ],
+  "galleryBanner": {
+    "color": "#0f3d2e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZachShen99/vscode-tcl-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZachShen99/vscode-tcl-tools/issues"
+  },
+  "homepage": "https://github.com/ZachShen99/vscode-tcl-tools#readme",
+  "devDependencies": {
+    "@vscode/vsce": "3.3.2"
+  }
+}

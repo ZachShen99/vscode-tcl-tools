@@ -1,0 +1,62 @@
+{
+  "creators": {
+    "sqlite3": { "type": "sqlite3", "package": "sqlite3", "probeArg": ":memory:" }
+  },
+  "types": {
+    "sqlite3": {
+      "label": "SQLite database handle",
+      "methods": {
+        "authorizer": ["DB authorizer ?CALLBACK?", "Install (or clear) an authorizer callback invoked while SQL is compiled."],
+        "backup": ["DB backup ?SOURCE-DB? FILENAME", "Back up SOURCE-DB (default main) into the database file FILENAME."],
+        "bind_fallback": ["DB bind_fallback ?CALLBACK?", "Callback invoked for $variables in SQL that are not Tcl variables."],
+        "busy": ["DB busy CALLBACK", "Register a busy handler called when the database is locked."],
+        "cache": ["DB cache size N | flush", "Control the prepared-statement cache."],
+        "changes": ["DB changes", "Number of rows changed by the most recent INSERT/UPDATE/DELETE."],
+        "close": ["DB close", "Close the database and delete the DB command."],
+        "collate": ["DB collate NAME SCRIPT", "Define a collating sequence implemented by a Tcl script."],
+        "collation_needed": ["DB collation_needed SCRIPT", "Script invoked when an unknown collation is required."],
+        "commit_hook": ["DB commit_hook ?SCRIPT?", "Script run before each commit; a non-zero result turns the commit into a rollback."],
+        "complete": ["DB complete SQL", "Return 1 if SQL is a complete statement (ends with a semicolon)."],
+        "config": ["DB config OPTION ?BOOLEAN?", "Query or set a database connection option."],
+        "copy": ["DB copy CONFLICT-ALGORITHM TABLE FILENAME ?SEPARATOR? ?NULLINDICATOR?", "Import rows from a text file into TABLE."],
+        "deserialize": ["DB deserialize ?-maxsize N? ?-readonly BOOL? ?DB-NAME? VALUE", "Load a serialized database image."],
+        "enable_load_extension": ["DB enable_load_extension BOOLEAN", "Allow or forbid loading SQLite extensions."],
+        "errorcode": ["DB errorcode", "Numeric error code of the most recent failed call."],
+        "erroroffset": ["DB erroroffset", "Byte offset of the SQL error in the most recent failed statement."],
+        "eval": ["DB eval SQL ?ARRAY-NAME? ?SCRIPT?", "Run SQL. With a SCRIPT, run it once per result row with column values in variables (or ARRAY-NAME elements). Without a script, return all values as a list."],
+        "exists": ["DB exists SQL", "Return 1 if SQL returns at least one row."],
+        "format": ["DB format ?-dbname NAME? ?FORMAT-OPTIONS? SQL", "Run SQL and return the result in a formatted text layout."],
+        "function": ["DB function NAME ?-argcount N? ?-deterministic? ?-directonly? ?-returntype TYPE? SCRIPT", "Create an SQL function implemented by a Tcl script."],
+        "incrblob": ["DB incrblob ?-readonly? ?DB? TABLE COLUMN ROWID", "Open a BLOB for incremental I/O and return a channel."],
+        "interrupt": ["DB interrupt", "Abort the SQL operation currently running."],
+        "last_insert_rowid": ["DB last_insert_rowid", "Rowid of the most recent successful INSERT."],
+        "nullvalue": ["DB nullvalue ?STRING?", "String that represents SQL NULL in results (default empty)."],
+        "onecolumn": ["DB onecolumn SQL", "Run SQL and return the first column of the first row."],
+        "preupdate": ["DB preupdate", "Access old/new row values inside a preupdate hook."],
+        "profile": ["DB profile ?SCRIPT?", "Script run after each statement with its text and elapsed time."],
+        "progress": ["DB progress N SCRIPT", "Invoke SCRIPT every N virtual-machine instructions."],
+        "rekey": ["DB rekey KEY", "Change the encryption key (encryption builds only)."],
+        "restore": ["DB restore ?TARGET-DB? FILENAME", "Replace TARGET-DB (default main) with the contents of FILENAME."],
+        "rollback_hook": ["DB rollback_hook ?SCRIPT?", "Script run whenever a transaction is rolled back."],
+        "serialize": ["DB serialize ?DB-NAME?", "Return the database as a binary image."],
+        "status": ["DB status autoindex|step|sort|vmstep", "Statement counters of the most recent statement."],
+        "timeout": ["DB timeout MILLISECONDS", "How long to wait for a locked database before failing."],
+        "total_changes": ["DB total_changes", "Total rows changed since the connection was opened."],
+        "trace": ["DB trace ?SCRIPT?", "Script run with the text of each SQL statement before it executes."],
+        "trace_v2": ["DB trace_v2 ?SCRIPT? ?MASK?", "Extended tracing; MASK is a list of statement, profile, row, close."],
+        "transaction": ["DB transaction ?deferred|exclusive|immediate? SCRIPT", "Run SCRIPT inside BEGIN ... COMMIT; an error (or return code error) rolls back."],
+        "unlock_notify": ["DB unlock_notify ?SCRIPT?", "Script run when a blocking lock is released."],
+        "update_hook": ["DB update_hook ?SCRIPT?", "Script run after each row insert/update/delete: operation, db, table, rowid."],
+        "version": ["DB version", "SQLite library version string."],
+        "wal_hook": ["DB wal_hook ?SCRIPT?", "Script run after each commit in WAL mode."]
+      },
+      "values": {
+        "transaction": ["deferred", "exclusive", "immediate"],
+        "status": ["autoindex", "step", "sort", "vmstep"],
+        "cache": ["size", "flush"],
+        "copy": ["rollback", "abort", "fail", "ignore", "replace"],
+        "trace_v2": ["statement", "profile", "row", "close"]
+      }
+    }
+  }
+}

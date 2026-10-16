@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "tcl",
+      "request": "launch",
+      "name": "Debug current Tcl file",
+      "program": "${file}",
+      "stopOnEntry": true
+    },
+    {
+      "type": "tcl",
+      "request": "launch",
+      "name": "Debug with arguments",
+      "program": "${file}",
+      "args": ["a", "b"],
+      "stopOnEntry": false
+    }
+  ]
+}

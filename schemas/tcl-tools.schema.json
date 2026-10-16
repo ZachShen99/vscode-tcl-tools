@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tcl Tools project configuration",
+  "type": "object",
+  "properties": {
+    "knownCommands": {
+      "type": "array",
+      "description": "Command names (wildcards * and ? allowed) that the undefined-command check treats as defined, e.g. commands provided by a host tool.",
+      "items": { "type": "string", "pattern": "^\\S+$" }
+    },
+    "hosts": {
+      "type": "object",
+      "description": "Per-file tables for host tools (Vivado, Quartus ...): each host applies to the files its match patterns select.",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "match": { "type": "array", "description": "Glob patterns on the workspace-relative path: ** any depth, * within a folder, ? one character. A pattern without / matches in any folder.", "items": { "type": "string" } },
+          "knownCommands": { "type": "array", "description": "Command names (wildcards allowed) accepted for the matching files.", "items": { "type": "string", "pattern": "^\\S+$" } },
+          "commands": { "type": "object", "description": "Extra commands for the matching files (same format as the top-level commands)." },
+          "check": { "type": "boolean", "description": "Run the undefined-command check on the matching files (needs a plain tclsh for introspection). Default false." }
+        },
+        "additionalProperties": false
+      }
+    },
+    "commands": {
+      "type": "object",
+      "description": "Extra commands, keyed by name. They appear in completion, hover and signature help and are never reported as undefined.",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string", "description": "Argument signature, e.g. ?-filter expr? ?patterns?" },
+          {
+            "type": "object",
+            "properties": {
+              "sig": { "type": "string", "description": "Argument signature shown after the command name." },
+              "en": { "type": "string", "description": "English description." },
+              "zh": { "type": "string", "description": "Chinese description." },
+              "doc": { "type": "string", "description": "Description used for both languages when en/zh are not given." }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

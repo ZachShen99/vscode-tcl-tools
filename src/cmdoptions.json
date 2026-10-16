@@ -1,0 +1,1254 @@
+{
+ "socket": {
+  "-server": [
+   "Create a server socket; the command is called with (channel, clientAddr, clientPort) for each connection.",
+   "创建服务端套接字;每有一个连接就调用该命令,参数为 (通道, 客户端地址, 客户端端口)。"
+  ],
+  "-myaddr": [
+   "Local address (interface) to bind to.",
+   "绑定的本地地址(网卡)。"
+  ],
+  "-myport": [
+   "Local port to bind to (client sockets).",
+   "绑定的本地端口(客户端套接字)。"
+  ],
+  "-async": [
+   "Connect in the background; the channel becomes writable when connected.",
+   "后台异步连接;连上之后通道变为可写。"
+  ],
+  "-reuseaddr": [
+   "Allow reuse of a local address in TIME_WAIT (Tcl 8.6.?+).",
+   "允许重用处于 TIME_WAIT 的本地地址。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-reuseport": [
+   "Allow several sockets to bind the same port (Tcl 8.6.?+).",
+   "允许多个套接字绑定同一端口。",
+   [
+    "0",
+    "1"
+   ]
+  ]
+ },
+ "puts": {
+  "-nonewline": [
+   "Do not append a newline.",
+   "末尾不加换行。"
+  ]
+ },
+ "read": {
+  "-nonewline": [
+   "Remove the final newline from the data read.",
+   "去掉读到数据末尾的那个换行。"
+  ]
+ },
+ "regexp": {
+  "-all": [
+   "Match as many times as possible (count of matches / all replacements).",
+   "尽可能多次匹配(regsub 为全部替换)。"
+  ],
+  "-nocase": [
+   "Ignore case.",
+   "忽略大小写。"
+  ],
+  "-expanded": [
+   "Expanded syntax: whitespace and #-comments in the pattern are ignored.",
+   "扩展语法:忽略模式中的空白和 # 注释。"
+  ],
+  "-line": [
+   "Newline-sensitive matching (same as -linestop -lineanchor).",
+   "按行匹配(等价于 -linestop 加 -lineanchor)。"
+  ],
+  "-linestop": [
+   ". and [^...] do not match newline.",
+   ". 和 [^...] 不匹配换行。"
+  ],
+  "-lineanchor": [
+   "^ and $ match at line boundaries.",
+   "^ 和 $ 匹配每一行的开头和结尾。"
+  ],
+  "-start": [
+   "Start matching at this character index.",
+   "从该字符索引开始匹配。"
+  ],
+  "--": [
+   "End of options (the next word is the pattern).",
+   "选项结束(下一个词是模式)。"
+  ],
+  "-about": [
+   "Return information about the pattern instead of matching.",
+   "返回模式的信息而不是匹配。"
+  ],
+  "-indices": [
+   "Store index pairs {first last} instead of the matched text.",
+   "保存 {起 止} 索引对而不是匹配文本。"
+  ],
+  "-inline": [
+   "Return matches as a list instead of storing them in variables.",
+   "把匹配结果作为列表直接返回,不存入变量。"
+  ]
+ },
+ "regsub": {
+  "-all": [
+   "Match as many times as possible (count of matches / all replacements).",
+   "尽可能多次匹配(regsub 为全部替换)。"
+  ],
+  "-nocase": [
+   "Ignore case.",
+   "忽略大小写。"
+  ],
+  "-expanded": [
+   "Expanded syntax: whitespace and #-comments in the pattern are ignored.",
+   "扩展语法:忽略模式中的空白和 # 注释。"
+  ],
+  "-line": [
+   "Newline-sensitive matching (same as -linestop -lineanchor).",
+   "按行匹配(等价于 -linestop 加 -lineanchor)。"
+  ],
+  "-linestop": [
+   ". and [^...] do not match newline.",
+   ". 和 [^...] 不匹配换行。"
+  ],
+  "-lineanchor": [
+   "^ and $ match at line boundaries.",
+   "^ 和 $ 匹配每一行的开头和结尾。"
+  ],
+  "-start": [
+   "Start matching at this character index.",
+   "从该字符索引开始匹配。"
+  ],
+  "--": [
+   "End of options (the next word is the pattern).",
+   "选项结束(下一个词是模式)。"
+  ]
+ },
+ "lsort": {
+  "-ascii": [
+   "Compare as strings by character code (default).",
+   "按字符码比较字符串(默认)。"
+  ],
+  "-dictionary": [
+   "Dictionary order: case-insensitive, numbers compared numerically.",
+   "字典序:忽略大小写,数字按数值比较。"
+  ],
+  "-integer": [
+   "Compare as integers.",
+   "按整数比较。"
+  ],
+  "-real": [
+   "Compare as floating-point numbers.",
+   "按浮点数比较。"
+  ],
+  "-command": [
+   "Compare with a command (called with two elements, returns -1/0/1).",
+   "用命令比较(传入两个元素,返回 -1/0/1)。"
+  ],
+  "-increasing": [
+   "Ascending order (default).",
+   "升序(默认)。"
+  ],
+  "-decreasing": [
+   "Descending order.",
+   "降序。"
+  ],
+  "-indices": [
+   "Return the original indices instead of the elements.",
+   "返回原始索引而不是元素。"
+  ],
+  "-index": [
+   "Sort sublists by the element at this index.",
+   "按子列表中该索引的元素排序。"
+  ],
+  "-stride": [
+   "Treat the list as groups of N elements.",
+   "把列表按每 N 个元素分组排序。"
+  ],
+  "-nocase": [
+   "Ignore case (with -ascii).",
+   "忽略大小写(配合 -ascii)。"
+  ],
+  "-unique": [
+   "Keep only one of each set of equal elements.",
+   "相等的元素只保留一个。"
+  ]
+ },
+ "lsearch": {
+  "-exact": [
+   "Elements must equal the pattern.",
+   "元素必须与模式完全相等。"
+  ],
+  "-glob": [
+   "Pattern is a glob pattern (default).",
+   "模式是通配符(默认)。"
+  ],
+  "-regexp": [
+   "Pattern is a regular expression.",
+   "模式是正则表达式。"
+  ],
+  "-sorted": [
+   "The list is sorted (binary search).",
+   "列表已排序(使用二分查找)。"
+  ],
+  "-bisect": [
+   "Inexact search in a sorted list.",
+   "在已排序列表中做不精确(二分)查找。"
+  ],
+  "-all": [
+   "Return all matching indices.",
+   "返回所有匹配的索引。"
+  ],
+  "-inline": [
+   "Return the matching elements instead of indices.",
+   "返回匹配的元素而不是索引。"
+  ],
+  "-not": [
+   "Negate the match.",
+   "取反。"
+  ],
+  "-start": [
+   "Start searching at this index.",
+   "从该索引开始查找。"
+  ],
+  "-nocase": [
+   "Ignore case.",
+   "忽略大小写。"
+  ],
+  "-ascii": [
+   "Compare as strings (with -sorted).",
+   "按字符串比较(配合 -sorted)。"
+  ],
+  "-dictionary": [
+   "Dictionary order comparison (with -sorted).",
+   "按字典序比较(配合 -sorted)。"
+  ],
+  "-integer": [
+   "Compare as integers.",
+   "按整数比较。"
+  ],
+  "-real": [
+   "Compare as floating-point numbers.",
+   "按浮点数比较。"
+  ],
+  "-increasing": [
+   "List is in ascending order (with -sorted).",
+   "列表为升序(配合 -sorted)。"
+  ],
+  "-decreasing": [
+   "List is in descending order (with -sorted).",
+   "列表为降序(配合 -sorted)。"
+  ],
+  "-index": [
+   "Search the element at this index of each sublist.",
+   "在每个子列表的该索引处查找。"
+  ],
+  "-subindices": [
+   "With -index: return the full index path.",
+   "配合 -index:返回完整索引路径。"
+  ],
+  "-stride": [
+   "Treat the list as groups of N elements.",
+   "把列表按每 N 个元素分组。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "glob": {
+  "-directory": [
+   "Search in this directory.",
+   "在该目录中查找。"
+  ],
+  "-path": [
+   "Patterns are appended to this path prefix.",
+   "模式接在该路径前缀之后。"
+  ],
+  "-join": [
+   "Join the patterns into one path pattern.",
+   "把多个模式连成一个路径模式。"
+  ],
+  "-nocomplain": [
+   "No error if nothing matches.",
+   "没有匹配也不报错。"
+  ],
+  "-tails": [
+   "Return only the part after -directory / -path.",
+   "只返回 -directory / -path 之后的部分。"
+  ],
+  "-types": [
+   "Restrict by type: b c d f l p s, or r w x hidden readonly.",
+   "按类型过滤:b c d f l p s,或 r w x hidden readonly。",
+   [
+    "b",
+    "c",
+    "d",
+    "f",
+    "l",
+    "p",
+    "s",
+    "r",
+    "w",
+    "x",
+    "hidden",
+    "readonly"
+   ]
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "switch": {
+  "-exact": [
+   "Exact string match (default).",
+   "精确匹配(默认)。"
+  ],
+  "-glob": [
+   "Patterns are glob patterns.",
+   "模式是通配符。"
+  ],
+  "-regexp": [
+   "Patterns are regular expressions.",
+   "模式是正则表达式。"
+  ],
+  "-nocase": [
+   "Ignore case.",
+   "忽略大小写。"
+  ],
+  "-matchvar": [
+   "Store regexp sub-matches in this variable.",
+   "把正则子匹配存入该变量。"
+  ],
+  "-indexvar": [
+   "Store sub-match indices in this variable.",
+   "把子匹配的索引存入该变量。"
+  ],
+  "--": [
+   "End of options (recommended before the string).",
+   "选项结束(建议放在待匹配字符串之前)。"
+  ]
+ },
+ "exec": {
+  "-ignorestderr": [
+   "Do not treat output on stderr as an error.",
+   "不把 stderr 输出视为错误。"
+  ],
+  "-keepnewline": [
+   "Keep the trailing newline of the output.",
+   "保留输出末尾的换行。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "fconfigure": {
+  "-blocking": [
+   "Blocking mode of the channel.",
+   "通道是否阻塞。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-buffering": [
+   "Buffering mode.",
+   "缓冲模式。",
+   [
+    "none",
+    "line",
+    "full"
+   ]
+  ],
+  "-buffersize": [
+   "Buffer size in bytes.",
+   "缓冲区字节数。"
+  ],
+  "-encoding": [
+   "Character encoding (e.g. utf-8, binary).",
+   "字符编码(如 utf-8、binary)。",
+   [
+    "utf-8",
+    "utf-16",
+    "utf-32",
+    "unicode",
+    "ascii",
+    "binary",
+    "iso8859-1",
+    "iso8859-15",
+    "cp1252",
+    "cp936",
+    "gb2312",
+    "gbk",
+    "big5",
+    "cp932",
+    "shiftjis",
+    "euc-jp",
+    "iso2022-jp",
+    "euc-kr",
+    "koi8-r"
+   ]
+  ],
+  "-eofchar": [
+   "End-of-file character(s).",
+   "文件结束符。"
+  ],
+  "-translation": [
+   "End-of-line translation.",
+   "换行符转换。",
+   [
+    "auto",
+    "binary",
+    "cr",
+    "crlf",
+    "lf"
+   ]
+  ],
+  "-profile": [
+   "Encoding error-handling profile (Tcl 8.7/9.0).",
+   "编码错误处理策略(Tcl 8.7/9.0)。",
+   [
+    "strict",
+    "replace",
+    "tcl8"
+   ]
+  ],
+  "-closemode": [
+   "Which half to close on close (Tcl 9.0).",
+   "close 时关闭哪一端(Tcl 9.0)。",
+   [
+    "default",
+    "read",
+    "write"
+   ]
+  ],
+  "-peername": [
+   "Read-only: remote address of a socket as {addr host port}.",
+   "只读:套接字的对端地址 {地址 主机 端口}。"
+  ],
+  "-sockname": [
+   "Read-only: local address of a socket as {addr host port}.",
+   "只读:套接字的本地地址 {地址 主机 端口}。"
+  ],
+  "-error": [
+   "Read-only: pending socket error (after an -async connect).",
+   "只读:套接字上待处理的错误(-async 连接之后)。"
+  ],
+  "-connecting": [
+   "Read-only: 1 while an -async connect is still in progress.",
+   "只读:-async 连接仍在进行时为 1。"
+  ],
+  "-keepalive": [
+   "Enable TCP keepalive.",
+   "启用 TCP keepalive。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-nodelay": [
+   "Disable Nagle algorithm.",
+   "关闭 Nagle 算法。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-mode": [
+   "Serial port settings baud,parity,data,stop.",
+   "串口参数 波特率,校验,数据位,停止位。"
+  ],
+  "-handshake": [
+   "Serial flow control.",
+   "串口流控。",
+   [
+    "none",
+    "rtscts",
+    "xonxoff",
+    "dtrdsr"
+   ]
+  ],
+  "-queue": [
+   "Read-only: bytes queued on a serial port {in out}.",
+   "只读:串口队列中的字节数 {输入 输出}。"
+  ],
+  "-timeout": [
+   "Serial read timeout in ms.",
+   "串口读超时(毫秒)。"
+  ],
+  "-ttycontrol": [
+   "Serial control lines {DTR 1 RTS 0 BREAK 0}.",
+   "串口控制线 {DTR 1 RTS 0 BREAK 0}。"
+  ],
+  "-ttystatus": [
+   "Read-only: serial status lines.",
+   "只读:串口状态线。"
+  ],
+  "-xchar": [
+   "Serial XON/XOFF characters.",
+   "串口 XON/XOFF 字符。"
+  ],
+  "-pollinterval": [
+   "Serial poll interval in ms.",
+   "串口轮询间隔(毫秒)。"
+  ],
+  "-sysbuffer": [
+   "Serial system buffer sizes.",
+   "串口系统缓冲区大小。"
+  ],
+  "-lasterror": [
+   "Read-only: pending serial errors.",
+   "只读:串口待处理的错误。"
+  ],
+  "-permissions": [
+   "File permissions of an opened file (Tcl 9.0).",
+   "已打开文件的权限(Tcl 9.0)。"
+  ]
+ },
+ "chan configure": {
+  "-blocking": [
+   "Blocking mode of the channel.",
+   "通道是否阻塞。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-buffering": [
+   "Buffering mode.",
+   "缓冲模式。",
+   [
+    "none",
+    "line",
+    "full"
+   ]
+  ],
+  "-buffersize": [
+   "Buffer size in bytes.",
+   "缓冲区字节数。"
+  ],
+  "-encoding": [
+   "Character encoding (e.g. utf-8, binary).",
+   "字符编码(如 utf-8、binary)。",
+   [
+    "utf-8",
+    "utf-16",
+    "utf-32",
+    "unicode",
+    "ascii",
+    "binary",
+    "iso8859-1",
+    "iso8859-15",
+    "cp1252",
+    "cp936",
+    "gb2312",
+    "gbk",
+    "big5",
+    "cp932",
+    "shiftjis",
+    "euc-jp",
+    "iso2022-jp",
+    "euc-kr",
+    "koi8-r"
+   ]
+  ],
+  "-eofchar": [
+   "End-of-file character(s).",
+   "文件结束符。"
+  ],
+  "-translation": [
+   "End-of-line translation.",
+   "换行符转换。",
+   [
+    "auto",
+    "binary",
+    "cr",
+    "crlf",
+    "lf"
+   ]
+  ],
+  "-profile": [
+   "Encoding error-handling profile (Tcl 8.7/9.0).",
+   "编码错误处理策略(Tcl 8.7/9.0)。",
+   [
+    "strict",
+    "replace",
+    "tcl8"
+   ]
+  ],
+  "-closemode": [
+   "Which half to close on close (Tcl 9.0).",
+   "close 时关闭哪一端(Tcl 9.0)。",
+   [
+    "default",
+    "read",
+    "write"
+   ]
+  ],
+  "-peername": [
+   "Read-only: remote address of a socket as {addr host port}.",
+   "只读:套接字的对端地址 {地址 主机 端口}。"
+  ],
+  "-sockname": [
+   "Read-only: local address of a socket as {addr host port}.",
+   "只读:套接字的本地地址 {地址 主机 端口}。"
+  ],
+  "-error": [
+   "Read-only: pending socket error (after an -async connect).",
+   "只读:套接字上待处理的错误(-async 连接之后)。"
+  ],
+  "-connecting": [
+   "Read-only: 1 while an -async connect is still in progress.",
+   "只读:-async 连接仍在进行时为 1。"
+  ],
+  "-keepalive": [
+   "Enable TCP keepalive.",
+   "启用 TCP keepalive。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-nodelay": [
+   "Disable Nagle algorithm.",
+   "关闭 Nagle 算法。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-mode": [
+   "Serial port settings baud,parity,data,stop.",
+   "串口参数 波特率,校验,数据位,停止位。"
+  ],
+  "-handshake": [
+   "Serial flow control.",
+   "串口流控。",
+   [
+    "none",
+    "rtscts",
+    "xonxoff",
+    "dtrdsr"
+   ]
+  ],
+  "-queue": [
+   "Read-only: bytes queued on a serial port {in out}.",
+   "只读:串口队列中的字节数 {输入 输出}。"
+  ],
+  "-timeout": [
+   "Serial read timeout in ms.",
+   "串口读超时(毫秒)。"
+  ],
+  "-ttycontrol": [
+   "Serial control lines {DTR 1 RTS 0 BREAK 0}.",
+   "串口控制线 {DTR 1 RTS 0 BREAK 0}。"
+  ],
+  "-ttystatus": [
+   "Read-only: serial status lines.",
+   "只读:串口状态线。"
+  ],
+  "-xchar": [
+   "Serial XON/XOFF characters.",
+   "串口 XON/XOFF 字符。"
+  ],
+  "-pollinterval": [
+   "Serial poll interval in ms.",
+   "串口轮询间隔(毫秒)。"
+  ],
+  "-sysbuffer": [
+   "Serial system buffer sizes.",
+   "串口系统缓冲区大小。"
+  ],
+  "-lasterror": [
+   "Read-only: pending serial errors.",
+   "只读:串口待处理的错误。"
+  ],
+  "-permissions": [
+   "File permissions of an opened file (Tcl 9.0).",
+   "已打开文件的权限(Tcl 9.0)。"
+  ]
+ },
+ "fcopy": {
+  "-size": [
+   "Maximum number of bytes/characters to copy.",
+   "最多复制的字节/字符数。"
+  ],
+  "-command": [
+   "Run in the background; call this command when done.",
+   "后台进行,完成后调用该命令。"
+  ]
+ },
+ "chan copy": {
+  "-size": [
+   "Maximum number of bytes/characters to copy.",
+   "最多复制的字节/字符数。"
+  ],
+  "-command": [
+   "Run in the background; call this command when done.",
+   "后台进行,完成后调用该命令。"
+  ]
+ },
+ "file copy": {
+  "-force": [
+   "Overwrite existing targets.",
+   "覆盖已存在的目标。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "file rename": {
+  "-force": [
+   "Overwrite existing targets.",
+   "覆盖已存在的目标。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "file delete": {
+  "-force": [
+   "Delete non-empty directories and read-only files.",
+   "允许删除非空目录和只读文件。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "string compare": {
+  "-nocase": [
+   "Ignore case.",
+   "忽略大小写。"
+  ],
+  "-length": [
+   "Compare only the first N characters.",
+   "只比较前 N 个字符。"
+  ]
+ },
+ "string equal": {
+  "-nocase": [
+   "Ignore case.",
+   "忽略大小写。"
+  ],
+  "-length": [
+   "Compare only the first N characters.",
+   "只比较前 N 个字符。"
+  ]
+ },
+ "string match": {
+  "-nocase": [
+   "Ignore case.",
+   "忽略大小写。"
+  ]
+ },
+ "string map": {
+  "-nocase": [
+   "Ignore case.",
+   "忽略大小写。"
+  ]
+ },
+ "string is": {
+  "-strict": [
+   "Empty string is not a member of the class.",
+   "空字符串不属于该类别。"
+  ],
+  "-failindex": [
+   "Store the index of the first offending character in this variable.",
+   "把第一个不合规字符的索引存入该变量。"
+  ]
+ },
+ "subst": {
+  "-nobackslashes": [
+   "No backslash substitution.",
+   "不做反斜杠替换。"
+  ],
+  "-nocommands": [
+   "No command substitution.",
+   "不做命令替换。"
+  ],
+  "-novariables": [
+   "No variable substitution.",
+   "不做变量替换。"
+  ]
+ },
+ "unset": {
+  "-nocomplain": [
+   "No error if the variable does not exist.",
+   "变量不存在也不报错。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "return": {
+  "-code": [
+   "Completion code: ok, error, return, break, continue or integer.",
+   "完成码:ok、error、return、break、continue 或整数。",
+   [
+    "ok",
+    "error",
+    "return",
+    "break",
+    "continue"
+   ]
+  ],
+  "-level": [
+   "How many levels to return through.",
+   "返回穿透的层数。"
+  ],
+  "-options": [
+   "Option dictionary to apply.",
+   "要应用的选项字典。"
+  ],
+  "-errorcode": [
+   "Value for errorCode.",
+   "设置 errorCode 的值。"
+  ],
+  "-errorinfo": [
+   "Initial value for errorInfo.",
+   "errorInfo 的初始值。"
+  ],
+  "-errorstack": [
+   "Initial value for the error stack.",
+   "错误栈的初始值。"
+  ]
+ },
+ "clock format": {
+  "-format": [
+   "Format string (%Y-%m-%d %H:%M:%S ...).",
+   "格式字符串(%Y-%m-%d %H:%M:%S 等)。"
+  ],
+  "-timezone": [
+   "Time zone name or offset.",
+   "时区名或偏移。"
+  ],
+  "-locale": [
+   "Locale for names and formats.",
+   "名称/格式使用的区域。"
+  ],
+  "-gmt": [
+   "Use GMT/UTC (deprecated; use -timezone :UTC).",
+   "使用 GMT/UTC(已过时,改用 -timezone :UTC)。",
+   [
+    "0",
+    "1"
+   ]
+  ]
+ },
+ "clock scan": {
+  "-format": [
+   "Format describing the input string.",
+   "描述输入字符串的格式。"
+  ],
+  "-base": [
+   "Base time (seconds) for relative input.",
+   "相对时间使用的基准时间(秒)。"
+  ],
+  "-timezone": [
+   "Time zone name or offset.",
+   "时区名或偏移。"
+  ],
+  "-locale": [
+   "Locale for names and formats.",
+   "名称/格式使用的区域。"
+  ],
+  "-gmt": [
+   "Use GMT/UTC (deprecated).",
+   "使用 GMT/UTC(已过时)。",
+   [
+    "0",
+    "1"
+   ]
+  ]
+ },
+ "clock add": {
+  "-timezone": [
+   "Time zone name or offset.",
+   "时区名或偏移。"
+  ],
+  "-locale": [
+   "Locale.",
+   "区域。"
+  ],
+  "-gmt": [
+   "Use GMT/UTC (deprecated).",
+   "使用 GMT/UTC(已过时)。",
+   [
+    "0",
+    "1"
+   ]
+  ]
+ },
+ "namespace import": {
+  "-force": [
+   "Replace existing commands.",
+   "替换已存在的命令。"
+  ]
+ },
+ "namespace export": {
+  "-clear": [
+   "Clear the export list first.",
+   "先清空导出列表。"
+  ]
+ },
+ "array names": {
+  "-exact": [
+   "Exact name match.",
+   "名字完全匹配。"
+  ],
+  "-glob": [
+   "Glob match (default).",
+   "通配符匹配(默认)。"
+  ],
+  "-regexp": [
+   "Regular expression match.",
+   "正则表达式匹配。"
+  ]
+ },
+ "load": {
+  "-global": [
+   "Make symbols globally visible.",
+   "使符号全局可见。"
+  ],
+  "-lazy": [
+   "Lazy symbol binding.",
+   "延迟绑定符号。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "unload": {
+  "-nocomplain": [
+   "Ignore errors.",
+   "忽略错误。"
+  ],
+  "-keeplibrary": [
+   "Keep the library loaded.",
+   "保留库不卸载。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "source": {
+  "-encoding": [
+   "Encoding of the file.",
+   "文件编码。",
+   [
+    "utf-8",
+    "utf-16",
+    "utf-32",
+    "unicode",
+    "ascii",
+    "binary",
+    "iso8859-1",
+    "iso8859-15",
+    "cp1252",
+    "cp936",
+    "gb2312",
+    "gbk",
+    "big5",
+    "cp932",
+    "shiftjis",
+    "euc-jp",
+    "iso2022-jp",
+    "euc-kr",
+    "koi8-r"
+   ]
+  ]
+ },
+ "package require": {
+  "-exact": [
+   "Require exactly this version.",
+   "要求版本完全一致。"
+  ]
+ },
+ "interp create": {
+  "-safe": [
+   "Create a safe interpreter.",
+   "创建安全解释器。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "timerate": {
+  "-calibrate": [
+   "Calibrate the measurement overhead.",
+   "校准测量开销。"
+  ],
+  "-overhead": [
+   "Measurement overhead to subtract (microseconds).",
+   "要扣除的测量开销(微秒)。"
+  ]
+ },
+ "zlib gzip": {
+  "-level": [
+   "Compression level 0-9.",
+   "压缩级别 0-9。"
+  ],
+  "-header": [
+   "Header dictionary.",
+   "头部字典。"
+  ]
+ },
+ "zlib gunzip": {
+  "-headerVar": [
+   "Variable receiving the header dictionary.",
+   "接收头部字典的变量。"
+  ]
+ },
+ "encoding convertfrom": {
+  "-profile": [
+   "Error-handling profile (Tcl 8.7/9.0).",
+   "错误处理策略(Tcl 8.7/9.0)。",
+   [
+    "strict",
+    "replace",
+    "tcl8"
+   ]
+  ],
+  "-failindex": [
+   "Variable receiving the index of the first bad byte.",
+   "接收第一个错误字节索引的变量。"
+  ]
+ },
+ "encoding convertto": {
+  "-profile": [
+   "Error-handling profile (Tcl 8.7/9.0).",
+   "错误处理策略(Tcl 8.7/9.0)。",
+   [
+    "strict",
+    "replace",
+    "tcl8"
+   ]
+  ],
+  "-failindex": [
+   "Variable receiving the index of the first bad byte.",
+   "接收第一个错误字节索引的变量。"
+  ]
+ },
+ "file attributes": {
+  "-permissions": [
+   "Unix permission bits, e.g. 0644 (or rwxr-xr-x).",
+   "Unix 权限位,如 0644(或 rwxr-xr-x)。"
+  ],
+  "-owner": [
+   "Owner (Unix).",
+   "所有者(Unix)。"
+  ],
+  "-group": [
+   "Group (Unix).",
+   "所属组(Unix)。"
+  ],
+  "-readonly": [
+   "Read-only flag (Windows/macOS).",
+   "只读标志(Windows/macOS)。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-hidden": [
+   "Hidden flag (Windows/macOS).",
+   "隐藏标志(Windows/macOS)。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-archive": [
+   "Archive flag (Windows).",
+   "存档标志(Windows)。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-system": [
+   "System flag (Windows).",
+   "系统标志(Windows)。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-longname": [
+   "Long name (Windows).",
+   "长文件名(Windows)。"
+  ],
+  "-shortname": [
+   "8.3 short name (Windows).",
+   "8.3 短文件名(Windows)。"
+  ],
+  "-creator": [
+   "Creator code (macOS).",
+   "创建者代码(macOS)。"
+  ],
+  "-filetype": [
+   "File type code (macOS).",
+   "文件类型代码(macOS)。"
+  ],
+  "-rsrclength": [
+   "Resource fork length (macOS).",
+   "资源分支长度(macOS)。"
+  ]
+ },
+ "clock clicks": {
+  "-milliseconds": [
+   "Millisecond resolution counter.",
+   "毫秒级计数器。"
+  ],
+  "-microseconds": [
+   "Microsecond resolution counter.",
+   "微秒级计数器。"
+  ]
+ },
+ "namespace which": {
+  "-command": [
+   "Look for a command.",
+   "查找命令。"
+  ],
+  "-variable": [
+   "Look for a variable.",
+   "查找变量。"
+  ]
+ },
+ "namespace ensemble create": {
+  "-command": [
+   "Name of the ensemble command.",
+   "ensemble 命令的名字。"
+  ],
+  "-map": [
+   "Dictionary mapping subcommand -> command prefix.",
+   "子命令 -> 命令前缀 的字典。"
+  ],
+  "-parameters": [
+   "Extra leading arguments before the subcommand.",
+   "位于子命令之前的额外参数。"
+  ],
+  "-prefixes": [
+   "Allow unique abbreviations of subcommands.",
+   "允许使用子命令的唯一缩写。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-subcommands": [
+   "List of subcommands.",
+   "子命令列表。"
+  ],
+  "-unknown": [
+   "Handler for unknown subcommands.",
+   "处理未知子命令的回调。"
+  ]
+ },
+ "namespace ensemble configure": {
+  "-command": [
+   "Name of the ensemble command.",
+   "ensemble 命令的名字。"
+  ],
+  "-map": [
+   "Dictionary mapping subcommand -> command prefix.",
+   "子命令 -> 命令前缀 的字典。"
+  ],
+  "-parameters": [
+   "Extra leading arguments before the subcommand.",
+   "位于子命令之前的额外参数。"
+  ],
+  "-prefixes": [
+   "Allow unique abbreviations of subcommands.",
+   "允许使用子命令的唯一缩写。",
+   [
+    "0",
+    "1"
+   ]
+  ],
+  "-subcommands": [
+   "List of subcommands.",
+   "子命令列表。"
+  ],
+  "-unknown": [
+   "Handler for unknown subcommands.",
+   "处理未知子命令的回调。"
+  ]
+ },
+ "interp limit": {
+  "-command": [
+   "Script run when a limit is exceeded.",
+   "超出限制时运行的脚本。"
+  ],
+  "-granularity": [
+   "How often the limit is checked.",
+   "检查限制的频率。"
+  ],
+  "-milliseconds": [
+   "Time limit: milliseconds part.",
+   "时间限制:毫秒部分。"
+  ],
+  "-seconds": [
+   "Time limit: absolute seconds since the epoch.",
+   "时间限制:自纪元起的绝对秒数。"
+  ],
+  "-value": [
+   "Limit value (command count).",
+   "限制值(命令数)。"
+  ]
+ },
+ "interp invokehidden": {
+  "-global": [
+   "Run in the global namespace.",
+   "在全局命名空间运行。"
+  ],
+  "-namespace": [
+   "Run in this namespace.",
+   "在该命名空间运行。"
+  ]
+ },
+ "interp cancel": {
+  "-unwind": [
+   "Unwind the whole interpreter stack.",
+   "展开整个解释器栈。"
+  ],
+  "--": [
+   "End of options.",
+   "选项结束。"
+  ]
+ },
+ "interp debug": {
+  "-frame": [
+   "Show frame information in `info frame`.",
+   "让 `info frame` 显示帧信息。",
+   [
+    "0",
+    "1"
+   ]
+  ]
+ },
+ "tcl::prefix match": {
+  "-exact": [
+   "Require an exact match.",
+   "要求完全匹配。"
+  ],
+  "-message": [
+   "Name used in the error message.",
+   "错误信息中使用的名称。"
+  ],
+  "-error": [
+   "Options dictionary for the error.",
+   "错误的选项字典。"
+  ]
+ }
+}
