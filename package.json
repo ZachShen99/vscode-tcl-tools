@@ -2,7 +2,7 @@
   "name": "tcl-tools",
   "displayName": "Tcl Tools",
   "description": "Tcl language support for VS Code: smart completion, diagnostics, Tk/SQLite/TclOO awareness, tcltest Test Explorer, and a full debugger.",
-  "version": "0.6.12",
+  "version": "0.7.0",
   "publisher": "zach-shen",
   "license": "MIT",
   "author": "Zach Shen",
