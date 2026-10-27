@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.7.0 - 2026-10-27
 
 - **Getting-started walkthrough**: an 8-step tour, shown in English or Chinese according to VS Code's display language (the Chinese text lives in `*.nls.zh.md` and `package.nls.zh-cn.json`; command titles are localized too, and the sample file and first-run hint follow `tcl.docLanguage` / the display language) (interpreter, environment check, a sample file, running, tests, debugging, host commands, next steps), opened by `Tcl: Get Started (Walkthrough)` or from the Welcome page, plus `Tcl: Open Sample File`. A single dismissible hint offers it the first time the extension activates and is never shown again. The sample is copied to the extension's storage so your edits are kept.
 - **Debug Test:** Test Explorer has a *Debug* profile next to *Run*. It starts the Tcl debugger on the tcltest runner, so breakpoints inside `test ... -setup/-body/-cleanup` scripts (and positional `test name desc body result` bodies) hit, and pass/fail/skip results still appear in the Test UI. The debugger now also instruments the scripts of `test` commands, so breakpoints work when you simply press F5 on a `.test` file.
